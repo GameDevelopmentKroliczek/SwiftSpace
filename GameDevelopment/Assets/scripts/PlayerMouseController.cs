@@ -10,8 +10,19 @@ public class PlayerMouseController : MonoBehaviour
     public float XPosition = 0f;
     public float ZPosition = 0f;
     public float AttackSpeed = 1f;
-    Object BulletRef;
+    Object BulletRef; 
     public bool isPlaying = false;
+    private Vector2 screenBounds;
+
+
+    Vector3 RotationAngle;
+    public float  Velocity;
+    public Quaternion RotatePlayer;
+    public Vector3 RotaionAngle;
+    public Vector3 StopAngle;
+    public Vector3 lastMousePosition;
+    public float MousePosX;
+   
 
     public void Awake()
     {
@@ -22,17 +33,64 @@ public class PlayerMouseController : MonoBehaviour
         //L‰d den Angriff aus dem Ordner Resources und startet Coroutine zum schieﬂen
         BulletRef = Resources.Load("PlayerAttack");
         StartCoroutine(Shooting());
+
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+
+        RotationAngle = new Vector3(0, 210, 180);
+        StopAngle = new Vector3(0, 180, 180);
+        MousePosX = lastMousePosition.x;
+
     }
 
-    public void FixedUpdate()
+    public void Update()
     {
-        //Playerposition wird auf Mausposition gesetzt, Z-Position bleibt 0
+        {
+            if (Input.mousePosition != lastMousePosition)
+            {
+                lastMousePosition = Input.mousePosition;
+                WhenMouseIsMoving();
+            }
+            else
+                WhenMouseIsntMoving();
+        }
+    }
+
+    public void WhenMouseIsMoving()
+    {
+    //Playerposition wird auf Mausposition gesetzt, Z-Position bleibt 0
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0f;
         if (isPlaying == true)
         {
+            //Spielerposition wird mit Mausposition gleichgesetzt
             rb.transform.position = mousePos;
+
+
+            //Berechnet die Entfernung des Spielers zum Mittelpunkt des Screens
+            Velocity = rb.position.x;
+            //Dreht den Spieler um die Entfernung in Grad
+            if (Velocity  < MousePosX + 0.1f)
+            {
+                Quaternion deltaRotation = Quaternion.Euler(RotationAngle);
+                transform.rotation = Quaternion.Slerp(transform.rotation, deltaRotation, 0.1f);  
+            }
+
+            if (Velocity  > MousePosX - 0.1f)
+            {
+                Quaternion deltaRotation = Quaternion.Euler( -RotationAngle);
+                transform.rotation = Quaternion.Slerp(transform.rotation, deltaRotation, 0.1f);
+            }
         }
+        
+    }
+
+    public void WhenMouseIsntMoving()
+    {
+        //Dreht den Spieler um die Entfernung in Grad
+       
+            Quaternion StopDeltaRotation = Quaternion.Euler(StopAngle);
+            transform.rotation = Quaternion.Slerp(transform.rotation, StopDeltaRotation, 0.01f);
+        
 
     }
 

@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     public float EnemyStartY = 10f;
     private Vector2 screenBounds;
     Vector3 RotationAngle;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class EnemyController : MonoBehaviour
         StartCoroutine(EnemyMover());
         StartCoroutine(EnemyLifetime());
         RotationAngle = new Vector3(0, 210, 0);
-
+        
     }
 
     // Update is called once per frame
@@ -31,7 +32,18 @@ public class EnemyController : MonoBehaviour
             rb.velocity = new Vector3(0, -2, 0);
         }
 
-      
+        //Rotiert den Gegner bei Bewegung
+        if (rb.velocity.x > 0f)
+        {
+            Quaternion deltaRotation = Quaternion.Euler(rb.rotation * -RotationAngle);
+            transform.rotation = Quaternion.Slerp(transform.rotation, deltaRotation, 0.05f);
+        }
+
+        if (rb.velocity.x < 0f)
+        {
+            Quaternion deltaRotation = Quaternion.Euler(rb.rotation * RotationAngle);   
+            transform.rotation = Quaternion.Slerp(transform.rotation, deltaRotation, 0.05f);
+        }
     }
 
     private void MoveEnemy()
@@ -50,18 +62,7 @@ public class EnemyController : MonoBehaviour
             rb.velocity = new Vector3(-2, 0, 0);
         }
 
-        //Rotiert den Gegner bei Bewegung
-        if (rb.velocity.x > 0f)
-        {
-            Quaternion deltaRotation = Quaternion.Euler(rb.rotation * -RotationAngle);
-            rb.MoveRotation( deltaRotation);
-        }
-
-        if (rb.velocity.x < 0f)
-        {
-            Quaternion deltaRotation = Quaternion.Euler(rb.rotation * RotationAngle);
-            rb.MoveRotation(  deltaRotation);
-        }
+    
 
 
     }
