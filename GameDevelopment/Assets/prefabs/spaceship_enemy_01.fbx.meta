@@ -3,7 +3,12 @@ guid: 840c5812506adfb42b3ca3b4bc814b9b
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LowPoly
+    second: {fileID: 2800000, guid: eee1a668db0d8f94e9d529b724d60df8, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

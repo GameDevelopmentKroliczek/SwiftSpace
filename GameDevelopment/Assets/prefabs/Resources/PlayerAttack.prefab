@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7086026950342557854}
   m_RootOrder: 0
@@ -112,6 +113,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1944503072740788096}
   m_Father: {fileID: 0}
@@ -131,7 +133,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletSpeed: 10
   rb2d: {fileID: 8023281589357998579}
-  asteroids: {fileID: 7642854250720142853, guid: 73e01e046f73be54dbcf05caa59b4743, type: 3}
 --- !u!50 &8023281589357998579
 Rigidbody2D:
   serializedVersion: 4
@@ -164,7 +165,7 @@ CapsuleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.2, y: 0.7}

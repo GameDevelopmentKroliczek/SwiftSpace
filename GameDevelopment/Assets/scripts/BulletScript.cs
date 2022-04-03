@@ -27,11 +27,11 @@ public class BulletScript : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter(Collider collider)
+    public void OnTriggerEnter2D(Collider2D collider)
     {
         //Spiel wird gestoppt bei Kollision mit Asteroid
         asteroidController asteroid = collider.GetComponent<asteroidController>();
-        //collision.gameObject.tag == "Spawnable";
+        
         if (asteroid != null)
         {
             Destroy(this.gameObject);

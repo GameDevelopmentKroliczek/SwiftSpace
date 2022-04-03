@@ -17,7 +17,9 @@ public class asteroidController : MonoBehaviour
         //Asteroid wird auf zufälliger Geschwindigkeit gespawnt
         rb = this.GetComponent<Rigidbody>();
         rb.velocity = new Vector2(Random.Range(-speed * 0.2f, speed * 0.2f), Random.Range(-speed, -speed * 2));
-        rb.transform.localScale = transform.localScale * Random.Range(.2f, 1f);
+        rb.transform.localScale = transform.localScale * Random.Range(.2f, .5f);
+        // Zufällige Rotation einbauen
+        rb.transform.localEulerAngles = new Vector3(Random.Range(0f, 180f), Random.Range(0f, 180f), Random.Range(0f, 180f));
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
 
     }

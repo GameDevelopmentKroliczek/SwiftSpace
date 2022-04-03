@@ -25,6 +25,7 @@ ScriptedImporter:
     streamingMipmaps: 1
     streamingMipmapsPriority: 0
     vTOnly: 0
+    ignoreMasterTextureLimit: 0
     nPOTScale: 1
     sRGBTexture: 1
     spriteMode: 2
@@ -79,7 +80,6 @@ ScriptedImporter:
       width: 0
       height: 0
     spriteID: 
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -103,7 +103,6 @@ ScriptedImporter:
       width: 6
       height: 22
     spriteID: b782e6b3c1b2e794aa16b211cdb82383
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -165,16 +164,13 @@ ScriptedImporter:
   documentPivot: {x: 0, y: 0}
   documentAlignment: 0
   importHiddenLayers: 0
-  importedTextureWidth: 16
-  importedTextureHeight: 32
-  documentSize: {x: 20, y: 30}
+  layerMappingOption: 2
+  generatePhysicsShape: 0
   paperDollMode: 0
   keepDupilcateSpriteName: 1
   skeletonAssetReferenceID: 
   spriteCategoryList:
     categories: []
-  textureActualWidth: 16
-  textureActualHeight: 32
   spritePackingTag: 
   resliceFromLayer: 0
   mosaicPSDLayers: []
@@ -186,7 +182,21 @@ ScriptedImporter:
     spriteID: b782e6b3c1b2e794aa16b211cdb82383
     layerID: 2
     mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Background
+    spriteName: 
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 1
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
   sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
   generateGOHierarchy: 0
   textureAssetName: PlayerAttack Texture
   prefabAssetName: PlayerAttack Prefab

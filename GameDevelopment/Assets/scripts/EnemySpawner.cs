@@ -31,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
         {
 
             int n = Random.Range(0, AsteroidList.Count);
-            Instantiate(AsteroidList[n], new Vector3(Random.Range(-screenBounds.x, screenBounds.x), screenBounds.y * 0.6f, 0f), Quaternion.Euler(0f, 180f, 0f));
+            Instantiate(AsteroidList[n], new Vector3(Random.Range(-screenBounds.x, screenBounds.x), screenBounds.y * 1.5f, 0f), Quaternion.Euler(0f, 0f, 0f));
            
         }
 

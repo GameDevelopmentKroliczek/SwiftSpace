@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
     public float MoveSpeed = 0.1f;
     public float EnemyStartY = 10f;
     private Vector2 screenBounds;
+    Vector3 RotationAngle;
 
     // Start is called before the first frame update
     void Start()
@@ -18,33 +19,53 @@ public class EnemyController : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         StartCoroutine(EnemyMover());
         StartCoroutine(EnemyLifetime());
+        RotationAngle = new Vector3(0, 210, 0);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (rb.transform.position.y > screenBounds.y * 0.9f)
+        {
+            rb.velocity = new Vector3(0, -2, 0);
+        }
 
+      
     }
 
     private void MoveEnemy()
     {
         MoveSpeed = Random.Range(2f, -2f);
-      
 
         rb.velocity = new Vector3(MoveSpeed, 0, 0);
 
-        if (transform.position.x < (-screenBounds.x + 0.5))
+        if (transform.position.x < (-screenBounds.x + 1))
         {
             rb.velocity = new Vector3(+2, 0, 0);
         }
 
-        if (transform.position.x > (screenBounds.x -0.5))
+        if (transform.position.x > (screenBounds.x - 1))
         {
             rb.velocity = new Vector3(-2, 0, 0);
         }
-        
+
+        //Rotiert den Gegner bei Bewegung
+        if (rb.velocity.x > 0f)
+        {
+            Quaternion deltaRotation = Quaternion.Euler(rb.rotation * -RotationAngle);
+            rb.MoveRotation( deltaRotation);
+        }
+
+        if (rb.velocity.x < 0f)
+        {
+            Quaternion deltaRotation = Quaternion.Euler(rb.rotation * RotationAngle);
+            rb.MoveRotation(  deltaRotation);
+        }
+
+
     }
-  
+
 
     IEnumerator EnemyMover()
     {

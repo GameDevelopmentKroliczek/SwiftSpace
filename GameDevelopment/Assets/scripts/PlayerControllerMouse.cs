@@ -7,6 +7,7 @@ public class PlayerControllerMouse : MonoBehaviour
     public Rigidbody rb;
     public float AttackSpeed = 1f;
     Object BulletRef;
+    
 
     [SerializeField] private Camera mainCamera;
 
