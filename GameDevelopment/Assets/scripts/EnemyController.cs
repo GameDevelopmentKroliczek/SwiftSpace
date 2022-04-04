@@ -11,7 +11,8 @@ public class EnemyController : MonoBehaviour
     public float EnemyStartY = 10f;
     private Vector2 screenBounds;
     Vector3 RotationAngle;
-   
+    Vector3 StopAngle;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,7 @@ public class EnemyController : MonoBehaviour
         StartCoroutine(EnemyMover());
         StartCoroutine(EnemyLifetime());
         RotationAngle = new Vector3(0, 210, 0);
-        
+        StopAngle = new Vector3(0, 180, 0);
     }
 
     // Update is called once per frame
@@ -33,37 +34,42 @@ public class EnemyController : MonoBehaviour
         }
 
         //Rotiert den Gegner bei Bewegung
-        if (rb.velocity.x > 0f)
+        if (rb.velocity.x > 0.5f)
         {
             Quaternion deltaRotation = Quaternion.Euler(rb.rotation * -RotationAngle);
             transform.rotation = Quaternion.Slerp(transform.rotation, deltaRotation, 0.05f);
         }
 
-        if (rb.velocity.x < 0f)
+        if (rb.velocity.x < -0.5f)
         {
             Quaternion deltaRotation = Quaternion.Euler(rb.rotation * RotationAngle);   
             transform.rotation = Quaternion.Slerp(transform.rotation, deltaRotation, 0.05f);
         }
+
+        if (rb.velocity.x > -0.5f && rb.velocity.x < 0.5f)
+        {
+            
+            Quaternion deltaRotation = Quaternion.Euler(rb.rotation * StopAngle);
+            transform.rotation = Quaternion.Slerp(transform.rotation, deltaRotation, 0.05f);
+        }
+
     }
 
     private void MoveEnemy()
     {
         MoveSpeed = Random.Range(2f, -2f);
+        rb.AddForce(MoveSpeed, 0, 0, ForceMode.Impulse);
+        //rb.velocity = new Vector3(MoveSpeed, 0, 0);
 
-        rb.velocity = new Vector3(MoveSpeed, 0, 0);
-
-        if (transform.position.x < (-screenBounds.x + 1))
+        if (transform.position.x < (-screenBounds.x + 2))
         {
             rb.velocity = new Vector3(+2, 0, 0);
         }
 
-        if (transform.position.x > (screenBounds.x - 1))
+        if (transform.position.x > (screenBounds.x - 2))
         {
             rb.velocity = new Vector3(-2, 0, 0);
         }
-
-    
-
 
     }
 
@@ -82,4 +88,5 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(LifeTime);
         Destroy(this.gameObject);
     }
+
 }

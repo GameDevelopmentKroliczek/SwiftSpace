@@ -31,6 +31,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0.15, y: 2.1, z: 0}
   m_LocalScale: {x: 12, y: 12, z: 12}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 840c5812506adfb42b3ca3b4bc814b9b, type: 3}
+  - {fileID: 2100000, guid: 2e81b5fcb379fa34e875013073965071, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

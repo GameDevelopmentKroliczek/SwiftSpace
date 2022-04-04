@@ -5,20 +5,20 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     public float BulletSpeed = 5f;
-    public Rigidbody2D rb2d;
+    public Rigidbody rb;
     private Vector2 screenBounds;
     asteroidController asteroid;
     // Start is called before the first frame update
     void Start()
     {
-        rb2d = this.GetComponent<Rigidbody2D>();
+        rb = this.GetComponent<Rigidbody>();
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb2d.velocity = new Vector2(0, BulletSpeed);
+        rb.velocity = new Vector2(0, BulletSpeed);
 
         //Asteroid wird zerstört wenn er außerhalb des Bildschirms ist
         if (transform.position.y > screenBounds.y * 2)
@@ -27,17 +27,21 @@ public class BulletScript : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D collider)
+    public void OnTriggerEnter(Collider collision)
     {
         //Spiel wird gestoppt bei Kollision mit Asteroid
-        asteroidController asteroid = collider.GetComponent<asteroidController>();
-        
-        if (asteroid != null)
+        asteroidController asteroid = collision.GetComponent<asteroidController>();
+        EnemyController enemy = collision.GetComponent<EnemyController>();
+        //collision.gameObject.tag == "Spawnable";
+        if (asteroid != null || enemy != null)
         {
-            Destroy(this.gameObject);
+            Debug.Log(collision.name);
+            Destroy(gameObject);
+
         }
 
     }
+
 
 
 }
