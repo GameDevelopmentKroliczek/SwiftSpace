@@ -6,12 +6,13 @@ public class EnemyController : MonoBehaviour
 {
     public Rigidbody rb;
     public float respawnTime = 1.0f;
-    public float LifeTime = 10.0f;
     public float MoveSpeed = 0.1f;
     public float EnemyStartY = 10f;
+    public int Health = 100;
+
     private Vector2 screenBounds;
-    Vector3 RotationAngle;
-    Vector3 StopAngle;
+    Vector3 RotationAngle = new Vector3(0, 210, 0);
+    Vector3 StopAngle = new Vector3(0, 180, 0);
 
 
     // Start is called before the first frame update
@@ -20,9 +21,6 @@ public class EnemyController : MonoBehaviour
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         rb = this.GetComponent<Rigidbody>();
         StartCoroutine(EnemyMover());
-        StartCoroutine(EnemyLifetime());
-        RotationAngle = new Vector3(0, 210, 0);
-        StopAngle = new Vector3(0, 180, 0);
     }
 
     // Update is called once per frame
@@ -58,8 +56,8 @@ public class EnemyController : MonoBehaviour
     private void MoveEnemy()
     {
         MoveSpeed = Random.Range(2f, -2f);
-        rb.AddForce(MoveSpeed, 0, 0, ForceMode.Impulse);
-        //rb.velocity = new Vector3(MoveSpeed, 0, 0);
+        
+        rb.velocity = new Vector3(MoveSpeed, 0, 0);
 
         if (transform.position.x < (-screenBounds.x + 2))
         {
@@ -83,10 +81,22 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    IEnumerator EnemyLifetime()
+    public void TakeDamage(int damage)
     {
-        yield return new WaitForSeconds(LifeTime);
+        Health -= damage;
+
+        if(Health <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        //Hier Todesanimation abspielen
         Destroy(this.gameObject);
     }
+
+ 
 
 }

@@ -8,6 +8,7 @@ public class BulletScript : MonoBehaviour
     public Rigidbody rb;
     private Vector2 screenBounds;
     asteroidController asteroid;
+    public int Damage = 30;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,18 +28,20 @@ public class BulletScript : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter(Collider collision)
+    public void OnTriggerEnter(Collider EnemyHit)
     {
         //Spiel wird gestoppt bei Kollision mit Asteroid
-        asteroidController asteroid = collision.GetComponent<asteroidController>();
-        EnemyController enemy = collision.GetComponent<EnemyController>();
-        //collision.gameObject.tag == "Spawnable";
-        if (asteroid != null || enemy != null)
+       // asteroidController asteroid = AsteroidHit.GetComponent<asteroidController>();
+        EnemyController enemy = EnemyHit.GetComponent<EnemyController>();
+ 
+        if (enemy != null)
         {
-            Debug.Log(collision.name);
+            enemy.TakeDamage(Damage);
             Destroy(gameObject);
 
         }
+
+      
 
     }
 
