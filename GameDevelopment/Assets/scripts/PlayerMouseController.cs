@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMouseController : MonoBehaviour
 {
+    public UI_Endscreen endscreen;
     Rigidbody rb;
     asteroidController asteroid;
     public float YPosition = 0f;
@@ -40,6 +41,7 @@ public class PlayerMouseController : MonoBehaviour
     {
 
         Vector3 MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        MousePosition.y = -2f;
         MousePosition.z = 0f;
         if (isPlaying == true)
         {
@@ -70,6 +72,11 @@ public class PlayerMouseController : MonoBehaviour
         }
     }
 
+    public void TriggerEndscreen()
+    {
+        endscreen.ShowEndScreen();
+    }
+
 
 
     public void OnTriggerEnter(Collider collider)
@@ -81,7 +88,7 @@ public class PlayerMouseController : MonoBehaviour
         {
             isPlaying = false;
             Time.timeScale = 0f;
-           // TriggerEndscreen();
+            TriggerEndscreen();
 
         }
 

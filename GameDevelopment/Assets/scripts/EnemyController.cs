@@ -26,29 +26,31 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rb.transform.position.y > screenBounds.y * 0.9f)
+        if (rb.transform.position.y >= screenBounds.y * 0.8f)
         {
             rb.velocity = new Vector3(0, -2, 0);
+            
         }
+        
 
         //Rotiert den Gegner bei Bewegung
         if (rb.velocity.x > 0.5f)
         {
             Quaternion deltaRotation = Quaternion.Euler(rb.rotation * -RotationAngle);
-            transform.rotation = Quaternion.Slerp(transform.rotation, deltaRotation, 0.05f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, deltaRotation, 0.02f);
         }
 
         if (rb.velocity.x < -0.5f)
         {
             Quaternion deltaRotation = Quaternion.Euler(rb.rotation * RotationAngle);   
-            transform.rotation = Quaternion.Slerp(transform.rotation, deltaRotation, 0.05f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, deltaRotation, 0.02f);
         }
 
         if (rb.velocity.x > -0.5f && rb.velocity.x < 0.5f)
         {
             
             Quaternion deltaRotation = Quaternion.Euler(rb.rotation * StopAngle);
-            transform.rotation = Quaternion.Slerp(transform.rotation, deltaRotation, 0.05f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, deltaRotation, 0.02f);
         }
 
     }

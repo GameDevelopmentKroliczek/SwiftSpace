@@ -36,6 +36,7 @@ public class BulletScript : MonoBehaviour
  
         if (enemy != null)
         {
+            //Animation hier
             enemy.TakeDamage(Damage);
             Destroy(gameObject);
 
