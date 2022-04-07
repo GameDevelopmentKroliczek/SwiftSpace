@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMouseController : MonoBehaviour
 {
     public UI_Endscreen endscreen;
+    public PlayerHealth playerhealth;
     Rigidbody rb;
     asteroidController asteroid;
     public float YPosition = 0f;
@@ -13,7 +14,6 @@ public class PlayerMouseController : MonoBehaviour
     public bool isPlaying = false;
     private Vector2 screenBounds;
 
-
     Vector3 RotationAngleLeft;
     Vector3 RotationAngleRight;
     Vector3 StopAngle;
@@ -21,7 +21,8 @@ public class PlayerMouseController : MonoBehaviour
     public float lastMousePosX;
     Vector3 MousePosition;
 
-
+    public int MaxHealth;
+    public int CurrentHealth;
 
     public void Awake()
     {
@@ -34,6 +35,9 @@ public class PlayerMouseController : MonoBehaviour
         RotationAngleLeft = new Vector3(0, 220, 180);
         RotationAngleRight = new Vector3(0, 140, 180);
         StopAngle = new Vector3(0, 180, 180);
+
+        CurrentHealth = MaxHealth;
+        playerhealth.SetMaxHealth(MaxHealth);
 
     }
 
@@ -70,6 +74,9 @@ public class PlayerMouseController : MonoBehaviour
             }
 
         }
+
+        
+
     }
 
     public void TriggerEndscreen()
@@ -77,6 +84,19 @@ public class PlayerMouseController : MonoBehaviour
         endscreen.ShowEndScreen();
     }
 
+    public void GetHit()
+    {
+        
+        CurrentHealth -= 1;
+        playerhealth.SetHealth(CurrentHealth);
+
+        if (CurrentHealth <= 0)
+        {
+            isPlaying = false;
+            Time.timeScale = 0f;
+            TriggerEndscreen();
+        }
+    }
 
 
     public void OnTriggerEnter(Collider collider)
@@ -86,10 +106,7 @@ public class PlayerMouseController : MonoBehaviour
         //collision.gameObject.tag == "Spawnable";
         if (asteroid != null)
         {
-            isPlaying = false;
-            Time.timeScale = 0f;
-            TriggerEndscreen();
-
+            GetHit();
         }
 
     }
