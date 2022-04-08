@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     public float MoveSpeed = 0.1f;
     public float EnemyStartY = 10f;
     public int Health = 100;
+    public bool CanBeAttacked;
 
     private Vector2 screenBounds;
     Vector3 RotationAngle = new Vector3(0, 210, 0);
@@ -21,6 +22,7 @@ public class EnemyController : MonoBehaviour
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         rb = this.GetComponent<Rigidbody>();
         StartCoroutine(EnemyMover());
+        CanBeAttacked = false;
     }
 
     // Update is called once per frame
@@ -30,6 +32,11 @@ public class EnemyController : MonoBehaviour
         {
             rb.velocity = new Vector3(0, -2, 0);
             
+        }
+        else
+        {
+            //Gegner kann erst angegriffen werden, wenn er eine bestimmte Position auf dem Bildschirm erreicht
+            CanBeAttacked = true;
         }
         
 
@@ -85,11 +92,14 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Health -= damage;
-
-        if(Health <= 0)
+        if (CanBeAttacked == true)
         {
-            Die();
+            Health -= damage;
+
+            if (Health <= 0)
+            {
+                Die();
+            }
         }
     }
 

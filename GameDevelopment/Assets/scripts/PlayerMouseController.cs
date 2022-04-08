@@ -70,7 +70,7 @@ public class PlayerMouseController : MonoBehaviour
             if (Input.GetAxis("Mouse X") > -0.1 && Input.GetAxis("Mouse X") < 0.1)
             {
                 Quaternion StopDeltaRotation = Quaternion.Euler(StopAngle);
-                transform.rotation = Quaternion.Slerp(transform.rotation, StopDeltaRotation, 0.01f);
+                transform.rotation = Quaternion.Slerp(transform.rotation, StopDeltaRotation, 0.1f);
             }
 
         }
