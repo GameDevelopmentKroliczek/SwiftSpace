@@ -12,6 +12,7 @@ public class PlayerMouseController : MonoBehaviour
     public float XPosition = 0f;
     public float ZPosition = 0f;
     public bool isPlaying = false;
+    public bool CanTakeDamage = false;
     private Vector2 screenBounds;
 
     Vector3 RotationAngleLeft;
@@ -24,11 +25,14 @@ public class PlayerMouseController : MonoBehaviour
     public int MaxHealth;
     public int CurrentHealth;
 
+    public int DamageCooldownTime = 3;
+
     public void Awake()
     {
         rb = GetComponent<Rigidbody>();
         //UI_EndScreen endScreen = gameObject.GetComponent<UI_EndScreen>();
         isPlaying = true;
+        CanTakeDamage = true;
 
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
 
@@ -86,17 +90,33 @@ public class PlayerMouseController : MonoBehaviour
 
     public void GetHit()
     {
-        
-        CurrentHealth -= 1;
-        playerhealth.SetHealth(CurrentHealth);
-
-        if (CurrentHealth <= 0)
+        if (CanTakeDamage == true)
         {
-            isPlaying = false;
-            Time.timeScale = 0f;
-            TriggerEndscreen();
+            CurrentHealth -= 1;
+            playerhealth.SetHealth(CurrentHealth);
+            CanTakeDamage = false;
+            StartCoroutine(DamageCooldown());
+
+            if (CurrentHealth <= 0)
+            {
+                isPlaying = false;
+                Time.timeScale = 0f;
+                TriggerEndscreen();
+            }
         }
     }
+
+
+    IEnumerator DamageCooldown()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(DamageCooldownTime);
+            CanTakeDamage = true;
+        }
+    }
+
+    
 
 
     public void OnTriggerEnter(Collider collider)
