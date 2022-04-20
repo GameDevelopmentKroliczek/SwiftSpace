@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
 
-    public GameObject asteroidPrefab1, asteroidPrefab2;
+   
     public float respawnTime = 15.0f;
     private Vector2 screenBounds;
 

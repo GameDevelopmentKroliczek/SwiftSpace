@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 533512687623701700}
   - component: {fileID: 826479199352281589}
   - component: {fileID: 5703999890754887464}
+  - component: {fileID: 1507480912709580920}
   - component: {fileID: 3020428383882216517}
   m_Layer: 0
   m_Name: spaceship_enemy_01
@@ -132,10 +133,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 826479199352281589}
+  ScoreBonus: {fileID: 1507480912709580920}
   respawnTime: 1
   MoveSpeed: 0.1
   EnemyStartY: 10
   Health: 100
+  CanBeAttacked: 0
 --- !u!54 &826479199352281589
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -166,6 +169,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7969978266939365281, guid: 840c5812506adfb42b3ca3b4bc814b9b, type: 3}
+--- !u!114 &1507480912709580920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8841579783014622166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd99eb9322ed9a41ab56d912c88114e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreBonus: 0
+  counter: {fileID: 3859763049284958509, guid: 1bdcbf18e3a20b24bb732bcfd65e9ca2, type: 3}
 --- !u!114 &3020428383882216517
 MonoBehaviour:
   m_ObjectHideFlags: 0

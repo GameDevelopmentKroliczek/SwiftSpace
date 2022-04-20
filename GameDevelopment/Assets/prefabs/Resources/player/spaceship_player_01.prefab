@@ -23,8 +23,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2362108272766728345}
-  m_LocalRotation: {x: -1, y: -0, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: -0.039, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.03, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 260972149972858666}
   - component: {fileID: 811758194394235178}
   - component: {fileID: 2180344818827091786}
+  - component: {fileID: 460352513}
   m_Layer: 0
   m_Name: spaceship_player_01
   m_TagString: Untagged
@@ -160,14 +161,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19be9817790699c44bbb88fd657ac696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endscreen: {fileID: 0}
+  playerhealth: {fileID: 0}
   YPosition: -5
   XPosition: 0
   ZPosition: 0
-  AttackSpeed: 0.5
   isPlaying: 0
-  MousePosX: 0
-  RotatePlayer: {x: 0, y: 0, z: 0, w: 0}
-  RotaionAngle: {x: 0, y: 0, z: 0}
-  StopAngle: {x: 0, y: 0, z: 0}
+  CanTakeDamage: 0
   lastMousePosition: {x: 0, y: 0, z: 0}
   lastMousePosX: 0
+  MaxHealth: 3
+  CurrentHealth: 0
+  DamageCooldownTime: 1
+--- !u!114 &460352513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922204504679772693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e21364fbe0bf99a42844867d9875d64b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletRef: {fileID: 8766856975928529053, guid: f5342f8fd20e16347b9cc7cee1f69dc2, type: 3}
+  AttackSpeed: 0.5
+  firePoint: {fileID: 6793457289621540943}

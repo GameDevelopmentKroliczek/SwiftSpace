@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public Rigidbody rb;
+    public EnemyScoreBonus ScoreBonus;
+    public int BonusForKilling = 150;
     public float respawnTime = 1.0f;
     public float MoveSpeed = 0.1f;
     public float EnemyStartY = 10f;
@@ -98,6 +100,7 @@ public class EnemyController : MonoBehaviour
 
             if (Health <= 0)
             {
+                ScoreBonus.UpdateScoreBonus(BonusForKilling);
                 Die();
             }
         }
@@ -105,10 +108,9 @@ public class EnemyController : MonoBehaviour
 
     public void Die()
     {
+   
         //Hier Todesanimation abspielen
         Destroy(this.gameObject);
     }
-
- 
 
 }
