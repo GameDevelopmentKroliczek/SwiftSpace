@@ -6,6 +6,8 @@ public class PlayerMouseController : MonoBehaviour
 {
     public UI_Endscreen endscreen;
     public PlayerHealth playerhealth;
+    
+
     Rigidbody rb;
     asteroidController asteroid;
     public float YPosition = 0f;
@@ -27,7 +29,7 @@ public class PlayerMouseController : MonoBehaviour
 
     public int DamageCooldownTime = 3;
 
-    public void Awake()
+    public void Start()
     {
         rb = GetComponent<Rigidbody>();
         //UI_EndScreen endScreen = gameObject.GetComponent<UI_EndScreen>();

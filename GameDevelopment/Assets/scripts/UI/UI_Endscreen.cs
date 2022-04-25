@@ -8,13 +8,17 @@ public class UI_Endscreen : MonoBehaviour
 {
     public PauseButton pausebutton;
     public string retryLevel;
+    public Text Score;
 
-
+    public ScoreCounter Scorecounter;
+    public Text EndScore;
 
     public void ShowEndScreen()
     {
         gameObject.SetActive(true);
         pausebutton.gameObject.SetActive(false);
+        Score.gameObject.SetActive(false);
+        EndScore.text = "Score: " + Scorecounter.Score.ToString("0");
     }
 
 

@@ -5,43 +5,37 @@ using UnityEngine.UI;
 
 public class ScoreCounter : MonoBehaviour
 {
-    public Text scoreText;
-    public int Score = 0;
-    
+    public float Score;
+    public Text ScoreDisplay;
+    public float TimeMultiplier;
 
     public void Start()
     {
-        scoreText.text = "000000";
-       
-        Score = 0;
+        TimeMultiplier = 2f;
     }
 
-    public void BeginTimer()
+    public void UpdateScore(int scoreBonus)
     {
-       
+        Score = Score + scoreBonus;
     }
 
-    public void StopTimer()
+    // Update is called once per frame
+    void Update()
     {
-        
-    }
+        Score += Time.deltaTime * TimeMultiplier;
+        ScoreDisplay.text = Score.ToString("0");
 
-    //Funktion um den Score zu Updaten
-    public void  UpdateScore( int Bonus)
-    {
-       
-            //Updated die Scorezahl
-            Score = Score + Bonus;
-        
-
-    }
-
-    public void FixedUpdate()
-    {
-       
-            Score = Score + 1;
-            scoreText.text = Score.ToString();
-
-      
+        if(Score <= 50 && Score >= 0)
+        {
+            TimeMultiplier = 2;
+        }
+        if (Score <= 150 && Score >= 51)
+        {
+            TimeMultiplier = 3f;
+        }
+        if (Score >= 151)
+        {
+            TimeMultiplier = 5f;
+        }
     }
 }

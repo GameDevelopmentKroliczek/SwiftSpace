@@ -2,34 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
-{ 
+public class PickUpSpawner : MonoBehaviour
+{
+
+   
     public float respawnTime = 15.0f;
     private Vector2 screenBounds;
 
-    public List<GameObject> AsteroidList;
+    public List<GameObject> PickupList;
 
 
     // Start is called before the first frame update
     void Start()
     {
         //Alle Objekte in dem Ordner "Resources" -> "Asteroids" werden in die Liste AsteroidList geladen
-        AsteroidList = new List<GameObject>(Resources.LoadAll<GameObject>("Enemies"));
+        PickupList = new List<GameObject>(Resources.LoadAll<GameObject>("PickUps"));
         //Berechnet die Größe des Bildschirmrandes
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         //Startet die Coroutine zum Spawnen der Asteroiden
         StartCoroutine(SpawnEnemy());
-        spawnEnemy();
+        spawnPickup();
     }
 
-    private void spawnEnemy()
+    public void spawnPickup()
     {
-        //Spawnt 1 zufälligen Asteroiden aus der Liste AsteroidList 
+        //Spawnt 1 zufälliges Pickup aus der Liste PickupList 
         for (int i = 0; i < 1; i++)
         {
 
-            int n = Random.Range(0, AsteroidList.Count);
-            Instantiate(AsteroidList[n], new Vector3(Random.Range(-screenBounds.x, screenBounds.x), screenBounds.y * 1.5f, 0f), Quaternion.Euler(0f, 180f, 0f));
+            int n = Random.Range(0, PickupList.Count);
+            Instantiate(PickupList[n], new Vector3(Random.Range(-screenBounds.x, screenBounds.x), screenBounds.y * 1.5f, 0f), Quaternion.Euler(0f, 180f, 0f));
            
         }
 
@@ -41,7 +43,7 @@ public class EnemySpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(respawnTime);
-            spawnEnemy();
+            spawnPickup();
         }
     }
 
