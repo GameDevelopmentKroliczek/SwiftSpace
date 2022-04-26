@@ -8,6 +8,7 @@ public class PickUpController : MonoBehaviour
     private Vector2 screenBounds;
 
     public float FallSpeed = -2f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +19,10 @@ public class PickUpController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //PickUp bewegt sich mit der Geschwindigkeit "Fallspeed" nach unten
         rb.velocity = new Vector3(0, FallSpeed, 0);
 
+        //PickUp wird zerstört wenn es außerhalb des Bildschirms ist
         if(rb.transform.position.y <= -screenBounds.y * 2)
         {
             Destroy(this.gameObject);

@@ -24,6 +24,18 @@ public class asteroidController : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        //Spieler erleidet Schaden wenn er den Asteroiden berührt
+        PlayerMouseController player = other.GetComponent<PlayerMouseController>();
+
+        if (player != null)
+        {
+            Destroy(this.gameObject);
+            player.GetHit();
+        }
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {

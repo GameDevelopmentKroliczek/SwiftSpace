@@ -5,9 +5,10 @@ using UnityEngine;
 public class ShieldPickUp : MonoBehaviour
 {
     public PlayerMouseController player;
+    
     public float ShieldTimer = 3.0f;
 
-    //Aktueller Bug: Spieler bekommt keinen Schaden wenn er volle Leben hat, Schild endet nicht. Wenn er nicht volle Leben hat, aktiviert der Schild nicht
+    // aktiviert das Schild Prefab beim Spieler wenn das PickUp eingesammelt wird
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,24 +16,11 @@ public class ShieldPickUp : MonoBehaviour
 
         if (player != null)
         {
-            player.CanTakeDamage = false;
-            StartCoroutine(ShieldCooldown());
+            player.ActivateShield();
+            
             Destroy(this.gameObject);
             
         }
     }
     
-    public void ResetShield()
-    {
-        player.CanTakeDamage = true;
-    }
-
-    IEnumerator ShieldCooldown()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(ShieldTimer);
-            ResetShield();
-        }
-    }
 }

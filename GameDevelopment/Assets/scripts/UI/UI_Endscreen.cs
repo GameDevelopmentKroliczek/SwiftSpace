@@ -6,19 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class UI_Endscreen : MonoBehaviour
 {
-    public PauseButton pausebutton;
+    public PauseButton pausebutton;    
     public string retryLevel;
+
+    public ScoreCounter scorecounter;
+    public Text EndScore;
     public Text Score;
 
-    public ScoreCounter Scorecounter;
-    public Text EndScore;
+  
 
     public void ShowEndScreen()
     {
         gameObject.SetActive(true);
         pausebutton.gameObject.SetActive(false);
         Score.gameObject.SetActive(false);
-        EndScore.text = "Score: " + Scorecounter.Score.ToString("0");
+        EndScore.text = "Score: " + scorecounter.Score.ToString("0");
     }
 
 

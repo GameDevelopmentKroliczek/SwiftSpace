@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 8212394577067047276}
   - component: {fileID: 5068681319482128073}
   - component: {fileID: 7040082277257380355}
-  - component: {fileID: 7253887042372037496}
   - component: {fileID: 533512687623701700}
   - component: {fileID: 826479199352281589}
   - component: {fileID: 5703999890754887464}
@@ -120,18 +119,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7253887042372037496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8841579783014622166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c5344ecd8a50fc4da1574b717877458, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &533512687623701700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 826479199352281589}
-  PickupSpawner: {fileID: 6548044778071552434, guid: 6d92f060bad71ff4ebf8fae074ffc48b, type: 3}
+  pickupspawner: {fileID: 2138282383260013490, guid: 9f4af30dd224e354380445e4cf2f9e7b, type: 3}
   ScoreBonus: 150
   respawnTime: 1
   MoveSpeed: 0.1

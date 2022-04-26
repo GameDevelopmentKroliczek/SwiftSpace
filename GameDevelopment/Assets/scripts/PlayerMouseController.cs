@@ -6,7 +6,7 @@ public class PlayerMouseController : MonoBehaviour
 {
     public UI_Endscreen endscreen;
     public PlayerHealth playerhealth;
-    
+    public Shield ShieldObject;
 
     Rigidbody rb;
     asteroidController asteroid;
@@ -121,16 +121,10 @@ public class PlayerMouseController : MonoBehaviour
     
 
 
-    public void OnTriggerEnter(Collider collider)
-    {
-        //Spiel wird gestoppt bei Kollision mit Asteroid
-        asteroidController asteroid = collider.GetComponent<asteroidController>();
-        //collision.gameObject.tag == "Spawnable";
-        if (asteroid != null)
-        {
-            GetHit();
-        }
 
+    public void ActivateShield()
+    {
+        ShieldObject.gameObject.SetActive(true);
     }
 }
 

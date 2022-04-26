@@ -1,42 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &595789455
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 595789456}
-  m_Layer: 5
-  m_Name: pauseScoreContainer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &595789456
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 595789455}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8371199, y: 1.8371199, z: 1.8371199}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1056216708}
-  m_Father: {fileID: 2371047735201644219}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 588, y: 1046}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1056216707
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,10 +28,10 @@ RectTransform:
   m_GameObject: {fileID: 1056216707}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 595789456}
+  m_Father: {fileID: 2371047734611902910}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
@@ -164,7 +127,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2371047734611902910}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -298,6 +261,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1056216708}
   - {fileID: 2371047734483496716}
   - {fileID: 2371047735649062660}
   - {fileID: 2371047735237096695}
@@ -502,7 +466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2371047735201644219
 RectTransform:
   m_ObjectHideFlags: 0
@@ -516,7 +480,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2371047734611902910}
-  - {fileID: 595789456}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -601,9 +564,6 @@ MonoBehaviour:
   retryLevel: PlayScene
   player: {fileID: 0}
   pausebutton: {fileID: 0}
-  Score: {fileID: 0}
-  Scorecounter: {fileID: 0}
-  PauseScore: {fileID: 1056216710}
 --- !u!1 &2371047735237096692
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +597,7 @@ RectTransform:
   m_Children:
   - {fileID: 2371047735908842018}
   m_Father: {fileID: 2371047734611902910}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -771,7 +731,7 @@ RectTransform:
   m_Children:
   - {fileID: 2371047735689914702}
   m_Father: {fileID: 2371047734611902910}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -905,7 +865,7 @@ RectTransform:
   m_Children:
   - {fileID: 2371047735140804548}
   m_Father: {fileID: 2371047734611902910}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

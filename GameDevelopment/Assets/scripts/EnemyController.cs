@@ -5,9 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public Rigidbody rb;
-    
-    
-    public int ScoreBonus = 150;
+
     public float respawnTime = 1.0f;
     public float MoveSpeed = 0.1f;
     public float EnemyStartY = 10f;
@@ -109,7 +107,7 @@ public class EnemyController : MonoBehaviour
 
     public void Die()
     {
- 
+        
         //Hier Todesanimation abspielen
         Destroy(this.gameObject);
     }

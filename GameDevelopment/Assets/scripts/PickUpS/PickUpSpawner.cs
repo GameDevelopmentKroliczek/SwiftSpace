@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickUpSpawner : MonoBehaviour
 {
-
+    public EnemyController Enemy;
    
     public float respawnTime = 15.0f;
     private Vector2 screenBounds;
@@ -21,7 +21,7 @@ public class PickUpSpawner : MonoBehaviour
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         //Startet die Coroutine zum Spawnen der Asteroiden
         StartCoroutine(SpawnEnemy());
-        spawnPickup();
+        //spawnPickup();
     }
 
     public void spawnPickup()
