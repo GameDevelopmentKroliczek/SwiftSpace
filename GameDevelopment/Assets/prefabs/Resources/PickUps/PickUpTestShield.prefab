@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -5303129343412558515}
   - component: {fileID: -6190789290905741704}
   m_Layer: 0
-  m_Name: PickUptest
+  m_Name: PickUpTestShield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
