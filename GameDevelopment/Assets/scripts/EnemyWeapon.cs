@@ -2,26 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class EnemyWeapon : MonoBehaviour
 {
     public GameObject BulletRef;
     public float AttackSpeed;
-    
     public Transform firePoint;
     private Vector2 screenBounds;
 
     public void Start()
     {
-
-        AttackSpeed = 0.5f;
+        AttackSpeed = 1f;
         StartCoroutine(Shooting());
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
 
-    }
-
-    public void UpdateAttackSpeed()
-    {
-        AttackSpeed = AttackSpeed * 0.8f;
     }
 
     IEnumerator Shooting()

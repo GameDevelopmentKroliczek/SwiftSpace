@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 2180344818827091786}
   - component: {fileID: 460352513}
   m_Layer: 0
-  m_Name: spaceship_player_01
+  m_Name: PlayerPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

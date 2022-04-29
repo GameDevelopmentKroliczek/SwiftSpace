@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ScoreCounter : MonoBehaviour
 {
+    public Text Highscore;
+
     public float Score;
     public float ScoreBonus;
     public Text ScoreDisplay;
@@ -14,6 +16,7 @@ public class ScoreCounter : MonoBehaviour
     {
         TimeMultiplier = 2f;
         ScoreBonus = 0f;
+        Highscore.text = "Highscore: " + PlayerPrefs.GetFloat("Highscore", 0).ToString("0");
     }
 
     //bisher nicht genutzt
@@ -25,7 +28,14 @@ public class ScoreCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        //Highscorefunktion
+        if (Score > PlayerPrefs.GetFloat("Highscore", 0))
+        {
+            PlayerPrefs.SetFloat("Highscore", Score);
+            Highscore.text = "Highscore: " + Score.ToString("0");
+        }
+
+
         Score += Time.deltaTime * TimeMultiplier;
         ScoreDisplay.text = Score.ToString("0");
 
