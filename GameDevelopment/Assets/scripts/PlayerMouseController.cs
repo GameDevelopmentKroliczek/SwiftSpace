@@ -108,6 +108,7 @@ public class PlayerMouseController : MonoBehaviour
             PlayerMediumDamage.gameObject.SetActive(false);
         }
 
+       
 
     }
 
@@ -145,7 +146,20 @@ public class PlayerMouseController : MonoBehaviour
     }
 
     
+    public void Heal()
+    {
 
+        CurrentHealth += 1;
+        playerhealth.SetHealth(CurrentHealth);
+
+        if (CurrentHealth > MaxHealth)
+        {
+
+            CurrentHealth = MaxHealth;
+            playerhealth.SetHealth(CurrentHealth);
+        }
+        Debug.Log(CurrentHealth);
+    }
 
 
     public void ActivateShield()

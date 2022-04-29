@@ -6,9 +6,11 @@ public class Weapon : MonoBehaviour
 {
     public GameObject BulletRef;
     public float AttackSpeed;
-    
+    public float ModifiedAS;
+
     public Transform firePoint;
     private Vector2 screenBounds;
+
 
     public void Start()
     {
@@ -16,14 +18,19 @@ public class Weapon : MonoBehaviour
         AttackSpeed = 0.5f;
         StartCoroutine(Shooting());
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-
+        ModifiedAS = AttackSpeed;
     }
 
     public void UpdateAttackSpeed()
     {
-        AttackSpeed = AttackSpeed * 0.8f;
+        ModifiedAS = AttackSpeed * 0.8f;
+        
     }
 
+    public void Update()
+    {
+        AttackSpeed = ModifiedAS;
+    }
     IEnumerator Shooting()
     {
         while (true)
