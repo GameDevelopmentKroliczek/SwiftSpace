@@ -17,6 +17,11 @@ public class PlayerMouseController : MonoBehaviour
     public bool CanTakeDamage = false;
     private Vector2 screenBounds;
 
+    //PlayerModels
+    public GameObject PlayerNoDamage;
+    public GameObject PlayerMediumDamage;
+    public GameObject PlayerHighDamage;
+
     Vector3 RotationAngleLeft;
     Vector3 RotationAngleRight;
     Vector3 StopAngle;
@@ -81,7 +86,28 @@ public class PlayerMouseController : MonoBehaviour
 
         }
 
-        
+        //Ändert PlayerModel je nach Schadenswert
+        if(CurrentHealth == MaxHealth)
+        {
+            PlayerNoDamage.gameObject.SetActive(true);
+            PlayerMediumDamage.gameObject.SetActive(false);
+            PlayerHighDamage.gameObject.SetActive(false);
+        }
+
+        if (CurrentHealth == MaxHealth -1)
+        {
+            PlayerMediumDamage.gameObject.SetActive(true);
+            PlayerNoDamage.gameObject.SetActive(false);
+            PlayerHighDamage.gameObject.SetActive(false);
+        }
+
+        if (CurrentHealth == MaxHealth - 2)
+        {
+            PlayerHighDamage.gameObject.SetActive(true);
+            PlayerNoDamage.gameObject.SetActive(false);
+            PlayerMediumDamage.gameObject.SetActive(false);
+        }
+
 
     }
 
