@@ -14,7 +14,7 @@ public class PickUpAS : MonoBehaviour
 
         if (player != null)
         {
-            weapon.UpdateAttackSpeed();
+            //weapon.UpdateAttackSpeed();
 
             Destroy(this.gameObject);
 

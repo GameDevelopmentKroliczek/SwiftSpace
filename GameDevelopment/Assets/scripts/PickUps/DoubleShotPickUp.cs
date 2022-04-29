@@ -2,19 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealPickUp : MonoBehaviour
+public class DoubleShotPickUp : MonoBehaviour
 {
+    public Weapon weapon;
     public PlayerMouseController player;
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
 
         PlayerMouseController player = other.GetComponent<PlayerMouseController>();
 
         if (player != null)
-
         {
-            player.Heal();
+            weapon.DoubleAttack = true;
+            weapon.SingleAttack = false;
+            weapon.UpdateShots();
             Destroy(this.gameObject);
         }
     }

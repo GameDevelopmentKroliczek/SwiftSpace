@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
+    public float ShieldTimer = 5f;
+
+    public void Awake()
+    {
+        StartCoroutine(ShieldTime());
+    }
+
     //Schild wird zerstört wenn er getroffen wird, Spieler bekommt keinen Schaden
 
     private void OnTriggerEnter(Collider other)
@@ -20,6 +27,14 @@ public class Shield : MonoBehaviour
         }
     }
 
+    IEnumerator ShieldTime()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(ShieldTimer);
+            DestroyShield();
+        }
+    }
 
 
 
