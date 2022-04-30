@@ -1654,17 +1654,5 @@ PrefabInstance:
       propertyPath: playerhealth
       value: 
       objectReference: {fileID: 806406895}
-    - target: {fileID: 7919692786099522211, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8955275742669108734, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
-      propertyPath: DoubleAttack
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8955275742669108734, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
-      propertyPath: SingleAttack
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cad61332127ef544abac0d961bc67f9b, type: 3}

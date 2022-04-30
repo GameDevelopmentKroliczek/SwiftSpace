@@ -11,12 +11,14 @@ public class Weapon : MonoBehaviour
     public Transform firePoint;
     private Vector2 screenBounds;
 
-    public bool SingleAttack = true;
-    public bool DoubleAttack = false;
+    public bool singleAttack = false;
+    public bool doubleAttack = false; 
 
-    public void Start()
+    public void Awake()
     {
-        
+        singleAttack = true;
+        doubleAttack = false;
+
         AttackSpeed = 0.5f;
         StartCoroutine(Shooting());
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
@@ -25,9 +27,9 @@ public class Weapon : MonoBehaviour
 
     public void UpdateShots()
     {
-        SingleAttack = false;
+        singleAttack = false;
 
-        DoubleAttack = true;
+        doubleAttack = true;
     }
 
     IEnumerator Shooting()
@@ -37,12 +39,12 @@ public class Weapon : MonoBehaviour
             //aktiviert die Funktion zum spawnen des Schusses alle "AttackSpeed" Sekunden
             yield return new WaitForSeconds(AttackSpeed);
 
-            if(SingleAttack == true)
+            if(singleAttack == true)
             {
                 PlayerAttackSingle();
             }
 
-            if (DoubleAttack == true)
+            if (doubleAttack == true)
             {
                 PlayerAttackDouble();
             }

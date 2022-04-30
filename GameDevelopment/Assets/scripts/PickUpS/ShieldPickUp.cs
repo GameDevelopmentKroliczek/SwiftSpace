@@ -5,8 +5,6 @@ using UnityEngine;
 public class ShieldPickUp : MonoBehaviour
 {
     public PlayerMouseController player;
-    
-    public float ShieldTimer = 3.0f;
 
     // aktiviert das Schild Prefab beim Spieler wenn das PickUp eingesammelt wird
 
