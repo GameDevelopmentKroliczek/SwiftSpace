@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb1ac38d2576c64bab3ff1a8c434d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2180344818827091786, guid: 6d92f060bad71ff4ebf8fae074ffc48b, type: 3}
-  weapon: {fileID: 460352513, guid: 6d92f060bad71ff4ebf8fae074ffc48b, type: 3}
+  player: {fileID: 5329478391586683011, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+  weapon: {fileID: 4481995341833668793, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
   AttackSpeedMulitplier: 0.8
 --- !u!54 &9148817238476262048
 Rigidbody:

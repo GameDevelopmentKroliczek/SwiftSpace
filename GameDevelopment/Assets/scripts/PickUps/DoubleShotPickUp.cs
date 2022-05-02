@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class DoubleShotPickUp : MonoBehaviour
 {
-    public Weapon weapon;
+    
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
 
         PlayerMouseController player = other.GetComponent<PlayerMouseController>();
 
         if (player != null)
         {
-            weapon.UpdateShots();
+            //deaktiviert Singleshot und aktiviert Doubleshot
+            player.SingleShot = false;
+            player.DoubleShot = true;
 
             Destroy(this.gameObject);
         }

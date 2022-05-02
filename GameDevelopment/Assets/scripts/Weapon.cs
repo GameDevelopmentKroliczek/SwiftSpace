@@ -5,46 +5,39 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public GameObject BulletRef;
-    public float AttackSpeed;
-    public float ModifiedAS;
+    public PlayerMouseController player;
+
+    
 
     public Transform firePoint;
     private Vector2 screenBounds;
 
-    public bool singleAttack = false;
-    public bool doubleAttack = false; 
+
 
     public void Awake()
     {
-        singleAttack = true;
-        doubleAttack = false;
 
-        AttackSpeed = 0.5f;
+
+        //AttackSpeed = player.Attackspeed;
         StartCoroutine(Shooting());
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        ModifiedAS = AttackSpeed;
+       
     }
 
-    public void UpdateShots()
-    {
-        singleAttack = false;
-
-        doubleAttack = true;
-    }
 
     IEnumerator Shooting()
     {
         while (true)
         {
             //aktiviert die Funktion zum spawnen des Schusses alle "AttackSpeed" Sekunden
-            yield return new WaitForSeconds(AttackSpeed);
+            yield return new WaitForSeconds(player.Attackspeed);
 
-            if(singleAttack == true)
+            if(player.SingleShot == true)
             {
                 PlayerAttackSingle();
             }
 
-            if (doubleAttack == true)
+            if (player.DoubleShot == true)
             {
                 PlayerAttackDouble();
             }

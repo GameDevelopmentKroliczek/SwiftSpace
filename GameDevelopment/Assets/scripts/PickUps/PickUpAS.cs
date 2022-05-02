@@ -5,7 +5,7 @@ using UnityEngine;
 public class PickUpAS : MonoBehaviour
 {
     public PlayerMouseController player;
-    public Weapon weapon;
+    
     public float AttackSpeedMulitplier = 0.8f;
 
     private void OnTriggerEnter(Collider other)
@@ -14,7 +14,7 @@ public class PickUpAS : MonoBehaviour
 
         if (player != null)
         {
-            //weapon.UpdateAttackSpeed();
+            player.Attackspeed *= 0.8f;
 
             Destroy(this.gameObject);
 

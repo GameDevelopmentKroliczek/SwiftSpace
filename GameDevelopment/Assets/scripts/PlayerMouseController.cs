@@ -34,6 +34,11 @@ public class PlayerMouseController : MonoBehaviour
 
     public int DamageCooldownTime = 3;
 
+    //Weapon Variables
+    public float Attackspeed;
+    public bool DoubleShot = false;
+    public bool SingleShot = false;
+
     public void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -49,6 +54,11 @@ public class PlayerMouseController : MonoBehaviour
 
         CurrentHealth = MaxHealth;
         playerhealth.SetMaxHealth(MaxHealth);
+
+        //Single Shot mit der Angriffsgeschwindigkeit Attackspeed/Sekunde
+        Attackspeed = 0.5f;
+        DoubleShot = false;
+        SingleShot = true;
 
     }
 

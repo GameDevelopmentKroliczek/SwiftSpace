@@ -9710,6 +9710,9 @@ MonoBehaviour:
   MaxHealth: 3
   CurrentHealth: 0
   DamageCooldownTime: 1
+  Attackspeed: 0
+  DoubleShot: 0
+  SingleShot: 0
 --- !u!64 &373321492
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9737,9 +9740,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletRef: {fileID: 8766856975928529053, guid: f5342f8fd20e16347b9cc7cee1f69dc2, type: 3}
+  player: {fileID: 5329478391586683011}
   AttackSpeed: 0
-  ModifiedAS: 0
   firePoint: {fileID: 5042040813276743605}
+  singleAttack: 0
+  doubleAttack: 0
 --- !u!1 &3345923010419824077
 GameObject:
   m_ObjectHideFlags: 0
