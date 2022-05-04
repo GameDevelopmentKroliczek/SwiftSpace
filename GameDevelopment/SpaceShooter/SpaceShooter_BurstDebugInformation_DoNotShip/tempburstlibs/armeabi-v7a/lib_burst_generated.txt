@@ -132,11 +132,11 @@ Library: lib_burst_generated
 --root-assembly=L:\Niki\GameDevelopment\GameDevelopment\Temp\StagingArea\Data\Managed\Unity.Mathematics.dll
 --root-assembly=L:\Niki\GameDevelopment\GameDevelopment\Temp\StagingArea\Data\Managed\Unity.VisualScripting.State.dll
 --root-assembly=L:\Niki\GameDevelopment\GameDevelopment\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Core.dll
+--root-assembly=L:\Niki\GameDevelopment\GameDevelopment\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=L:\Niki\GameDevelopment\GameDevelopment\Temp\StagingArea\Data\Managed\Unity.Burst.dll
 --root-assembly=L:\Niki\GameDevelopment\GameDevelopment\Temp\StagingArea\Data\Managed\Unity.2D.Animation.Runtime.dll
 --root-assembly=L:\Niki\GameDevelopment\GameDevelopment\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
 --root-assembly=L:\Niki\GameDevelopment\GameDevelopment\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
---root-assembly=L:\Niki\GameDevelopment\GameDevelopment\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=L:\Niki\GameDevelopment\GameDevelopment\Temp\StagingArea\Data\Managed\Unity.2D.Common.Runtime.dll
 --root-assembly=L:\Niki\GameDevelopment\GameDevelopment\Temp\StagingArea\Data\Managed\Unity.2D.IK.Runtime.dll
 --root-assembly=L:\Niki\GameDevelopment\GameDevelopment\Temp\StagingArea\Data\Managed\Unity.InternalAPIEngineBridge.001.dll

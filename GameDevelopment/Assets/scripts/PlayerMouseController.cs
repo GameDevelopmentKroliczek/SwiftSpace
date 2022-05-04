@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMouseController : MonoBehaviour
@@ -38,6 +37,7 @@ public class PlayerMouseController : MonoBehaviour
     public float Attackspeed;
     public bool DoubleShot = false;
     public bool SingleShot = false;
+    public float DoubleShotTimer = 5f;
 
     public void Start()
     {
@@ -122,6 +122,7 @@ public class PlayerMouseController : MonoBehaviour
 
     }
 
+    //Aktiviert den GameOver Screen
     public void TriggerEndscreen()
     {
         endscreen.ShowEndScreen();
@@ -145,7 +146,7 @@ public class PlayerMouseController : MonoBehaviour
         }
     }
 
-
+    //Spieler kann nur alle "DamageCoolDownTime" Sekunden Schaden erleiden
     IEnumerator DamageCooldown()
     {
         while (true)
@@ -155,7 +156,7 @@ public class PlayerMouseController : MonoBehaviour
         }
     }
 
-    
+    //Spieler bekommt ein Leben zurück
     public void Heal()
     {
 
@@ -171,10 +172,33 @@ public class PlayerMouseController : MonoBehaviour
         Debug.Log(CurrentHealth);
     }
 
-
+    //SchildPrefab wird aktiviert
     public void ActivateShield()
     {
         ShieldObject.gameObject.SetActive(true);
+    }
+
+    //Doppelschuss hält für "DoubleShotTimer" Sekunden
+
+    public void StartDoubleShotTimer()
+    {
+        StartCoroutine(DoubleShotTime());
+    }
+
+    public void RevertShots()
+    {
+        SingleShot = true;
+        DoubleShot = false;
+        
+    }
+
+    public IEnumerator DoubleShotTime()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(DoubleShotTimer);
+            RevertShots();
+        }
     }
 }
 
