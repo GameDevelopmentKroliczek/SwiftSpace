@@ -16,6 +16,7 @@ public class PlayerMouseController : MonoBehaviour
     public bool isPlaying = false;
     public bool CanTakeDamage = false;
     private Vector2 screenBounds;
+ 
 
     //PlayerModels
     public GameObject PlayerNoDamage;
@@ -39,8 +40,10 @@ public class PlayerMouseController : MonoBehaviour
     public bool DoubleShot = false;
     public bool SingleShot = false;
     public float DoubleShotTimer = 5f;
+    public float LaserTime = 5f;
     public bool AttackspeedIsLimited = false;
     public bool PlayerCanShoot = false;
+
 
     
     public bool ActivateLaser = false;
@@ -68,6 +71,7 @@ public class PlayerMouseController : MonoBehaviour
         AttackspeedIsLimited = false;
         PlayerCanShoot = true; ;
         ActivateLaser = false;
+       
     }
 
     public void Update()
@@ -193,34 +197,67 @@ public class PlayerMouseController : MonoBehaviour
     //Doppelschuss hält für "DoubleShotTimer" Sekunden
     public void StartDoubleShotTimer()
     {
-        StartCoroutine(DoubleShotTime());
+       
+            StartCoroutine(DoubleShotTime());
+        
     }
 
     public void RevertShots()
     {
         SingleShot = true;
         DoubleShot = false;
-        
+        StopCoroutine(DoubleShotTime());
     }
 
     public IEnumerator DoubleShotTime()
     {
+        
+
         while (true)
         {
+           
+
             yield return new WaitForSeconds(DoubleShotTimer);
             RevertShots();
+
+            
         }
     }
 
-   //LaserPickup
+    //LaserPickup
+
 
     public void ActivateLaserWeapon()
     {
        
         PlayerCanShoot = false;
         Laser.gameObject.SetActive(true);
-
+       
+            StartCoroutine(LaserTimer());
+       
     }
+
+    public void DeactivateLaser()
+    {
+        PlayerCanShoot = true;
+        Laser.gameObject.SetActive(false);
+        StopCoroutine(LaserTimer());
+    }
+
+    private IEnumerator LaserTimer()
+    {
+      
+        while (true)
+        {
+            
+            yield return new WaitForSeconds(LaserTime);
+            DeactivateLaser();
+           
+
+        }
+    }
+
+  
 
 }
 

@@ -26,7 +26,7 @@ public class ScoreCounter : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //Highscorefunktion
         if (Score > PlayerPrefs.GetFloat("Highscore", 0))

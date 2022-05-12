@@ -5,7 +5,6 @@ using UnityEngine;
 public class LaserPickUp : MonoBehaviour
 {
     public PlayerMouseController player;
-    public LaserScript Laser;
 
     // aktiviert den Laserangriff beim Spieler wenn das PickUp eingesammelt wird
 
@@ -16,7 +15,7 @@ public class LaserPickUp : MonoBehaviour
         if (player != null)
         {
             player.ActivateLaserWeapon();
-           
+            
 
             Destroy(this.gameObject);
 
