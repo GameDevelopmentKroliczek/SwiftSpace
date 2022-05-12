@@ -46,15 +46,15 @@ public class Weapon : MonoBehaviour
     {
         //Spawnt einen Schuss an der Position des Spielers
         GameObject bullet = (GameObject)Instantiate(BulletRef);
-        bullet.transform.position = new Vector3(firePoint.transform.position.x, firePoint.transform.position.y, 0);
+        bullet.transform.position = new Vector3(firePoint.transform.position.x, firePoint.transform.position.y, -0.1f);
     }
 
     public void PlayerAttackDouble()
     {
         GameObject DoubleBullet1 = (GameObject)Instantiate(BulletRef);
-        DoubleBullet1.transform.position = new Vector3(firePoint.transform.position.x + 0.1f , firePoint.transform.position.y, 0);
+        DoubleBullet1.transform.position = new Vector3(firePoint.transform.position.x + 0.1f , firePoint.transform.position.y, -0.01f);
         GameObject DoubleBullet2 = (GameObject)Instantiate(BulletRef);
-        DoubleBullet2.transform.position = new Vector3(firePoint.transform.position.x - 0.1f , firePoint.transform.position.y, 0);
+        DoubleBullet2.transform.position = new Vector3(firePoint.transform.position.x - 0.1f , firePoint.transform.position.y, -0.01f);
     }
 
   

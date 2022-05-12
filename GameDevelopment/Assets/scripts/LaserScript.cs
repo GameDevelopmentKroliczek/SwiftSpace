@@ -6,6 +6,7 @@ public class LaserScript : MonoBehaviour
 {
     public PlayerMouseController player;
     public float LaserTime = 5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,13 +16,12 @@ public class LaserScript : MonoBehaviour
 
     public void OnTriggerEnter(Collider EnemyHit)
     {
-        //Spiel wird gestoppt bei Kollision mit Asteroid
-        // asteroidController asteroid = AsteroidHit.GetComponent<asteroidController>();
+        //Laser zerstört Gegner mit einem hit
         EnemyController enemy = EnemyHit.GetComponent<EnemyController>();
 
         if (enemy != null)
         {
-            //Animation hier
+            
             enemy.Die();
             //Destroy(gameObject);
 
