@@ -6,6 +6,7 @@ public class PlayerMouseController : MonoBehaviour
     public UI_Endscreen endscreen;
     public PlayerHealth playerhealth;
     public Shield ShieldObject;
+    public LaserScript Laser;
 
     Rigidbody rb;
     asteroidController asteroid;
@@ -38,6 +39,11 @@ public class PlayerMouseController : MonoBehaviour
     public bool DoubleShot = false;
     public bool SingleShot = false;
     public float DoubleShotTimer = 5f;
+    public bool AttackspeedIsLimited = false;
+    public bool PlayerCanShoot = false;
+
+    
+    public bool ActivateLaser = false;
 
     public void Start()
     {
@@ -59,7 +65,9 @@ public class PlayerMouseController : MonoBehaviour
         Attackspeed = 0.5f;
         DoubleShot = false;
         SingleShot = true;
-
+        AttackspeedIsLimited = false;
+        PlayerCanShoot = true; ;
+        ActivateLaser = false;
     }
 
     public void Update()
@@ -118,7 +126,11 @@ public class PlayerMouseController : MonoBehaviour
             PlayerMediumDamage.gameObject.SetActive(false);
         }
 
-       
+        //AttackspeedLimit
+        if(Attackspeed <= 0.1f && AttackspeedIsLimited == true)
+        {
+            Attackspeed = 0.1f;
+        }
 
     }
 
@@ -179,7 +191,6 @@ public class PlayerMouseController : MonoBehaviour
     }
 
     //Doppelschuss hält für "DoubleShotTimer" Sekunden
-
     public void StartDoubleShotTimer()
     {
         StartCoroutine(DoubleShotTime());
@@ -200,5 +211,16 @@ public class PlayerMouseController : MonoBehaviour
             RevertShots();
         }
     }
+
+   //LaserPickup
+
+    public void ActivateLaserWeapon()
+    {
+       
+        PlayerCanShoot = false;
+        Laser.gameObject.SetActive(true);
+
+    }
+
 }
 

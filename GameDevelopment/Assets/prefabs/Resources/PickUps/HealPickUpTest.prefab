@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 3090890708997232981}
   - component: {fileID: 8771080159886102468}
   - component: {fileID: -5303129343412558515}
-  - component: {fileID: -3736864459900324634}
+  - component: {fileID: 8169405299860613342}
   m_Layer: 0
-  m_Name: pickUpTestDoubleShot
+  m_Name: HealPickUpTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 8771080159886102468}
   FallSpeed: -2
---- !u!114 &-3736864459900324634
+--- !u!114 &8169405299860613342
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,8 +139,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5482811538900903586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee0a0428c90fec744ab561ef16430374, type: 3}
+  m_Script: {fileID: 11500000, guid: 0db45468af001d6459f05d394e04157e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 5329478391586683011, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
-  DoubleShotTimer: 5

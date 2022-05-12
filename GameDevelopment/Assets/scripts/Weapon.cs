@@ -5,47 +5,42 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public GameObject BulletRef;
+    public GameObject LaserRef;
     public PlayerMouseController player;
-
-    
 
     public Transform firePoint;
     private Vector2 screenBounds;
 
+    
 
-
-    public void Awake()
+    public void Start()
     {
-
-
         //AttackSpeed = player.Attackspeed;
         StartCoroutine(Shooting());
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-       
+        
     }
 
-
-    IEnumerator Shooting()
+    private IEnumerator Shooting()
     {
         while (true)
         {
-            //aktiviert die Funktion zum spawnen des Schusses alle "AttackSpeed" Sekunden
             yield return new WaitForSeconds(player.Attackspeed);
 
-            if(player.SingleShot == true)
+            if (player.PlayerCanShoot == true)
             {
-                PlayerAttackSingle();
-            }
+                if (player.SingleShot == true)
+                {
+                    PlayerAttackSingle();
+                }
 
-            if (player.DoubleShot == true)
-            {
-                PlayerAttackDouble();
+                if (player.DoubleShot == true)
+                {
+                    PlayerAttackDouble();
+                }
             }
-
         }
     }
-
-   
 
     public void PlayerAttackSingle()
     {
@@ -62,4 +57,5 @@ public class Weapon : MonoBehaviour
         DoubleBullet2.transform.position = new Vector3(firePoint.transform.position.x - 0.1f , firePoint.transform.position.y, 0);
     }
 
+  
 }
