@@ -15,8 +15,6 @@ public class DoubleShotPickUp : MonoBehaviour
         if (player != null)
         {
             //deaktiviert Singleshot und aktiviert Doubleshot
-            player.SingleShot = false;
-            player.DoubleShot = true;
             player.StartDoubleShotTimer();
 
             Destroy(this.gameObject);

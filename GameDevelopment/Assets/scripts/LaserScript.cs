@@ -15,13 +15,37 @@ public class LaserScript : MonoBehaviour
 
         if (enemy != null)
         {
+            if (enemy.CanBeAttacked = true)
+            {
+                enemy.Die();
+            }
             
-            enemy.Die();
-            //Destroy(gameObject);
 
         }
 
     }
+
+    
+
+    public void StartCoroutine()
+    {
+        StartCoroutine(LaserTimer());
+    }
+
+
+    IEnumerator LaserTimer()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(LaserTime);
+            player.DestroyLaser();
+        }
+    }
+
+
+
+
+   
 
 }
 

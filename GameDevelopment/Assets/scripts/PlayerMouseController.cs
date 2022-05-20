@@ -7,6 +7,7 @@ public class PlayerMouseController : MonoBehaviour
     public PlayerHealth playerhealth;
     public Shield ShieldObject;
     public LaserScript Laser;
+    public Weapon weapon;
 
     Rigidbody rb;
     asteroidController asteroid;
@@ -39,8 +40,6 @@ public class PlayerMouseController : MonoBehaviour
     public float Attackspeed;
     public bool DoubleShot = false;
     public bool SingleShot = false;
-    public float DoubleShotTimer = 5f;
-    public float LaserTime = 5f;
     public bool AttackspeedIsLimited = false;
     public bool PlayerCanShoot = false;
 
@@ -197,32 +196,19 @@ public class PlayerMouseController : MonoBehaviour
     //Doppelschuss hält für "DoubleShotTimer" Sekunden
     public void StartDoubleShotTimer()
     {
-       
-            StartCoroutine(DoubleShotTime());
-        
+        SingleShot = false;
+        DoubleShot = true;
+        weapon.ActivateDoubleShotTimer();
+
     }
 
     public void RevertShots()
     {
         SingleShot = true;
         DoubleShot = false;
-        StopCoroutine(DoubleShotTime());
-    }
-
-    public IEnumerator DoubleShotTime()
-    {
         
-
-        while (true)
-        {
-           
-
-            yield return new WaitForSeconds(DoubleShotTimer);
-            RevertShots();
-
-            
-        }
     }
+
 
     //LaserPickup
 
@@ -232,32 +218,16 @@ public class PlayerMouseController : MonoBehaviour
        
         PlayerCanShoot = false;
         Laser.gameObject.SetActive(true);
-       
-            StartCoroutine(LaserTimer());
-       
+        Laser.StartCoroutine();
     }
-
-    public void DeactivateLaser()
+    public void DestroyLaser()
     {
         PlayerCanShoot = true;
         Laser.gameObject.SetActive(false);
-        StopCoroutine(LaserTimer());
+        
     }
 
-    private IEnumerator LaserTimer()
-    {
-      
-        while (true)
-        {
-            
-            yield return new WaitForSeconds(LaserTime);
-            DeactivateLaser();
-           
 
-        }
-    }
-
-  
 
 }
 
