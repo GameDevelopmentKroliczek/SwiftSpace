@@ -15,7 +15,7 @@ public class LaserScript : MonoBehaviour
 
         if (enemy != null)
         {
-            if (enemy.CanBeAttacked = true)
+            if (enemy.CanBeAttacked == true)
             {
                 enemy.Die();
             }

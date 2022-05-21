@@ -10,16 +10,16 @@ public class PlanetScroll : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartPosition = transform.position;
+        StartPosition = transform.localPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector3.down * speed * Time.deltaTime);
-        if (transform.position.y < -100f)
+        if (transform.localPosition.y < -100f)
         {
-            transform.position = StartPosition;
+            transform.localPosition = StartPosition;
         }
     }
 }

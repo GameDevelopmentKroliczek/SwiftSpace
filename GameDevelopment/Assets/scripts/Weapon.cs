@@ -45,6 +45,7 @@ public class Weapon : MonoBehaviour
     public void ActivateDoubleShotTimer()
     {
         StartCoroutine(DoubleShotTimer());
+        
     }
 
     private IEnumerator DoubleShotTimer()
@@ -53,8 +54,13 @@ public class Weapon : MonoBehaviour
         {
             yield return new WaitForSeconds(DoubleShotTime);
 
-            player.RevertShots();
+            StopDoubleShots();
         }
+    }
+
+    public void StopDoubleShots()
+    {
+        player.RevertShots();
     }
 
 

@@ -9716,8 +9716,6 @@ MonoBehaviour:
   Attackspeed: 0
   DoubleShot: 0
   SingleShot: 0
-  DoubleShotTimer: 5
-  LaserTime: 5
   AttackspeedIsLimited: 0
   PlayerCanShoot: 0
   ActivateLaser: 0
