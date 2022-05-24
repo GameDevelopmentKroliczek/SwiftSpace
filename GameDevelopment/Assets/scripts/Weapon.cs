@@ -5,7 +5,9 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public GameObject BulletRef;
+    public GameObject DoubleShotRef;
     public PlayerMouseController player;
+    public LaserScript laser;
 
     public Transform firePoint;
     private Vector2 screenBounds;
@@ -60,12 +62,13 @@ public class Weapon : MonoBehaviour
 
     public void StopDoubleShots()
     {
-        player.RevertShots();
+        player.SingleShot = true;
+        player.DoubleShot = false;
     }
 
 
 
-        public void PlayerAttackSingle()
+    public void PlayerAttackSingle()
     {
         //Spawnt einen Schuss an der Position des Spielers
         GameObject bullet = (GameObject)Instantiate(BulletRef);
@@ -74,10 +77,9 @@ public class Weapon : MonoBehaviour
 
     public void PlayerAttackDouble()
     {
-        GameObject DoubleBullet1 = (GameObject)Instantiate(BulletRef);
-        DoubleBullet1.transform.position = new Vector3(firePoint.transform.position.x + 0.1f , firePoint.transform.position.y, -0.1f);
-        GameObject DoubleBullet2 = (GameObject)Instantiate(BulletRef);
-        DoubleBullet2.transform.position = new Vector3(firePoint.transform.position.x - 0.1f , firePoint.transform.position.y, -0.1f);
+        GameObject DoubleBullet1 = (GameObject)Instantiate(DoubleShotRef);
+        DoubleBullet1.transform.position = new Vector3(firePoint.transform.position.x , firePoint.transform.position.y, -0.1f);
+        
     }
 
   

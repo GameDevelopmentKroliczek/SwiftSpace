@@ -43,9 +43,7 @@ public class PlayerMouseController : MonoBehaviour
     public bool SingleShot = false;
     public bool AttackspeedIsLimited = false;
     public bool PlayerCanShoot = false;
-
-
-    
+    public float DoubleShotTime = 5f;
     public bool ActivateLaser = false;
 
     public void Start()
@@ -199,7 +197,7 @@ public class PlayerMouseController : MonoBehaviour
     {
         SingleShot = false;
         DoubleShot = true;
-        weapon.ActivateDoubleShotTimer();
+        StartCoroutine(DoubleShotTimer());
 
     }
 
@@ -211,12 +209,24 @@ public class PlayerMouseController : MonoBehaviour
     }
 
 
+    private IEnumerator DoubleShotTimer()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(DoubleShotTime);
+
+            RevertShots();
+        }
+    }
+
+  
+
+
     //LaserPickup
 
 
     public void ActivateLaserWeapon()
-    {
-       
+    {   
         PlayerCanShoot = false;
         Laser.gameObject.SetActive(true);
         Laser.StartCoroutine();

@@ -33,16 +33,25 @@ public class BulletScript : MonoBehaviour
         //Spiel wird gestoppt bei Kollision mit Asteroid
        // asteroidController asteroid = AsteroidHit.GetComponent<asteroidController>();
         EnemyController enemy = EnemyHit.GetComponent<EnemyController>();
+        asteroidController asteroid = EnemyHit.GetComponent<asteroidController>();
  
         if (enemy != null)
         {
             //Animation hier
             enemy.TakeDamage(Damage);
-            Destroy(gameObject);
+            Die();
 
         }
 
-      
+        if(asteroid != null)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
 
     }
 
