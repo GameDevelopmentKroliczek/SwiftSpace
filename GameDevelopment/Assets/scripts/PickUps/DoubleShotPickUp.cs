@@ -5,7 +5,7 @@ using UnityEngine;
 public class DoubleShotPickUp : MonoBehaviour
 {
     public PlayerMouseController player;
-    public float DoubleShotTimer = 5f;
+ 
 
     public void OnTriggerEnter(Collider other)
     {
@@ -15,7 +15,7 @@ public class DoubleShotPickUp : MonoBehaviour
         if (player != null)
         {
             //deaktiviert Singleshot und aktiviert Doubleshot
-            player.StartDoubleShotTimer();
+            player.ActivateDoubleShot();
 
             Destroy(this.gameObject);
         }

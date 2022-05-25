@@ -5,19 +5,17 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public GameObject BulletRef;
-    public GameObject DoubleShotRef;
     public PlayerMouseController player;
-    public LaserScript laser;
 
     public Transform firePoint;
     private Vector2 screenBounds;
 
-    public float DoubleShotTime = 5f;
+    
 
 
     public void Start()
     {
-        //AttackSpeed = player.Attackspeed;
+        
         StartCoroutine(Shooting());
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         
@@ -36,35 +34,10 @@ public class Weapon : MonoBehaviour
                     PlayerAttackSingle();
                 }
 
-                if (player.DoubleShot == true)
-                {
-                    PlayerAttackDouble();
-                }
             }
         }
     }
 
-    public void ActivateDoubleShotTimer()
-    {
-        StartCoroutine(DoubleShotTimer());
-        
-    }
-
-    private IEnumerator DoubleShotTimer()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(DoubleShotTime);
-
-            StopDoubleShots();
-        }
-    }
-
-    public void StopDoubleShots()
-    {
-        player.SingleShot = true;
-        player.DoubleShot = false;
-    }
 
 
 
@@ -75,12 +48,6 @@ public class Weapon : MonoBehaviour
         bullet.transform.position = new Vector3(firePoint.transform.position.x, firePoint.transform.position.y, -0.1f);
     }
 
-    public void PlayerAttackDouble()
-    {
-        GameObject DoubleBullet1 = (GameObject)Instantiate(DoubleShotRef);
-        DoubleBullet1.transform.position = new Vector3(firePoint.transform.position.x , firePoint.transform.position.y, -0.1f);
-        
-    }
 
   
 }

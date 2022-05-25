@@ -143,4 +143,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 5329478391586683011, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
-  DoubleShotTimer: 5
+  weapon: {fileID: 2341777867821709244, guid: b78fd2059e652564a9a7c6906a406c52, type: 3}
+  weapon_DoubleShot: {fileID: 5220209569611287157, guid: f26cf97c2dbc9be4a8c40a2fb316d636, type: 3}

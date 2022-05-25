@@ -8,6 +8,7 @@ public class PlayerMouseController : MonoBehaviour
     public Shield ShieldObject;
     public LaserScript Laser;
     public Weapon weapon;
+    public Weapon_DoubleShot weapon_DoubleShot;
 
 
     Rigidbody rb;
@@ -69,7 +70,9 @@ public class PlayerMouseController : MonoBehaviour
         AttackspeedIsLimited = false;
         PlayerCanShoot = true; ;
         ActivateLaser = false;
-       
+
+        weapon.gameObject.SetActive(true);
+        weapon_DoubleShot.gameObject.SetActive(false);
     }
 
     public void Update()
@@ -193,11 +196,12 @@ public class PlayerMouseController : MonoBehaviour
     }
 
     //Doppelschuss hält für "DoubleShotTimer" Sekunden
-    public void StartDoubleShotTimer()
+    public void ActivateDoubleShot()
     {
         SingleShot = false;
         DoubleShot = true;
-        StartCoroutine(DoubleShotTimer());
+        weapon.gameObject.SetActive(false);
+        weapon_DoubleShot.gameObject.SetActive(true);
 
     }
 
@@ -205,21 +209,9 @@ public class PlayerMouseController : MonoBehaviour
     {
         SingleShot = true;
         DoubleShot = false;
-        
+        weapon.gameObject.SetActive(true);
+        weapon_DoubleShot.gameObject.SetActive(false);
     }
-
-
-    private IEnumerator DoubleShotTimer()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(DoubleShotTime);
-
-            RevertShots();
-        }
-    }
-
-  
 
 
     //LaserPickup
