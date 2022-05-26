@@ -2215,10 +2215,34 @@ PrefabInstance:
       propertyPath: DoubleShotRef
       value: 
       objectReference: {fileID: 8766856975928529053, guid: d17c604a265b3ba40bc833fde3acc330, type: 3}
+    - target: {fileID: 913965895, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 913965897, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
       propertyPath: DoubleShotRef
       value: 
       objectReference: {fileID: 8766856975928529053, guid: d17c604a265b3ba40bc833fde3acc330, type: 3}
+    - target: {fileID: 1733707514, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1733707514, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1733707514, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 972114473069237302, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 972114473069237302, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1423627177176821526, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2287,6 +2311,10 @@ PrefabInstance:
       propertyPath: weapon_DoubleShot
       value: 
       objectReference: {fileID: 913965897}
+    - target: {fileID: 6189901149220724645, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6853467529240965954, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
       propertyPath: m_Interpolate
       value: 1
