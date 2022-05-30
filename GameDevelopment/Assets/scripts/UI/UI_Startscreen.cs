@@ -9,12 +9,9 @@ public class UI_Startscreen : MonoBehaviour
     public string loadLevel;
     public GameObject Playermodels;
     public GameObject Startmenu;
+    public GameObject CharacterList;
 
-    public void Start()
-    {
-        Playermodels.gameObject.SetActive(false);
-        Startmenu.gameObject.SetActive(true);
-    }
+  
 
     public void StartGame()
     {
@@ -30,8 +27,8 @@ public class UI_Startscreen : MonoBehaviour
     public void changePlayerModels()
     {
         Playermodels.gameObject.SetActive(true);
-       Startmenu.gameObject.SetActive(false);
-
+        Startmenu.gameObject.SetActive(false);
+        CharacterList.SetActive(true);
     }
 
 }

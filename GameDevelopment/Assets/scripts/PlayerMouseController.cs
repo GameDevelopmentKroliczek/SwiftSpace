@@ -215,8 +215,6 @@ public class PlayerMouseController : MonoBehaviour
 
 
     //LaserPickup
-
-
     public void ActivateLaserWeapon()
     {   
         PlayerCanShoot = false;
@@ -231,6 +229,6 @@ public class PlayerMouseController : MonoBehaviour
     }
 
 
-
+    
 }
 
