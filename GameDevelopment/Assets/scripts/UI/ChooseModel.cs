@@ -12,10 +12,7 @@ public class ChooseModel : MonoBehaviour
     public GameObject player_midDamage;
     public GameObject player_highDamage;
 
-    void Start()
-    {
-        
-    }
+    
 
     public void ChooseModels()
     {
