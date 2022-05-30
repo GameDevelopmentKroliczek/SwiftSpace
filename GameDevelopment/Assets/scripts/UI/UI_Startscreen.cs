@@ -7,17 +7,31 @@ using UnityEngine.SceneManagement;
 public class UI_Startscreen : MonoBehaviour
 {
     public string loadLevel;
+    public GameObject Playermodels;
+    public GameObject Startmenu;
+
+    public void Start()
+    {
+        Playermodels.gameObject.SetActive(false);
+        Startmenu.gameObject.SetActive(true);
+    }
+
     public void StartGame()
     {
-
         SceneManager.LoadScene(loadLevel, LoadSceneMode.Single);
-        
-        
-}
+   
+    }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void changePlayerModels()
+    {
+        Playermodels.gameObject.SetActive(true);
+       Startmenu.gameObject.SetActive(false);
+
     }
 
 }

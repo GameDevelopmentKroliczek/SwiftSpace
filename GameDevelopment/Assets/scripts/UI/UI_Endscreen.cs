@@ -11,9 +11,9 @@ public class UI_Endscreen : MonoBehaviour
     public GameObject UI_Overlay;
     public ScoreCounter scorecounter;
     public Text EndScore;
-    
+    public string MenuLevel;
 
-  
+
 
     public void ShowEndScreen()
     {
@@ -35,5 +35,9 @@ public class UI_Endscreen : MonoBehaviour
         Application.Quit();
     }
 
-
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(MenuLevel, LoadSceneMode.Single);
+        
+    }
 }

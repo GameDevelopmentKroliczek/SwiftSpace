@@ -8,6 +8,7 @@ public class UI_PauseScreen : MonoBehaviour
 {
 
     public string retryLevel;
+    public string MenuLevel;
     public PlayerMouseController player;
     public GameObject UI_Overlay;
 
@@ -46,5 +47,9 @@ public class UI_PauseScreen : MonoBehaviour
         Application.Quit();
     }
 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(MenuLevel, LoadSceneMode.Single);
 
+    }
 }
