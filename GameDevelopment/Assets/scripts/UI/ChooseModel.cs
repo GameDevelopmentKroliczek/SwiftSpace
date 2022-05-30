@@ -69,5 +69,6 @@ public class ChooseModel : MonoBehaviour
     {
         PlayerPrefs.SetInt ("CharacterSelected", index);
         SceneManager.LoadScene(loadLevel, LoadSceneMode.Single);
+        Time.timeScale = 1f;
     }
 }

@@ -16,7 +16,7 @@ public class UI_Startscreen : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(loadLevel, LoadSceneMode.Single);
-   
+        Time.timeScale = 1f;
     }
 
     public void QuitGame()
