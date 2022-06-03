@@ -61,7 +61,7 @@ public class Weapon_DoubleShot : MonoBehaviour
 
 
 
-    public void PlayerAttackDouble()
+    private void PlayerAttackDouble()
     {
         GameObject DoubleBullet1 = (GameObject)Instantiate(DoubleShotRef);
         DoubleBullet1.transform.position = new Vector3(firePoint.transform.position.x, firePoint.transform.position.y, -0.1f);

@@ -24,7 +24,7 @@ public class PlayerMouseController : MonoBehaviour
     //PlayerModels
     public GameObject PlayerNoDamage;
     public GameObject PlayerMediumDamage;
-    public GameObject PlayerHighDamage;
+    public GameObject smoke;
 
     Vector3 RotationAngleLeft;
     Vector3 RotationAngleRight;
@@ -114,21 +114,21 @@ public class PlayerMouseController : MonoBehaviour
         {
             PlayerNoDamage.gameObject.SetActive(true);
             PlayerMediumDamage.gameObject.SetActive(false);
-            PlayerHighDamage.gameObject.SetActive(false);
+            smoke.gameObject.SetActive(false);
         }
 
         if (CurrentHealth == MaxHealth -1)
         {
             PlayerMediumDamage.gameObject.SetActive(true);
             PlayerNoDamage.gameObject.SetActive(false);
-            PlayerHighDamage.gameObject.SetActive(false);
+            smoke.gameObject.SetActive(false);
         }
 
         if (CurrentHealth == MaxHealth - 2)
         {
-            PlayerHighDamage.gameObject.SetActive(true);
+            smoke.gameObject.SetActive(true);
             PlayerNoDamage.gameObject.SetActive(false);
-            PlayerMediumDamage.gameObject.SetActive(false);
+            PlayerMediumDamage.gameObject.SetActive(true);
         }
 
         //AttackspeedLimit

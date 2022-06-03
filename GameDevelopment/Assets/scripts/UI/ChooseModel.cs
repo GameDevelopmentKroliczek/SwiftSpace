@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class ChooseModel : MonoBehaviour
 {
     public GameObject[] characterList;
+    public GameObject ModelSelection;
+    public GameObject Startscreen;
+    public GameObject CharacterList;
     public int index;
     public string loadLevel;
 
@@ -70,5 +73,12 @@ public class ChooseModel : MonoBehaviour
         PlayerPrefs.SetInt ("CharacterSelected", index);
         SceneManager.LoadScene(loadLevel, LoadSceneMode.Single);
         Time.timeScale = 1f;
+    }
+
+    public void ReturnButton()
+    {
+        ModelSelection.SetActive(false);
+        Startscreen.SetActive(true);
+        CharacterList.SetActive(false);
     }
 }

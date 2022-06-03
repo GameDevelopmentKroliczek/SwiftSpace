@@ -135,7 +135,7 @@ MonoBehaviour:
   respawnTime: 1
   MoveSpeed: 0.1
   EnemyStartY: 10
-  Health: 100
+  Health: 5
   CanBeAttacked: 0
 --- !u!54 &826479199352281589
 Rigidbody:

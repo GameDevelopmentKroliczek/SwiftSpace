@@ -27,12 +27,11 @@ public class Weapon : MonoBehaviour
         {
             yield return new WaitForSeconds(player.Attackspeed);
 
-            if (player.PlayerCanShoot == true)
+            if (player.PlayerCanShoot == true && player.SingleShot == true)
             {
-                if (player.SingleShot == true)
-                {
+               
                     PlayerAttackSingle();
-                }
+                
 
             }
         }

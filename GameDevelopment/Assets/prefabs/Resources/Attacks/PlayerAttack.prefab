@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletSpeed: 10
   rb: {fileID: -9185792536645530438}
-  Damage: 30
+  Damage: 1
 --- !u!136 &-5652793934580857662
 CapsuleCollider:
   m_ObjectHideFlags: 0
