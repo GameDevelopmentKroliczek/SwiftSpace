@@ -7,8 +7,8 @@ public class PlayerMouseController : MonoBehaviour
     public PlayerHealth playerhealth;
     public Shield ShieldObject;
     public LaserScript Laser;
-    public Weapon weapon;
-    public Weapon_DoubleShot weapon_DoubleShot;
+    public GameObject weapon;
+    public GameObject weapon_DoubleShot;
 
 
     Rigidbody rb;
