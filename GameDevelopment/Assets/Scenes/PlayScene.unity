@@ -21059,6 +21059,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19be9817790699c44bbb88fd657ac696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1449986815 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4249724081631172504, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+  m_PrefabInstance: {fileID: 7766033075468368415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e21364fbe0bf99a42844867d9875d64b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1583474141
 GameObject:
   m_ObjectHideFlags: 0
@@ -22137,6 +22148,10 @@ PrefabInstance:
       propertyPath: smoke
       value: 
       objectReference: {fileID: 922869495}
+    - target: {fileID: 5329478391586683011, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 1449986815}
     - target: {fileID: 5329478391586683011, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
       propertyPath: endscreen
       value: 
