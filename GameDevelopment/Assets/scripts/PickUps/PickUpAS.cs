@@ -14,8 +14,13 @@ public class PickUpAS : MonoBehaviour
 
         if (player != null)
         {
+            //Attackspeed wird jedes Mal 20% schneller
             player.Attackspeed *= 0.8f;
-
+            //Attackspeed ist bei 0.1 gecapt
+            if(player.Attackspeed < 0.1f)
+            {
+                player.Attackspeed = 0.1f;
+            }
             Destroy(this.gameObject);
 
         }

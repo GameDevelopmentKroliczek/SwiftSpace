@@ -42,7 +42,6 @@ public class PlayerMouseController : MonoBehaviour
     public float Attackspeed;
     public bool DoubleShot = false;
     public bool SingleShot = false;
-    public bool AttackspeedIsLimited = false;
     public bool PlayerCanShoot = false;
     public float DoubleShotTime = 5f;
     public bool ActivateLaser = false;
@@ -67,7 +66,6 @@ public class PlayerMouseController : MonoBehaviour
         Attackspeed = 0.5f;
         DoubleShot = false;
         SingleShot = true;
-        AttackspeedIsLimited = false;
         PlayerCanShoot = true; ;
         ActivateLaser = false;
 
@@ -131,11 +129,6 @@ public class PlayerMouseController : MonoBehaviour
             PlayerMediumDamage.gameObject.SetActive(true);
         }
 
-        //AttackspeedLimit
-        if(Attackspeed <= 0.1f && AttackspeedIsLimited == true)
-        {
-            Attackspeed = 0.1f;
-        }
 
     }
 
