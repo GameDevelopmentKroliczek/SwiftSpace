@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 533512687623701700}
   - component: {fileID: 826479199352281589}
   - component: {fileID: 5703999890754887464}
+  - component: {fileID: 7996331315910160506}
   - component: {fileID: 6148022617185451048}
   m_Layer: 0
   m_Name: spaceship_enemy_01
@@ -132,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 826479199352281589}
+  AnimationSpawner: {fileID: 7996331315910160506}
   respawnTime: 1
   MoveSpeed: 0.1
   EnemyStartY: 10
@@ -167,6 +169,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7969978266939365281, guid: 840c5812506adfb42b3ca3b4bc814b9b, type: 3}
+--- !u!114 &7996331315910160506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8841579783014622166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1240c169f0278d243badaa639fb2dee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathAnimationList: []
 --- !u!114 &6148022617185451048
 MonoBehaviour:
   m_ObjectHideFlags: 0

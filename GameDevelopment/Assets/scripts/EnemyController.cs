@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public Rigidbody rb;
-
+    public SpawnDeathAnimation AnimationSpawner;
     public float respawnTime = 1.0f;
     public float MoveSpeed = 0.1f;
     public float EnemyStartY = 10f;
@@ -24,6 +24,7 @@ public class EnemyController : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         StartCoroutine(EnemyMover());
         CanBeAttacked = false;
+        
     }
 
     // Update is called once per frame
@@ -107,9 +108,12 @@ public class EnemyController : MonoBehaviour
 
     public void Die()
     {
-        
         //Hier Todesanimation abspielen
+        AnimationSpawner.spawnAniamtion(); 
         Destroy(this.gameObject);
     }
+
+
+
 
 }

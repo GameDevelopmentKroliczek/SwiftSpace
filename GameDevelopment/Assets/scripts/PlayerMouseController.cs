@@ -9,7 +9,8 @@ public class PlayerMouseController : MonoBehaviour
     public LaserScript Laser;
     public GameObject weapon;
     public GameObject weapon_DoubleShot;
-
+    public GameObject Healthbar;
+    
 
     Rigidbody rb;
     asteroidController asteroid;
@@ -110,6 +111,7 @@ public class PlayerMouseController : MonoBehaviour
         //Ändert PlayerModel je nach Schadenswert
         if(CurrentHealth == MaxHealth)
         {
+            Healthbar.GetComponent<Animator>().enabled = false;
             PlayerNoDamage.gameObject.SetActive(true);
             PlayerMediumDamage.gameObject.SetActive(false);
             smoke.gameObject.SetActive(false);
@@ -117,6 +119,7 @@ public class PlayerMouseController : MonoBehaviour
 
         if (CurrentHealth == MaxHealth -1)
         {
+            Healthbar.GetComponent<Animator>().enabled = false;
             PlayerMediumDamage.gameObject.SetActive(true);
             PlayerNoDamage.gameObject.SetActive(false);
             smoke.gameObject.SetActive(false);
@@ -124,6 +127,7 @@ public class PlayerMouseController : MonoBehaviour
 
         if (CurrentHealth == MaxHealth - 2)
         {
+            Healthbar.GetComponent<Animator>().enabled = true;
             smoke.gameObject.SetActive(true);
             PlayerNoDamage.gameObject.SetActive(false);
             PlayerMediumDamage.gameObject.SetActive(true);

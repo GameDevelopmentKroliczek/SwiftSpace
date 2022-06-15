@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickUpSpawner : MonoBehaviour
 {
-    public EnemyController Enemy;
+    
    
     public float respawnTime = 15.0f;
     private Vector2 screenBounds;
