@@ -9,6 +9,7 @@ public class EnemyBullet : MonoBehaviour
     private Vector2 screenBounds;
     asteroidController asteroid;
     public int Damage = 30;
+    public GameObject ShotAnimation;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,17 +36,17 @@ public class EnemyBullet : MonoBehaviour
         PlayerMouseController player = PlayerHit.GetComponent<PlayerMouseController>();
  
         if (player != null)
-        {
-            //Animation hier
+        {        
             player.GetHit();
-            Destroy(gameObject);
-
+            Die();
         }
-
-      
-
     }
 
+    private void Die()
+    {
+        Instantiate(ShotAnimation, new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.5f), Quaternion.identity);
+        Destroy(this.gameObject);
+    }
 
 
 }

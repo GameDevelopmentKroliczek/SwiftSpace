@@ -6,6 +6,7 @@ public class asteroidController : MonoBehaviour
 {
 
     public PlayerMouseController player;
+    public SpawnDeathAnimation AnimationSpawner;
     public float speed = 5f;
     private Rigidbody rb;
     private Vector2 screenBounds;
@@ -31,7 +32,7 @@ public class asteroidController : MonoBehaviour
 
         if (player != null)
         {
-            Destroy(this.gameObject);
+            Die();
             player.GetHit();
         }
     }
@@ -46,5 +47,9 @@ public class asteroidController : MonoBehaviour
         }
     }
 
-
+    private void Die()
+    {
+        AnimationSpawner.spawnAniamtion();
+        Destroy(this.gameObject);
+    }
 }

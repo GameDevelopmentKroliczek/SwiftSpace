@@ -20,7 +20,7 @@ public class SpawnDeathAnimation : MonoBehaviour
         {
 
             int n = Random.Range(0, DeathAnimationList.Count);
-            Instantiate(DeathAnimationList[n], transform.position, Quaternion.identity);
+            Instantiate(DeathAnimationList[n], new Vector3 (transform.position.x, transform.position.y, transform.position.z -0.5f), Quaternion.identity);
 
         }
 

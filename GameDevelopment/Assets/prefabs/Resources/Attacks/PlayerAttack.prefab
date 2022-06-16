@@ -134,6 +134,7 @@ MonoBehaviour:
   BulletSpeed: 10
   rb: {fileID: -9185792536645530438}
   Damage: 1
+  ShotAnimation: {fileID: 3731287472175138482, guid: a8828e6442763994c89468e0131079dd, type: 3}
 --- !u!136 &-5652793934580857662
 CapsuleCollider:
   m_ObjectHideFlags: 0
