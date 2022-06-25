@@ -7,7 +7,7 @@ public class PickUpController : MonoBehaviour
     public Rigidbody rb;
     private Vector2 screenBounds;
 
-    public float FallSpeed = -2f;
+    private float FallSpeed = -2.5f;
 
     // Start is called before the first frame update
     void Start()
