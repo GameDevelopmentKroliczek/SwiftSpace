@@ -217,12 +217,13 @@ public class PlayerMouseController : MonoBehaviour
         PlayerCanShoot = false;
         Laser.gameObject.SetActive(true);
         Laser.StartCoroutine();
+        weapon.gameObject.SetActive(false);
     }
     public void DestroyLaser()
     {
         PlayerCanShoot = true;
         Laser.gameObject.SetActive(false);
-        
+        weapon.gameObject.SetActive(true);
     }
 
 
