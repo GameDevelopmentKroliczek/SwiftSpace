@@ -94,5 +94,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletSpeed: -5
   rb: {fileID: 0}
-  Damage: 30
+  Damage: 1
   ShotAnimation: {fileID: 3731287472175138482, guid: a8828e6442763994c89468e0131079dd, type: 3}

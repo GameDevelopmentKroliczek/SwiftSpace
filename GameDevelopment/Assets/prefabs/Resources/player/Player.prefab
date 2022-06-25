@@ -19305,7 +19305,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1984195465015004759}
   - component: {fileID: 6853467529240965954}
-  - component: {fileID: 2858997766145276339}
   - component: {fileID: 5329478391586683011}
   - component: {fileID: 4249724081631172504}
   - component: {fileID: 373321492}
@@ -19356,20 +19355,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &2858997766145276339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1423627177176821526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3396ac49f6d4c5e4d880a5db42c4e710, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NoDamageModel: {fileID: 0}
-  DamagedModel: {fileID: 0}
 --- !u!114 &5329478391586683011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19388,6 +19373,7 @@ MonoBehaviour:
   Laser: {fileID: 3590038237989587895}
   weapon: {fileID: 2298126072102647013}
   weapon_DoubleShot: {fileID: 913965895}
+  Healthbar: {fileID: 0}
   YPosition: -5
   XPosition: 0
   ZPosition: 0

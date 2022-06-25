@@ -142,11 +142,11 @@ public class PlayerMouseController : MonoBehaviour
         endscreen.ShowEndScreen();
     }
 
-    public void GetHit()
+    public void GetHit( int damage)
     {
         if (CanTakeDamage == true)
         {
-            CurrentHealth -= 1;
+            CurrentHealth -= damage;
             playerhealth.SetHealth(CurrentHealth);
             CanTakeDamage = false;
             StartCoroutine(DamageCooldown());

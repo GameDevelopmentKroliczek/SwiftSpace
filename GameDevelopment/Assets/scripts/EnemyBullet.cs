@@ -8,7 +8,7 @@ public class EnemyBullet : MonoBehaviour
     public Rigidbody rb;
     private Vector2 screenBounds;
     asteroidController asteroid;
-    public int Damage = 30;
+    public int Damage = 1;
     public GameObject ShotAnimation;
     // Start is called before the first frame update
     void Start()
@@ -37,7 +37,7 @@ public class EnemyBullet : MonoBehaviour
  
         if (player != null)
         {        
-            player.GetHit();
+            player.GetHit(Damage);
             Die();
         }
     }

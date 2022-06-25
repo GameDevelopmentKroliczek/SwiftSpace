@@ -10,6 +10,7 @@ public class asteroidController : MonoBehaviour
     public float speed = 5f;
     private Rigidbody rb;
     private Vector2 screenBounds;
+    public int Damage = 1; 
 
 
     // Start is called before the first frame update
@@ -33,7 +34,7 @@ public class asteroidController : MonoBehaviour
         if (player != null)
         {
             Die();
-            player.GetHit();
+            player.GetHit(Damage);
         }
     }
 
