@@ -13,9 +13,10 @@ public class EnemyController : MonoBehaviour
     public bool CanBeAttacked;
 
     private Vector2 screenBounds;
-    Vector3 RotationAngle = new Vector3(0, 210, 0);
-    Vector3 StopAngle = new Vector3(0, 180, 0);
 
+    Vector3 RotationAngleLeft;
+    Vector3 RotationAngleRight;
+    Vector3 StopAngle;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,11 @@ public class EnemyController : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         StartCoroutine(EnemyMover());
         CanBeAttacked = false;
-        
+        RotationAngleLeft = new Vector3(0, 220, 0);
+        RotationAngleRight = new Vector3(0, 140, 0);
+        StopAngle = new Vector3(0, 180, 0);
+
+
     }
 
     // Update is called once per frame
@@ -43,23 +48,24 @@ public class EnemyController : MonoBehaviour
         
 
         //Rotiert den Gegner bei Bewegung
-        if (rb.velocity.x > 0.5f)
+        if (rb.velocity.x > 0.2f)
         {
-            Quaternion deltaRotation = Quaternion.Euler(rb.rotation * -RotationAngle);
-            transform.rotation = Quaternion.Slerp(transform.rotation, deltaRotation, 0.02f);
+            Quaternion RotationRight = Quaternion.Euler(RotationAngleRight);
+            transform.rotation = Quaternion.Slerp(transform.rotation, RotationRight, 0.2f);
         }
 
-        if (rb.velocity.x < -0.5f)
+        if (rb.velocity.x < -0.2f)
         {
-            Quaternion deltaRotation = Quaternion.Euler(rb.rotation * RotationAngle);   
-            transform.rotation = Quaternion.Slerp(transform.rotation, deltaRotation, 0.02f);
+            Quaternion RotationLeft = Quaternion.Euler(RotationAngleLeft);
+            transform.rotation = Quaternion.Slerp(transform.rotation, RotationLeft, 0.2f);
         }
 
-        if (rb.velocity.x > -0.5f && rb.velocity.x < 0.5f)
+        if (rb.velocity.x > -0.2f && rb.velocity.x < 0.2f)
         {
-            
-            Quaternion deltaRotation = Quaternion.Euler(rb.rotation * StopAngle);
-            transform.rotation = Quaternion.Slerp(transform.rotation, deltaRotation, 0.02f);
+
+            Quaternion StopDeltaRotation = Quaternion.Euler(StopAngle);
+            transform.rotation = Quaternion.Slerp(transform.rotation, StopDeltaRotation, 0.2f);
+
         }
 
     }
