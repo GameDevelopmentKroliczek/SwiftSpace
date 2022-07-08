@@ -123,31 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &12367600 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3377868288266370637, guid: 3bef21f908e96984587c517900eb01c9, type: 3}
-  m_PrefabInstance: {fileID: 6384966687387142899}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &12367604
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12367600}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2d8d0018a118fc745b24fd7109dfb799, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &130358056
 GameObject:
   m_ObjectHideFlags: 0
@@ -20696,6 +20671,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.05
+--- !u!1 &1289173338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1289173338, guid: 3bef21f908e96984587c517900eb01c9, type: 3}
+  m_PrefabInstance: {fileID: 6384966687387142899}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1293421238
 GameObject:
   m_ObjectHideFlags: 0
@@ -22156,7 +22136,7 @@ PrefabInstance:
     - target: {fileID: 5329478391586683011, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
       propertyPath: CriticalHealthOverlay
       value: 
-      objectReference: {fileID: 12367600}
+      objectReference: {fileID: 1289173338}
     - target: {fileID: 6732379326299218141, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
       propertyPath: ShieldOverlay
       value: 
