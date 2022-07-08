@@ -10,7 +10,8 @@ public class PlayerMouseController : MonoBehaviour
     public GameObject weapon;
     public GameObject weapon_DoubleShot;
     public GameObject Healthbar;
-    
+    public GameObject CriticalHealthOverlay;
+
 
     Rigidbody rb;
     asteroidController asteroid;
@@ -112,6 +113,7 @@ public class PlayerMouseController : MonoBehaviour
         if(CurrentHealth == MaxHealth)
         {
             Healthbar.GetComponent<Animator>().enabled = false;
+            CriticalHealthOverlay.gameObject.SetActive(false);
             PlayerNoDamage.gameObject.SetActive(true);
             PlayerMediumDamage.gameObject.SetActive(false);
             smoke.gameObject.SetActive(false);
@@ -120,6 +122,7 @@ public class PlayerMouseController : MonoBehaviour
         if (CurrentHealth == MaxHealth -1)
         {
             Healthbar.GetComponent<Animator>().enabled = false;
+            CriticalHealthOverlay.gameObject.SetActive(false);
             PlayerMediumDamage.gameObject.SetActive(true);
             PlayerNoDamage.gameObject.SetActive(false);
             smoke.gameObject.SetActive(false);
@@ -128,6 +131,7 @@ public class PlayerMouseController : MonoBehaviour
         if (CurrentHealth == MaxHealth - 2)
         {
             Healthbar.GetComponent<Animator>().enabled = true;
+            CriticalHealthOverlay.gameObject.SetActive(true);
             smoke.gameObject.SetActive(true);
             PlayerNoDamage.gameObject.SetActive(false);
             PlayerMediumDamage.gameObject.SetActive(true);

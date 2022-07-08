@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-   
+    public GameObject ShieldOverlay;
     public float ShieldTimer = 5f;
 
     public void OnEnable()
     {
         StartCoroutine(ShieldTime());
+        ShieldOverlay.gameObject.SetActive(true);
     }
 
     //Schild wird zerstört wenn er getroffen wird, Spieler bekommt keinen Schaden
@@ -23,7 +24,7 @@ public class Shield : MonoBehaviour
         if (asteroid != null || bullet != null)
         {
             Destroy(other.gameObject);
-            
+            ShieldOverlay.gameObject.SetActive(false);
             DestroyShield();
         }
     }
