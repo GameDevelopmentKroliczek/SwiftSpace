@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using EZCameraShake;
 
 public class PlayerMouseController : MonoBehaviour
 {
@@ -12,7 +13,6 @@ public class PlayerMouseController : MonoBehaviour
     public GameObject Healthbar;
     public GameObject CriticalHealthOverlay;
 
-
     Rigidbody rb;
     asteroidController asteroid;
     public float YPosition = 0f;
@@ -24,8 +24,7 @@ public class PlayerMouseController : MonoBehaviour
  
 
     //PlayerModels
-    public GameObject PlayerNoDamage;
-    public GameObject PlayerMediumDamage;
+    public GameObject PlayerModels;
     public GameObject smoke;
 
     Vector3 RotationAngleLeft;
@@ -73,6 +72,7 @@ public class PlayerMouseController : MonoBehaviour
 
         weapon.gameObject.SetActive(true);
         weapon_DoubleShot.gameObject.SetActive(false);
+
     }
 
     public void Update()
@@ -114,8 +114,6 @@ public class PlayerMouseController : MonoBehaviour
         {
             Healthbar.GetComponent<Animator>().enabled = false;
             CriticalHealthOverlay.gameObject.SetActive(false);
-            PlayerNoDamage.gameObject.SetActive(true);
-            PlayerMediumDamage.gameObject.SetActive(false);
             smoke.gameObject.SetActive(false);
         }
 
@@ -123,8 +121,6 @@ public class PlayerMouseController : MonoBehaviour
         {
             Healthbar.GetComponent<Animator>().enabled = false;
             CriticalHealthOverlay.gameObject.SetActive(false);
-            PlayerMediumDamage.gameObject.SetActive(true);
-            PlayerNoDamage.gameObject.SetActive(false);
             smoke.gameObject.SetActive(false);
         }
 
@@ -133,8 +129,7 @@ public class PlayerMouseController : MonoBehaviour
             Healthbar.GetComponent<Animator>().enabled = true;
             CriticalHealthOverlay.gameObject.SetActive(true);
             smoke.gameObject.SetActive(true);
-            PlayerNoDamage.gameObject.SetActive(false);
-            PlayerMediumDamage.gameObject.SetActive(true);
+            
         }
 
 
@@ -154,6 +149,7 @@ public class PlayerMouseController : MonoBehaviour
             playerhealth.SetHealth(CurrentHealth);
             CanTakeDamage = false;
             StartCoroutine(DamageCooldown());
+            CameraShaker.Instance.ShakeOnce(2f, 5f, 0.1f, 1f);
 
             if (CurrentHealth <= 0)
             {

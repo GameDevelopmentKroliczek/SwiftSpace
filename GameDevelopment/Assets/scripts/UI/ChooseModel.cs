@@ -24,6 +24,7 @@ public class ChooseModel : MonoBehaviour
         {
             characterList[i] = transform.GetChild(i).gameObject;
         }
+
         //Modelle werden im renderer deaktiviert
         foreach (GameObject go in characterList)
         {
