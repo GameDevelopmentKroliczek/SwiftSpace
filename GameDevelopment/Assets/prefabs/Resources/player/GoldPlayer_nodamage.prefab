@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2183373123759785352}
   - component: {fileID: 6717536302519328578}
   m_Layer: 0
-  m_Name: testplayer_nodamge
+  m_Name: GoldPlayer_nodamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
