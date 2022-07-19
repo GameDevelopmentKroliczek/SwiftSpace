@@ -11,6 +11,7 @@ public class Shield : MonoBehaviour
     {
         StartCoroutine(ShieldTime());
         ShieldOverlay.gameObject.SetActive(true);
+        
     }
 
     //Schild wird zerstört wenn er getroffen wird, Spieler bekommt keinen Schaden
@@ -22,9 +23,8 @@ public class Shield : MonoBehaviour
         EnemyBullet bullet = other.GetComponent<EnemyBullet>();
         //collision.gameObject.tag == "Spawnable";
         if (asteroid != null || bullet != null)
-        {
+        { 
             Destroy(other.gameObject);
-            ShieldOverlay.gameObject.SetActive(false);
             DestroyShield();
         }
     }
@@ -43,6 +43,9 @@ public class Shield : MonoBehaviour
 
  private void DestroyShield()
     {
+        
+        ShieldOverlay.gameObject.SetActive(false);
         gameObject.SetActive(false);
+       
     }
 }

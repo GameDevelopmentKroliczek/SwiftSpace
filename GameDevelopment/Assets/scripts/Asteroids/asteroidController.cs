@@ -30,11 +30,16 @@ public class asteroidController : MonoBehaviour
     {
         //Spieler erleidet Schaden wenn er den Asteroiden berührt
         PlayerMouseController player = other.GetComponent<PlayerMouseController>();
+        Shield shield = other.GetComponent<Shield>();
 
         if (player != null)
         {
             Die();
             player.GetHit(Damage);
+        }
+        if (shield != null)
+        {
+            Die();
         }
     }
 
@@ -50,7 +55,7 @@ public class asteroidController : MonoBehaviour
 
     private void Die()
     {
-        AnimationSpawner.spawnAniamtion();
+        AnimationSpawner.spawnAniamtion(transform.position);
         Destroy(this.gameObject);
     }
 }

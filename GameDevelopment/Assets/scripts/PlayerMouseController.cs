@@ -127,6 +127,10 @@ public class PlayerMouseController : MonoBehaviour
         if (CurrentHealth == MaxHealth - 2)
         {
             Healthbar.GetComponent<Animator>().enabled = true;
+            if (ShieldObject.gameObject.active == true)
+            {
+                CriticalHealthOverlay.gameObject.SetActive(false);
+            }
             CriticalHealthOverlay.gameObject.SetActive(true);
             smoke.gameObject.SetActive(true);
             

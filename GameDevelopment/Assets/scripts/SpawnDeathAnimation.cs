@@ -13,14 +13,14 @@ public class SpawnDeathAnimation : MonoBehaviour
         DeathAnimationList = new List<GameObject>(Resources.LoadAll<GameObject>("Explosions_Animationen"));
     }
 
-    public void spawnAniamtion()
+    public void spawnAniamtion(Vector3 PositionToSpawnAt)
     {
         //Spawnt 1 zufälliges Pickup aus der Liste PickupList 
         for (int i = 0; i < 1; i++)
         {
 
             int n = Random.Range(0, DeathAnimationList.Count);
-            Instantiate(DeathAnimationList[n], new Vector3 (transform.position.x, transform.position.y, transform.position.z -0.5f), Quaternion.identity);
+            Instantiate(DeathAnimationList[n], new Vector3 (PositionToSpawnAt.x, PositionToSpawnAt.y, PositionToSpawnAt.z -0.5f), Quaternion.identity);
 
         }
 

@@ -115,7 +115,7 @@ public class EnemyController : MonoBehaviour
     public void Die()
     {
         //Hier Todesanimation abspielen
-        AnimationSpawner.spawnAniamtion(); 
+        AnimationSpawner.spawnAniamtion(transform.position); 
         Destroy(this.gameObject);
     }
 
