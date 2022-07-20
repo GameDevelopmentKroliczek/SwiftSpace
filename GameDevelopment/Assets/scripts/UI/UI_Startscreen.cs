@@ -10,12 +10,21 @@ public class UI_Startscreen : MonoBehaviour
     public GameObject Playermodels;
     public GameObject Startmenu;
     public GameObject CharacterList;
-
-  
+   
 
     public void StartGame()
     {
-        SceneManager.LoadScene(loadLevel, LoadSceneMode.Single);
+        // erstellt einen neuen Spielstand
+        DataPersistenceManager.instance.NewGame();
+        SceneManager.LoadSceneAsync("PlayScene");
+        //SceneManager.LoadScene(loadLevel, LoadSceneMode.Single);
+        Time.timeScale = 1f;
+    }
+    public void ContinueGame()
+    {
+        //Läd letzten Spielstand
+        SceneManager.LoadSceneAsync("PlayScene");
+        //SceneManager.LoadScene(loadLevel, LoadSceneMode.Single);
         Time.timeScale = 1f;
     }
 

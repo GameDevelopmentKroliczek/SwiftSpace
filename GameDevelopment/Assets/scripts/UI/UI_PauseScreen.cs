@@ -28,7 +28,8 @@ public class UI_PauseScreen : MonoBehaviour
 
     public void ReloadLevel()
     {
-        
+        // erstellt einen neuen Spielstand
+        DataPersistenceManager.instance.NewGame();
         SceneManager.LoadScene(retryLevel, LoadSceneMode.Single);
         Time.timeScale = 1f;
         player.isPlaying = true;
@@ -49,6 +50,7 @@ public class UI_PauseScreen : MonoBehaviour
 
     public void MainMenu()
     {
+        DataPersistenceManager.instance.SaveGame();
         SceneManager.LoadScene(MenuLevel, LoadSceneMode.Single);
 
     }
