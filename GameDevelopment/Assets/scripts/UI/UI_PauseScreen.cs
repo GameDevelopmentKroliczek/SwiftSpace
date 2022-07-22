@@ -11,7 +11,6 @@ public class UI_PauseScreen : MonoBehaviour
     public string MenuLevel;
     public PlayerMouseController player;
     public GameObject UI_Overlay;
-
     public ScoreCounter Scorecounter;
     public Text PauseScore;
 
@@ -28,9 +27,9 @@ public class UI_PauseScreen : MonoBehaviour
 
     public void ReloadLevel()
     {
-        // erstellt einen neuen Spielstand
-        DataPersistenceManager.instance.NewGame();
-        SceneManager.LoadScene(retryLevel, LoadSceneMode.Single);
+        // erstellt einen neuen Spielstand 
+
+        SceneManager.LoadSceneAsync("PlayScene");
         Time.timeScale = 1f;
         player.isPlaying = true;
     }
@@ -50,8 +49,7 @@ public class UI_PauseScreen : MonoBehaviour
 
     public void MainMenu()
     {
-        DataPersistenceManager.instance.SaveGame();
-        SceneManager.LoadScene(MenuLevel, LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("StartMenu");
 
     }
 }

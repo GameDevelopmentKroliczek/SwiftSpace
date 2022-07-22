@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreCounter : MonoBehaviour, IDataPersistence
+public class ScoreCounter : MonoBehaviour
 {
     public Text Highscore;
 
@@ -19,14 +19,6 @@ public class ScoreCounter : MonoBehaviour, IDataPersistence
         Highscore.text = "Highscore: " + PlayerPrefs.GetFloat("Highscore", 0).ToString("0");
     }
 
-    public void LoadData (GameData data)
-    {
-        this.Score = data.ScoreCount;
-    }
-    public void SaveData( GameData data)
-    {
-        data.ScoreCount = (int) this.Score;
-    }
 
     // Update is called once per frame
     void FixedUpdate()

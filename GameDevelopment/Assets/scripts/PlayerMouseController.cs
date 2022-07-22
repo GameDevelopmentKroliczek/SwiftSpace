@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using EZCameraShake;
 
-public class PlayerMouseController : MonoBehaviour, IDataPersistence
+public class PlayerMouseController : MonoBehaviour
 {
     public UI_Endscreen endscreen;
     public PlayerHealth playerhealth;
@@ -73,16 +73,6 @@ public class PlayerMouseController : MonoBehaviour, IDataPersistence
         weapon.gameObject.SetActive(true);
         weapon_DoubleShot.gameObject.SetActive(false);
 
-    }
-    public void LoadData(GameData data)
-    {
-        this.CurrentHealth = data.PlayerHealth;
-        //this.transform.position = data.playerPosition;
-    }
-    public void SaveData(GameData data)
-    {
-        data.PlayerHealth =  this.CurrentHealth;
-        //data.playerPosition = this.transform.position;
     }
 
 

@@ -12,10 +12,9 @@ public class UI_Startscreen : MonoBehaviour
     public GameObject CharacterList;
    
 
-    public void StartGame()
+    public static void StartGame()
     {
         // erstellt einen neuen Spielstand
-        DataPersistenceManager.instance.NewGame();
         SceneManager.LoadSceneAsync("PlayScene");
         //SceneManager.LoadScene(loadLevel, LoadSceneMode.Single);
         Time.timeScale = 1f;
@@ -23,7 +22,7 @@ public class UI_Startscreen : MonoBehaviour
     public void ContinueGame()
     {
         //Läd letzten Spielstand
-        SceneManager.LoadSceneAsync("PlayScene");
+        SceneManager.LoadSceneAsync("PlayScene");  
         //SceneManager.LoadScene(loadLevel, LoadSceneMode.Single);
         Time.timeScale = 1f;
     }

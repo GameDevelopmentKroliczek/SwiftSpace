@@ -27,21 +27,19 @@ public class UI_Endscreen : MonoBehaviour
 
     public void ReloadLevel()
     {
-        DataPersistenceManager.instance.ResetGame();
+        
         SceneManager.LoadScene(retryLevel, LoadSceneMode.Single);
         Time.timeScale = 1f;
     }
 
     public void QuitGame()
     {
-        DataPersistenceManager.instance.ResetGame();
         Application.Quit();
     }
 
     public void MainMenu()
     {
-        DataPersistenceManager.instance.ResetGame();
-        SceneManager.LoadScene(MenuLevel, LoadSceneMode.Single);
         
+        SceneManager.LoadScene(MenuLevel, LoadSceneMode.Single);
     }
 }
