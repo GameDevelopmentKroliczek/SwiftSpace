@@ -3526,49 +3526,49 @@ MonoBehaviour:
   sounds:
   - name: Music
     Clip: {fileID: 8300000, guid: 4e9a829afb3df4444aac4baff207dce4, type: 3}
-    volume: 0.2
+    volume: 0.5
     pitch: 1
     Loop: 1
     source: {fileID: 0}
   - name: PlayerShot
     Clip: {fileID: 8300000, guid: e766aaae5b9267d489803cab59a4e1d9, type: 3}
-    volume: 0.1
+    volume: 0.3
     pitch: 0.7
     Loop: 0
     source: {fileID: 0}
   - name: PlayerDoubleShot
     Clip: {fileID: 8300000, guid: 3c29a6ab91c4b754885b916ead560ace, type: 3}
-    volume: 0.1
+    volume: 0.3
     pitch: 1
     Loop: 0
     source: {fileID: 0}
   - name: Shield
     Clip: {fileID: 8300000, guid: 83c3352cf0258db43955ceb5a1077638, type: 3}
-    volume: 0.3
+    volume: 0.5
     pitch: 1
     Loop: 0
     source: {fileID: 0}
   - name: EnemyShot
     Clip: {fileID: 8300000, guid: ae11ef7087b3ed64ab6803a09c7d9f60, type: 3}
-    volume: 0.1
+    volume: 0.3
     pitch: 1
     Loop: 0
     source: {fileID: 0}
   - name: HitSound
     Clip: {fileID: 8300000, guid: f20b1bcf97089084d8ffd34a6a035e50, type: 3}
-    volume: 0.1
+    volume: 0.3
     pitch: 1
     Loop: 0
     source: {fileID: 0}
   - name: GameOver
     Clip: {fileID: 8300000, guid: 07e376cdaa9dbc346a462d7fb5a2d07e, type: 3}
-    volume: 0.3
+    volume: 0.5
     pitch: 1
     Loop: 0
     source: {fileID: 0}
   - name: Heal
     Clip: {fileID: 8300000, guid: 83c3352cf0258db43955ceb5a1077638, type: 3}
-    volume: 0.3
+    volume: 0.5
     pitch: 1
     Loop: 0
     source: {fileID: 0}
