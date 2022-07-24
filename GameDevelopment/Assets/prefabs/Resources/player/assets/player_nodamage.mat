@@ -73,12 +73,12 @@ Material:
     - _FresnelPower: 0.75
     - _FresnelShadowDropoff: 0.1
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0.8
     - _GlossyReflections: 1
     - _HighIntensity: 1.5
     - _LightScalar: 1
     - _LowIntensity: 1
-    - _Metallic: 0.8
+    - _Metallic: 0.2
     - _Mode: 0
     - _OcclusionStrength: 1
     - _OutlineSize: 10
