@@ -23,12 +23,13 @@ public class EnemyWeapon : MonoBehaviour
         {
             //aktiviert die Funktion zum spawnen des Schusses alle "AttackSpeed" Sekunden
             yield return new WaitForSeconds(AttackSpeed);
-            PlayerAttack();
+            EnemyAttack();
+            FindObjectOfType<AudioManager>().PlaySound("EnemyShot");
         }
     }
 
 
-    public void PlayerAttack()
+    public void EnemyAttack()
     {
         //Spawnt einen Schuss an der Position des Spielers
         GameObject bullet = (GameObject)Instantiate(BulletRef);

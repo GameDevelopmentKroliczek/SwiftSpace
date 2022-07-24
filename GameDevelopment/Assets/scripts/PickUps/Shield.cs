@@ -11,7 +11,7 @@ public class Shield : MonoBehaviour
     {
         StartCoroutine(ShieldTime());
         ShieldOverlay.gameObject.SetActive(true);
-        
+        FindObjectOfType<AudioManager>().PlaySound("Shield");
     }
 
     //Schild wird zerstört wenn er getroffen wird, Spieler bekommt keinen Schaden
@@ -35,6 +35,7 @@ public class Shield : MonoBehaviour
         {
             yield return new WaitForSeconds(ShieldTimer);
             DestroyShield();
+            
         }
     }
 

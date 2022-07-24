@@ -72,6 +72,7 @@ public class PlayerMouseController : MonoBehaviour
 
         weapon.gameObject.SetActive(true);
         weapon_DoubleShot.gameObject.SetActive(false);
+        
 
     }
 
@@ -155,12 +156,14 @@ public class PlayerMouseController : MonoBehaviour
             CanTakeDamage = false;
             StartCoroutine(DamageCooldown());
             CameraShaker.Instance.ShakeOnce(2f, 5f, 0.1f, 1f);
+            FindObjectOfType<AudioManager>().PlaySound("HitSound");
 
             if (CurrentHealth <= 0)
             {
                 isPlaying = false;
                 Time.timeScale = 0f;
                 TriggerEndscreen();
+                FindObjectOfType<AudioManager>().PlaySound("GameOver");
             }
         }
     }
@@ -178,7 +181,7 @@ public class PlayerMouseController : MonoBehaviour
     //Spieler bekommt ein Leben zurück
     public void Heal()
     {
-
+        FindObjectOfType<AudioManager>().PlaySound("Heal");
         CurrentHealth += 1;
         playerhealth.SetHealth(CurrentHealth);
 

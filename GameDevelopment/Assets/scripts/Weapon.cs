@@ -6,7 +6,7 @@ public class Weapon : MonoBehaviour
 {
     public GameObject BulletRef;
     public PlayerMouseController player;
-
+ 
     public Transform firePoint;
     private Vector2 screenBounds;
 
@@ -31,7 +31,7 @@ public class Weapon : MonoBehaviour
             {
                
                     PlayerAttackSingle();
-                
+                    FindObjectOfType<AudioManager>().PlaySound("PlayerShot");
 
             }
         }

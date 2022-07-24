@@ -6,6 +6,7 @@ public class Weapon_DoubleShot : MonoBehaviour
 {
     public GameObject DoubleShotRef;
     public PlayerMouseController player;
+    
 
     public Transform firePoint;
     private Vector2 screenBounds;
@@ -34,6 +35,7 @@ public class Weapon_DoubleShot : MonoBehaviour
                 if (player.DoubleShot == true)
                 {
                     PlayerAttackDouble();
+                   FindObjectOfType<AudioManager>().PlaySound("PlayerDoubleShot");
                 }
             }
 
