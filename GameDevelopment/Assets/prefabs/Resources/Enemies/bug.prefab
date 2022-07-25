@@ -9624,6 +9624,37 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &5396203813686347866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6695091707280296967}
+  m_Layer: 0
+  m_Name: firePoint_Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6695091707280296967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5396203813686347866}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1.7}
+  m_LocalScale: {x: 1.6666669, y: 1.6666662, z: 1.6666669}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8963087236992904736}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: -180, y: 0, z: 180}
 --- !u!1 &5709504979229921670
 GameObject:
   m_ObjectHideFlags: 0
@@ -19259,6 +19290,11 @@ GameObject:
   - component: {fileID: 8963087236992904736}
   - component: {fileID: 5461902968679014789}
   - component: {fileID: 7793589682655417679}
+  - component: {fileID: 9218843662378825422}
+  - component: {fileID: 6479473508856895474}
+  - component: {fileID: 1899658724933738760}
+  - component: {fileID: 2521107807204344347}
+  - component: {fileID: 381807773080008805}
   m_Layer: 0
   m_Name: bug
   m_TagString: Untagged
@@ -19275,13 +19311,14 @@ Transform:
   m_GameObject: {fileID: 8586280872338846874}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: 2, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4757975921950248929}
   - {fileID: 1794683913119020498}
   - {fileID: 1516285277156960125}
   - {fileID: 8868121022513527225}
+  - {fileID: 6695091707280296967}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
@@ -19335,3 +19372,80 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &9218843662378825422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8586280872338846874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e68eaf24136df348975b75302fc0a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 6479473508856895474}
+  AnimationSpawner: {fileID: 2521107807204344347}
+  respawnTime: 1
+  MoveSpeed: 0.1
+  EnemyStartY: 10
+  Health: 8
+  CanBeAttacked: 0
+--- !u!54 &6479473508856895474
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8586280872338846874}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1899658724933738760
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8586280872338846874}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2365468341238731473, guid: 453a0f3fb9eb81448a24ddb9397a3dd5, type: 3}
+--- !u!114 &2521107807204344347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8586280872338846874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1240c169f0278d243badaa639fb2dee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathAnimationList: []
+--- !u!114 &381807773080008805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8586280872338846874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db1906378bbeb22438b70b3320868a17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletRef: {fileID: 6452500193516495524, guid: 817b60333e9f8884aab8795b9fe169e8, type: 3}
+  AttackSpeed: 1
+  firePoint: {fileID: 6695091707280296967}

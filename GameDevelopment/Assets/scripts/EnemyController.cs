@@ -25,9 +25,9 @@ public class EnemyController : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         StartCoroutine(EnemyMover());
         CanBeAttacked = false;
-        RotationAngleLeft = new Vector3(0, 220, 0);
-        RotationAngleRight = new Vector3(0, 140, 0);
-        StopAngle = new Vector3(0, 180, 0);
+        RotationAngleLeft = new Vector3(-90, 50, 0);
+        RotationAngleRight = new Vector3(-90, -40, 0);
+        StopAngle = new Vector3(-90, 0, 0);
 
 
     }

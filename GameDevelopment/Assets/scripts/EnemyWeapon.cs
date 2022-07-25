@@ -5,13 +5,13 @@ using UnityEngine;
 public class EnemyWeapon : MonoBehaviour
 {
     public GameObject BulletRef;
-    public float AttackSpeed;
+    public float AttackSpeed = 1f;
     public Transform firePoint;
     private Vector2 screenBounds;
 
     public void Start()
     {
-        AttackSpeed = 1f;
+        
         StartCoroutine(Shooting());
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
 

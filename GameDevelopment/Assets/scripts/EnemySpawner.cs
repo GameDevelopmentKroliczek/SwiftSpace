@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
         {
 
             int n = Random.Range(0, EnemyList.Count);
-            Instantiate(EnemyList[n], new Vector3(Random.Range(-screenBounds.x, screenBounds.x), screenBounds.y * 1.5f, 0f), Quaternion.Euler(0f, 180f, 0f));
+            Instantiate(EnemyList[n], new Vector3(Random.Range(-screenBounds.x, screenBounds.x), screenBounds.y * 1.5f, 0f), Quaternion.Euler(-90f, 0f, 0f));
            
         }
 
