@@ -91,7 +91,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Vector Smart Object
+  - name: Layer 8
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -102,7 +102,7 @@ ScriptedImporter:
       y: 4
       width: 797
       height: 1417
-    spriteID: a50fdf1239ec30c4d8606f37baa66fd8
+    spriteID: 355ecf08fe9e2de4c939f2fa6ebdd7bb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -112,6 +112,48 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 4}
+  - name: Layer 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1429
+      width: 797
+      height: 1417
+    spriteID: 9979cf61c1de6fe40b1b1bde52891080
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1429}
+  - name: Layer 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 809
+      y: 4
+      width: 797
+      height: 1417
+    spriteID: 5f27a493bc0645e4291ff90528ada3da
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 809, y: 4}
   characterData:
     bones: []
     parts: []
@@ -241,7 +283,7 @@ ScriptedImporter:
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
     isImported: 0
-    isVisible: 1
+    isVisible: 0
   - name: Vector Smart Object
     spriteName: Vector Smart Object
     isGroup: 0
@@ -250,7 +292,7 @@ ScriptedImporter:
     layerID: 42
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
-    isImported: 1
+    isImported: 0
     isVisible: 1
   - name: Group 2
     spriteName: 
@@ -261,7 +303,7 @@ ScriptedImporter:
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
     isImported: 0
-    isVisible: 0
+    isVisible: 1
   - name: Vector Smart Object
     spriteName: Vector Smart Object
     isGroup: 0
@@ -271,6 +313,16 @@ ScriptedImporter:
     mosaicPosition: {x: 4, y: 1429}
     flatten: 0
     isImported: 0
+    isVisible: 0
+  - name: Layer 8
+    spriteName: Layer 8
+    isGroup: 0
+    parentIndex: 11
+    spriteID: 355ecf08fe9e2de4c939f2fa6ebdd7bb
+    layerID: 55
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
     isVisible: 1
   - name: Layer 5
     spriteName: Layer 5
@@ -278,9 +330,9 @@ ScriptedImporter:
     parentIndex: 11
     spriteID: 9979cf61c1de6fe40b1b1bde52891080
     layerID: 18
-    mosaicPosition: {x: 4, y: 4}
+    mosaicPosition: {x: 4, y: 1429}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: Layer 3
     spriteName: Layer 3
@@ -290,7 +342,7 @@ ScriptedImporter:
     layerID: 14
     mosaicPosition: {x: 809, y: 4}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   sharedRigPSDLayers: []
   pSDLayerImportSetting: []
