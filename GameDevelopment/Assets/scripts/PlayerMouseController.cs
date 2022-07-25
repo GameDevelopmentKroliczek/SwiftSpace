@@ -12,6 +12,9 @@ public class PlayerMouseController : MonoBehaviour
     public GameObject weapon_DoubleShot;
     public GameObject Healthbar;
     public GameObject CriticalHealthOverlay;
+    public GameObject PlayerModels;
+    public GameObject smokeLight;
+    public GameObject smokeStrong;
 
     Rigidbody rb;
     asteroidController asteroid;
@@ -24,8 +27,7 @@ public class PlayerMouseController : MonoBehaviour
  
 
     //PlayerModels
-    public GameObject PlayerModels;
-    public GameObject smoke;
+   
 
     Vector3 RotationAngleLeft;
     Vector3 RotationAngleRight;
@@ -56,9 +58,9 @@ public class PlayerMouseController : MonoBehaviour
 
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
 
-        RotationAngleLeft = new Vector3(0, 220, 180);
-        RotationAngleRight = new Vector3(0, 140, 180);
-        StopAngle = new Vector3(0, 180, 180);
+        RotationAngleLeft = new Vector3( 90, 210, 0);
+        RotationAngleRight = new Vector3(90, 150, 0);
+        StopAngle = new Vector3(90, 180, 0);
 
         CurrentHealth = MaxHealth;
         playerhealth.SetMaxHealth(MaxHealth);
@@ -116,14 +118,17 @@ public class PlayerMouseController : MonoBehaviour
         {
             Healthbar.GetComponent<Animator>().enabled = false;
             CriticalHealthOverlay.gameObject.SetActive(false);
-            smoke.gameObject.SetActive(false);
+            smokeLight.gameObject.SetActive(false);
+            smokeStrong.gameObject.SetActive(false);
+
         }
 
         if (CurrentHealth == MaxHealth -1)
         {
             Healthbar.GetComponent<Animator>().enabled = false;
             CriticalHealthOverlay.gameObject.SetActive(false);
-            smoke.gameObject.SetActive(false);
+            smokeLight.gameObject.SetActive(true);
+            smokeStrong.gameObject.SetActive(false);
         }
 
         if (CurrentHealth == MaxHealth - 2)
@@ -134,8 +139,9 @@ public class PlayerMouseController : MonoBehaviour
                 CriticalHealthOverlay.gameObject.SetActive(false);
             }
             CriticalHealthOverlay.gameObject.SetActive(true);
-            smoke.gameObject.SetActive(true);
-            
+            smokeLight.gameObject.SetActive(false);
+            smokeStrong.gameObject.SetActive(true);
+
         }
 
 
