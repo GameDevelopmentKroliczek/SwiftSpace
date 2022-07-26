@@ -68,7 +68,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BlendOp: 0
-    - _BumpScale: 2
+    - _BumpScale: 4
     - _CameraFadingEnabled: 0
     - _CameraFarFadeDistance: 2
     - _CameraNearFadeDistance: 1
@@ -111,7 +111,7 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 0, g: 1, b: 1, a: 0.09803922}
+    - _Color: {r: 0, g: 1, b: 1, a: 0.29411766}
     - _EmissionColor: {r: 0, g: 0.23529412, b: 0.23529412, a: 1}
     - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}
     - _HighColor: {r: 1, g: 1, b: 1, a: 1}
