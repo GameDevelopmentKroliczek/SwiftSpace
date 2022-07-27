@@ -867,13 +867,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: PlayerShot
     Clip: {fileID: 8300000, guid: e766aaae5b9267d489803cab59a4e1d9, type: 3}
-    volume: 0.15
+    volume: 0
     pitch: 0.7
     Loop: 0
     source: {fileID: 0}
   - name: PlayerDoubleShot
     Clip: {fileID: 8300000, guid: 3c29a6ab91c4b754885b916ead560ace, type: 3}
-    volume: 0.15
+    volume: 0
     pitch: 1
     Loop: 0
     source: {fileID: 0}
@@ -2565,6 +2565,10 @@ PrefabInstance:
     - target: {fileID: 3590038237989587898, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432059062490713595, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: ShieldTimer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4432059062490713595, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
       propertyPath: ShieldOverlay

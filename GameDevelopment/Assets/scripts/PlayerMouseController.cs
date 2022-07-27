@@ -66,7 +66,7 @@ public class PlayerMouseController : MonoBehaviour
         playerhealth.SetMaxHealth(MaxHealth);
 
         //Single Shot mit der Angriffsgeschwindigkeit Attackspeed/Sekunde
-        Attackspeed = 0.5f;
+        Attackspeed = 0.2f;
         DoubleShot = false;
         SingleShot = true;
         PlayerCanShoot = true; ;
@@ -163,6 +163,7 @@ public class PlayerMouseController : MonoBehaviour
             StartCoroutine(DamageCooldown());
             CameraShaker.Instance.ShakeOnce(2f, 5f, 0.1f, 1f);
             FindObjectOfType<AudioManager>().PlaySound("HitSound");
+            Attackspeed = 0.5f;
 
             if (CurrentHealth <= 0)
             {
