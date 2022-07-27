@@ -10,18 +10,13 @@ public class UI_Startscreen : MonoBehaviour
     public GameObject Playermodels;
     public GameObject Startmenu;
     public GameObject CharacterList;
-   
+
+
 
     public static void StartGame()
     {
+        
         // erstellt einen neuen Spielstand
-        SceneManager.LoadSceneAsync("PlayScene");
-        //SceneManager.LoadScene(loadLevel, LoadSceneMode.Single);
-        Time.timeScale = 1f;
-    }
-    public void ContinueGame()
-    {
-        //Läd letzten Spielstand
         SceneManager.LoadSceneAsync("PlayScene");  
         //SceneManager.LoadScene(loadLevel, LoadSceneMode.Single);
         Time.timeScale = 1f;
@@ -37,6 +32,20 @@ public class UI_Startscreen : MonoBehaviour
         Playermodels.gameObject.SetActive(true);
         Startmenu.gameObject.SetActive(false);
         CharacterList.SetActive(true);
+    }
+
+    public void deactivateMusic()
+    {
+        if (FindObjectOfType<AudioManager>().ActivateMusic == true)
+        {
+            FindObjectOfType<AudioManager>().ActivateMusic = false;
+            FindObjectOfType<AudioManager>().NewScene();
+        }
+        else
+        {
+            FindObjectOfType<AudioManager>().ActivateMusic = true;
+            FindObjectOfType<AudioManager>().NewScene();
+        }
     }
 
 }

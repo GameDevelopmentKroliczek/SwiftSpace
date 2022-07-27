@@ -1,10 +1,11 @@
 using UnityEngine.Audio;
 using System;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-
+    public bool ActivateMusic;
     public Sound[] sounds;
     public static AudioManager instance;
 
@@ -30,7 +31,34 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.Loop;
         }
-        PlaySound("Music");
+
+        ActivateMusic = true;
+        
+    }
+
+    public void NewScene()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+
+        if (ActivateMusic == true)
+        {
+            if (scene.name == "PlayScene")
+            {
+                PlaySound("Music");
+                StopSound("MenuSound");
+            }
+
+            if (scene.name == "StartMenu")
+            {
+                PlaySound("MenuSound");
+                StopSound("Music");
+            }
+        }
+        else
+        {
+            StopSound("MenuSound");
+            StopSound("Music");
+        }
     }
 
     public void PlaySound(string name)
@@ -44,5 +72,19 @@ public class AudioManager : MonoBehaviour
         }
 
         s.source.Play();
+    }
+
+
+    public void StopSound(string name)
+    {
+
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            return;
+            Debug.LogWarning("Sound:" + name + "not found");
+        }
+
+        s.source.Stop();
     }
 }

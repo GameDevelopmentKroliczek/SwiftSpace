@@ -17,7 +17,6 @@ public class UI_Endscreen : MonoBehaviour
 
     public void ShowEndScreen()
     {
-        
         gameObject.SetActive(true);
         UI_Overlay.gameObject.SetActive(false); 
         EndScore.text = "Score: " + scorecounter.Score.ToString("0");
@@ -27,8 +26,8 @@ public class UI_Endscreen : MonoBehaviour
 
     public void ReloadLevel()
     {
-        
-        SceneManager.LoadScene(retryLevel, LoadSceneMode.Single);
+
+        SceneManager.LoadSceneAsync("PlayScene");
         Time.timeScale = 1f;
     }
 
@@ -39,7 +38,6 @@ public class UI_Endscreen : MonoBehaviour
 
     public void MainMenu()
     {
-        
-        SceneManager.LoadScene(MenuLevel, LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("StartMenu");
     }
 }

@@ -30,6 +30,7 @@ public class UI_PauseScreen : MonoBehaviour
         // erstellt einen neuen Spielstand 
 
         SceneManager.LoadSceneAsync("PlayScene");
+       
         Time.timeScale = 1f;
         player.isPlaying = true;
     }
@@ -50,6 +51,5 @@ public class UI_PauseScreen : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadSceneAsync("StartMenu");
-
     }
 }

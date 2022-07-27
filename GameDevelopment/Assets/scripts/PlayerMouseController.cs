@@ -50,7 +50,8 @@ public class PlayerMouseController : MonoBehaviour
     public bool ActivateLaser = false;
 
     public void Start()
-    {  
+    {
+        
         rb = GetComponent<Rigidbody>();
         //UI_EndScreen endScreen = gameObject.GetComponent<UI_EndScreen>();
         isPlaying = true;
@@ -74,8 +75,8 @@ public class PlayerMouseController : MonoBehaviour
 
         weapon.gameObject.SetActive(true);
         weapon_DoubleShot.gameObject.SetActive(false);
-        
 
+        
     }
 
 

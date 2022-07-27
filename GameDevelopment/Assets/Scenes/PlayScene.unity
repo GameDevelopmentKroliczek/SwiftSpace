@@ -841,7 +841,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -858,6 +858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b4b169ac52cbe43a205a50b11b1f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActivateMusic: 1
   sounds:
   - name: Music
     Clip: {fileID: 8300000, guid: 4e9a829afb3df4444aac4baff207dce4, type: 3}
@@ -867,13 +868,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: PlayerShot
     Clip: {fileID: 8300000, guid: e766aaae5b9267d489803cab59a4e1d9, type: 3}
-    volume: 0
+    volume: 0.15
     pitch: 0.7
     Loop: 0
     source: {fileID: 0}
   - name: PlayerDoubleShot
     Clip: {fileID: 8300000, guid: 3c29a6ab91c4b754885b916ead560ace, type: 3}
-    volume: 0
+    volume: 0.15
     pitch: 1
     Loop: 0
     source: {fileID: 0}
@@ -906,6 +907,12 @@ MonoBehaviour:
     volume: 0.3
     pitch: 1
     Loop: 0
+    source: {fileID: 0}
+  - name: MenuSound
+    Clip: {fileID: 8300000, guid: b77444c7e12d8e54ca14c3c82f415d96, type: 3}
+    volume: 0.3
+    pitch: 1
+    Loop: 1
     source: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
@@ -1604,6 +1611,7 @@ GameObject:
   - component: {fileID: 1433414693}
   - component: {fileID: 1433414692}
   - component: {fileID: 1433414691}
+  - component: {fileID: 1433414694}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1660,6 +1668,18 @@ Transform:
   m_Father: {fileID: 130358057}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1433414694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433414690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86626ac6d349ae14ca2963eb8a461c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1436691003
 GameObject:
   m_ObjectHideFlags: 0
