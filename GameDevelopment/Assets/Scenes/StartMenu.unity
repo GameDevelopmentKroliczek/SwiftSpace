@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3769,25 +3769,25 @@ MonoBehaviour:
   sounds:
   - name: Music
     Clip: {fileID: 8300000, guid: 4e9a829afb3df4444aac4baff207dce4, type: 3}
-    volume: 0
+    volume: 0.3
     pitch: 1
     Loop: 1
     source: {fileID: 0}
   - name: PlayerShot
     Clip: {fileID: 8300000, guid: e766aaae5b9267d489803cab59a4e1d9, type: 3}
-    volume: 0
+    volume: 0.15
     pitch: 0.7
     Loop: 0
     source: {fileID: 0}
   - name: PlayerDoubleShot
     Clip: {fileID: 8300000, guid: 3c29a6ab91c4b754885b916ead560ace, type: 3}
-    volume: 0.3
+    volume: 0.15
     pitch: 1
     Loop: 0
     source: {fileID: 0}
   - name: Shield
     Clip: {fileID: 8300000, guid: 83c3352cf0258db43955ceb5a1077638, type: 3}
-    volume: 0.5
+    volume: 0.3
     pitch: 1
     Loop: 0
     source: {fileID: 0}
