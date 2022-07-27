@@ -66,7 +66,7 @@ public class PlayerMouseController : MonoBehaviour
         playerhealth.SetMaxHealth(MaxHealth);
 
         //Single Shot mit der Angriffsgeschwindigkeit Attackspeed/Sekunde
-        Attackspeed = 0.2f;
+        Attackspeed = 0.5f;
         DoubleShot = false;
         SingleShot = true;
         PlayerCanShoot = true; ;
