@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shield : MonoBehaviour
 {
     public GameObject ShieldOverlay;
-    public float ShieldTimer = 15f;
+    public float ShieldTimer = 10f;
 
     public void OnEnable()
     {

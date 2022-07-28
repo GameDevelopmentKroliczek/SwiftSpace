@@ -2322,6 +2322,22 @@ PrefabInstance:
       propertyPath: ModelList
       value: 
       objectReference: {fileID: 740660662}
+    - target: {fileID: 354630257, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: m_Pitch
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 354630257, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4df860ec29bba3f4e98e18c00559a3e9, type: 3}
+    - target: {fileID: 624028281, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 768417052, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1423627177176821526, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2371,6 +2387,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4432059062490713595, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: ShieldTimer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432059062490713595, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
       propertyPath: ShieldOverlay
       value: 
       objectReference: {fileID: 6384966687387142900}
@@ -2392,7 +2412,11 @@ PrefabInstance:
       objectReference: {fileID: 1289173338}
     - target: {fileID: 8786028785681729484, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
       propertyPath: m_Volume
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 8786028785681729484, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ffc4c8354baf867498f85cc1489a2774, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
