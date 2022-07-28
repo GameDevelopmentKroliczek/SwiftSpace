@@ -6,7 +6,7 @@ public class PickUpAS : MonoBehaviour
 {
     public PlayerMouseController player;
     
-    public float AttackSpeedMulitplier = 0.85f;
+    public float AttackSpeedMulitplier = 0.8f;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,7 +17,7 @@ public class PickUpAS : MonoBehaviour
             FindObjectOfType<AudioManager>().PlaySound("CollectAS");
             //Attackspeed wird jedes Mal 20% schneller
             player.Attackspeed *= 0.8f;
-            //Attackspeed ist bei 0.1 gecapt
+            //Attackspeed ist bei 0.2 gecapt
             if(player.Attackspeed < 0.2f)
             {
                 player.Attackspeed = 0.2f;
