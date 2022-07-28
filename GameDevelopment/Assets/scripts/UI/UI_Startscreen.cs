@@ -10,7 +10,7 @@ public class UI_Startscreen : MonoBehaviour
     public GameObject Playermodels;
     public GameObject Startmenu;
     public GameObject CharacterList;
-    public GameObject X;
+
 
 
     public static void StartGame()
@@ -38,13 +38,13 @@ public class UI_Startscreen : MonoBehaviour
     {
         if (FindObjectOfType<AudioManager>().ActivateMusic == true)
         {
-            X.gameObject.SetActive(true);
+
             FindObjectOfType<AudioManager>().ActivateMusic = false;
             FindObjectOfType<AudioManager>().NewScene();
         }
         else
         {
-            X.gameObject.SetActive(false);
+           
             FindObjectOfType<AudioManager>().ActivateMusic = true;
             FindObjectOfType<AudioManager>().NewScene();
         }
