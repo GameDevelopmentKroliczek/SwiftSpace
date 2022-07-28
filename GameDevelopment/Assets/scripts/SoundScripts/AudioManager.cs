@@ -36,12 +36,15 @@ public class AudioManager : MonoBehaviour
         
     }
 
+ 
+
     public void NewScene()
     {
         Scene scene = SceneManager.GetActiveScene();
 
         if (ActivateMusic == true)
         {
+            AudioListener.volume = 1f;
             if (scene.name == "PlayScene")
             {
                 PlaySound("Music");
@@ -56,8 +59,7 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            StopSound("MenuSound");
-            StopSound("Music");
+            AudioListener.volume = 0f;
         }
     }
 
