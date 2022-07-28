@@ -14,6 +14,7 @@ public class PickUpAS : MonoBehaviour
 
         if (player != null)
         {
+            FindObjectOfType<AudioManager>().PlaySound("CollectAS");
             //Attackspeed wird jedes Mal 20% schneller
             player.Attackspeed *= 0.8f;
             //Attackspeed ist bei 0.1 gecapt

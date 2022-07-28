@@ -18,7 +18,7 @@ public class SpawnDeathAnimation : MonoBehaviour
         //Spawnt 1 zufälliges Pickup aus der Liste PickupList 
         for (int i = 0; i < 1; i++)
         {
-
+            FindObjectOfType<AudioManager>().PlaySound("Explosion");
             int n = Random.Range(0, DeathAnimationList.Count);
             Instantiate(DeathAnimationList[n], new Vector3 (PositionToSpawnAt.x, PositionToSpawnAt.y, PositionToSpawnAt.z -0.5f), Quaternion.identity);
 
