@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -31,8 +32,8 @@ public class Weapon : MonoBehaviour
             {
                
                     PlayerAttackSingle();
-                    FindObjectOfType<AudioManager>().PlaySound("PlayerShot");
-
+                    FindObjectOfType<AudioManager>().PlayOneShotSound("PlayerShot");
+                
             }
         }
     }

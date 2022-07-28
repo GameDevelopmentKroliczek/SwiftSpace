@@ -2762,6 +2762,124 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7574fd779d0afb948849a23c6f580e39, type: 3}
+--- !u!1 &1566063876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1566063878}
+  - component: {fileID: 1566063877}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1566063877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566063876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b4b169ac52cbe43a205a50b11b1f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActivateMusic: 1
+  sounds:
+  - name: Music
+    Clip: {fileID: 8300000, guid: 4e9a829afb3df4444aac4baff207dce4, type: 3}
+    volume: 0.3
+    pitch: 1
+    Loop: 1
+    source: {fileID: 0}
+  - name: PlayerShot
+    Clip: {fileID: 8300000, guid: e766aaae5b9267d489803cab59a4e1d9, type: 3}
+    volume: 0.15
+    pitch: 0.7
+    Loop: 0
+    source: {fileID: 0}
+  - name: PlayerDoubleShot
+    Clip: {fileID: 8300000, guid: 3c29a6ab91c4b754885b916ead560ace, type: 3}
+    volume: 0.15
+    pitch: 1
+    Loop: 0
+    source: {fileID: 0}
+  - name: Shield
+    Clip: {fileID: 8300000, guid: 83c3352cf0258db43955ceb5a1077638, type: 3}
+    volume: 0.3
+    pitch: 1
+    Loop: 0
+    source: {fileID: 0}
+  - name: EnemyShot
+    Clip: {fileID: 8300000, guid: ae11ef7087b3ed64ab6803a09c7d9f60, type: 3}
+    volume: 0.2
+    pitch: 1
+    Loop: 0
+    source: {fileID: 0}
+  - name: HitSound
+    Clip: {fileID: 8300000, guid: f20b1bcf97089084d8ffd34a6a035e50, type: 3}
+    volume: 0.1
+    pitch: 1
+    Loop: 0
+    source: {fileID: 0}
+  - name: GameOver
+    Clip: {fileID: 8300000, guid: 07e376cdaa9dbc346a462d7fb5a2d07e, type: 3}
+    volume: 0.3
+    pitch: 1
+    Loop: 0
+    source: {fileID: 0}
+  - name: Heal
+    Clip: {fileID: 8300000, guid: 83c3352cf0258db43955ceb5a1077638, type: 3}
+    volume: 0.3
+    pitch: 1
+    Loop: 0
+    source: {fileID: 0}
+  - name: MenuSound
+    Clip: {fileID: 8300000, guid: b77444c7e12d8e54ca14c3c82f415d96, type: 3}
+    volume: 0.3
+    pitch: 1
+    Loop: 1
+    source: {fileID: 0}
+  - name: Explosion
+    Clip: {fileID: 8300000, guid: 3c12896e134197b4d87d43dc017cc447, type: 3}
+    volume: 1
+    pitch: 1
+    Loop: 0
+    source: {fileID: 0}
+  - name: CollectAS
+    Clip: {fileID: 8300000, guid: 33a5ebe03c29f4342a21d75e236656c0, type: 3}
+    volume: 1
+    pitch: 1
+    Loop: 0
+    source: {fileID: 0}
+  - name: ShieldHit
+    Clip: {fileID: 8300000, guid: e8b5a0e0807287841907371ae5793f99, type: 3}
+    volume: 1
+    pitch: 1
+    Loop: 0
+    source: {fileID: 0}
+--- !u!4 &1566063878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566063876}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1566266236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3973,118 +4091,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4623250775850165655, guid: 7bb31496dd7a1004298deff2bb4d0ec9, type: 3}
   m_PrefabInstance: {fileID: 1048038876}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4909897633839100629
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4909897633839100632}
-  - component: {fileID: 4909897633839100633}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4909897633839100632
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4909897633839100629}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4909897633839100633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4909897633839100629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44b4b169ac52cbe43a205a50b11b1f3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ActivateMusic: 1
-  sounds:
-  - name: Music
-    Clip: {fileID: 8300000, guid: 4e9a829afb3df4444aac4baff207dce4, type: 3}
-    volume: 0.3
-    pitch: 1
-    Loop: 1
-    source: {fileID: 0}
-  - name: PlayerShot
-    Clip: {fileID: 8300000, guid: e766aaae5b9267d489803cab59a4e1d9, type: 3}
-    volume: 0.15
-    pitch: 0.7
-    Loop: 0
-    source: {fileID: 0}
-  - name: PlayerDoubleShot
-    Clip: {fileID: 8300000, guid: 3c29a6ab91c4b754885b916ead560ace, type: 3}
-    volume: 0.15
-    pitch: 1
-    Loop: 0
-    source: {fileID: 0}
-  - name: Shield
-    Clip: {fileID: 8300000, guid: 83c3352cf0258db43955ceb5a1077638, type: 3}
-    volume: 0.3
-    pitch: 1
-    Loop: 0
-    source: {fileID: 0}
-  - name: EnemyShot
-    Clip: {fileID: 8300000, guid: ae11ef7087b3ed64ab6803a09c7d9f60, type: 3}
-    volume: 0.2
-    pitch: 1
-    Loop: 0
-    source: {fileID: 0}
-  - name: HitSound
-    Clip: {fileID: 8300000, guid: f20b1bcf97089084d8ffd34a6a035e50, type: 3}
-    volume: 0.1
-    pitch: 1
-    Loop: 0
-    source: {fileID: 0}
-  - name: GameOver
-    Clip: {fileID: 8300000, guid: 07e376cdaa9dbc346a462d7fb5a2d07e, type: 3}
-    volume: 0.3
-    pitch: 1
-    Loop: 0
-    source: {fileID: 0}
-  - name: Heal
-    Clip: {fileID: 8300000, guid: 83c3352cf0258db43955ceb5a1077638, type: 3}
-    volume: 0.3
-    pitch: 1
-    Loop: 0
-    source: {fileID: 0}
-  - name: MenuSound
-    Clip: {fileID: 8300000, guid: b77444c7e12d8e54ca14c3c82f415d96, type: 3}
-    volume: 0.3
-    pitch: 1
-    Loop: 1
-    source: {fileID: 0}
-  - name: Explosion
-    Clip: {fileID: 8300000, guid: 3c12896e134197b4d87d43dc017cc447, type: 3}
-    volume: 1
-    pitch: 1
-    Loop: 0
-    source: {fileID: 0}
-  - name: CollectAS
-    Clip: {fileID: 8300000, guid: 33a5ebe03c29f4342a21d75e236656c0, type: 3}
-    volume: 1
-    pitch: 1
-    Loop: 0
-    source: {fileID: 0}
 --- !u!4 &7445503584885614905 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7445503583391112368, guid: 7574fd779d0afb948849a23c6f580e39, type: 3}

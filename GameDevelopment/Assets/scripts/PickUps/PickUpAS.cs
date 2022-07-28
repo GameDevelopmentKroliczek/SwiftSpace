@@ -6,7 +6,7 @@ public class PickUpAS : MonoBehaviour
 {
     public PlayerMouseController player;
     
-    public float AttackSpeedMulitplier = 0.8f;
+    public float AttackSpeedMulitplier = 0.85f;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,9 +18,9 @@ public class PickUpAS : MonoBehaviour
             //Attackspeed wird jedes Mal 20% schneller
             player.Attackspeed *= 0.8f;
             //Attackspeed ist bei 0.1 gecapt
-            if(player.Attackspeed < 0.1f)
+            if(player.Attackspeed < 0.2f)
             {
-                player.Attackspeed = 0.1f;
+                player.Attackspeed = 0.2f;
             }
             Destroy(this.gameObject);
 

@@ -35,7 +35,7 @@ public class Weapon_DoubleShot : MonoBehaviour
                 if (player.DoubleShot == true)
                 {
                     PlayerAttackDouble();
-                   FindObjectOfType<AudioManager>().PlaySound("PlayerDoubleShot");
+                   FindObjectOfType<AudioManager>().PlayOneShotSound("PlayerDoubleShot");
                 }
             }
 

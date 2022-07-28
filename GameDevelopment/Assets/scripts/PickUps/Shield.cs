@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shield : MonoBehaviour
 {
     public GameObject ShieldOverlay;
-    public float ShieldTimer = 5f;
+    public float ShieldTimer = 15f;
 
     public void OnEnable()
     {
@@ -14,18 +14,25 @@ public class Shield : MonoBehaviour
         FindObjectOfType<AudioManager>().PlaySound("Shield");
     }
 
-    //Schild wird zerstört wenn er getroffen wird, Spieler bekommt keinen Schaden
 
     private void OnTriggerEnter(Collider other)
     {
-        //Spiel wird gestoppt bei Kollision mit Asteroid
+        //Schild wird Zerstört bei Kollision mit Asteroid oder gegnerischem Schuss
         asteroidController asteroid = other.GetComponent<asteroidController>();
         EnemyBullet bullet = other.GetComponent<EnemyBullet>();
-        //collision.gameObject.tag == "Spawnable";
+        ShieldPickUp shieldnew = other.GetComponent<ShieldPickUp>();
+
         if (asteroid != null || bullet != null)
-        { 
+        {
+            FindObjectOfType<AudioManager>().PlaySound("ShieldHit");
             Destroy(other.gameObject);
             DestroyShield();
+        }
+        if(shieldnew != null)
+        {
+            Destroy(other.gameObject);
+            ShieldTimer += 15f;
+            
         }
     }
 
