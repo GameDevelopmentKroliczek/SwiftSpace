@@ -63,6 +63,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 7636211160035427885, guid: f5342f8fd20e16347b9cc7cee1f69dc2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1736245363536908257, guid: 8ee34d0623ff2bb40a62d72335bb140e, type: 3}
+    - target: {fileID: 7636211160035427885, guid: f5342f8fd20e16347b9cc7cee1f69dc2, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636211160035427885, guid: f5342f8fd20e16347b9cc7cee1f69dc2, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636211160035427885, guid: f5342f8fd20e16347b9cc7cee1f69dc2, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636211160035427885, guid: f5342f8fd20e16347b9cc7cee1f69dc2, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8492092663407235017, guid: f5342f8fd20e16347b9cc7cee1f69dc2, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -107,4 +127,4 @@ MonoBehaviour:
   BulletSpeed: -5
   rb: {fileID: 0}
   Damage: 1
-  ShotAnimation: {fileID: 3731287472175138482, guid: a8828e6442763994c89468e0131079dd, type: 3}
+  ShotAnimation: {fileID: 4887293627062149592, guid: 9a4f8e76d7889c74186444da4b9f580e, type: 3}
