@@ -2414,6 +2414,18 @@ PrefabInstance:
       propertyPath: CriticalHealthOverlay
       value: 
       objectReference: {fileID: 1289173338}
+    - target: {fileID: 8322099716747890267, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322099716747890267, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.9005344
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322099716747890267, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.7490196
+      objectReference: {fileID: 0}
     - target: {fileID: 8786028785681729484, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
       propertyPath: m_Volume
       value: 0.3
