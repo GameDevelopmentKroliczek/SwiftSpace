@@ -22,26 +22,35 @@ public class UI_Startscreen : MonoBehaviour
 
     public void Start()
     {
-
-        if(PlayerPrefs.GetInt("SoundIsActive") == null)
-        {
-            PlayerPrefs.SetInt("SoundIsActive", (FindObjectOfType<AudioManager>().AllSoundIsActive ? 1 : 0));
-            FindObjectOfType<AudioManager>().AllSoundIsActive = true;
-            FindObjectOfType<AudioManager>().MusicIsActive = true;
-           
-
-        }
-        if(PlayerPrefs.GetInt("MusicSpriteIsActive") == null)
-        {
-            PlayerPrefs.SetInt("MusicSpriteIsActive", (FindObjectOfType<AudioManager>().MusicIsActive ? 1 : 0));
-            FindObjectOfType<AudioManager>().MusicIsActive = true;
-
-        }
-
         FindObjectOfType<AudioManager>().NewScene();
     }
 
-    
+    public void Update()
+    {
+
+        SoundIsActive = (PlayerPrefs.GetInt("SoundIsActive") != 0);
+
+        if (SoundIsActive)
+        {
+            SoundButton.GetComponent<Image>().sprite = SoundPlayButton;
+        }
+        else
+        {
+            SoundButton.GetComponent<Image>().sprite = SoundPauseButton;
+        }
+
+        MusicSpriteIsActive = (PlayerPrefs.GetInt("MusicSpriteIsActive") != 0);
+
+        if (MusicSpriteIsActive)
+        {
+            MusicButton.GetComponent<Image>().sprite = MusicPlayButton;
+        }
+        else
+        {
+            MusicButton.GetComponent<Image>().sprite = MusicPauseButton;
+        }
+    }
+
 
     public static void StartGame()
     {
@@ -94,16 +103,7 @@ public class UI_Startscreen : MonoBehaviour
 
         }
 
-        MusicSpriteIsActive = (PlayerPrefs.GetInt("MusicSpriteIsActive") != 0);
-
-        if (MusicSpriteIsActive)
-        {
-            MusicButton.GetComponent<Image>().sprite = MusicPlayButton;
-        }
-        else
-        {
-            MusicButton.GetComponent<Image>().sprite = MusicPauseButton;
-        }
+      
     }
 
     public void deactivateSound()
@@ -130,16 +130,7 @@ public class UI_Startscreen : MonoBehaviour
             PlayerPrefs.SetInt("MusicSpriteIsActive", (FindObjectOfType<AudioManager>().MusicIsActive ? 1 : 0));
         }
 
-         SoundIsActive = (PlayerPrefs.GetInt("SoundIsActive") != 0);
-
-        if (SoundIsActive)
-        {
-            SoundButton.GetComponent<Image>().sprite = SoundPlayButton;
-        }
-        else
-        {
-            SoundButton.GetComponent<Image>().sprite = SoundPauseButton;
-        }
+      
     }
 
 
