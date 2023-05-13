@@ -10,7 +10,7 @@ public class SceneAudio : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
 
-        if (FindObjectOfType<AudioManager>().ActivateMusic == true)
+        if (FindObjectOfType<AudioManager>().AllSoundIsActive == true && FindObjectOfType<AudioManager>().MusicIsActive == true)
         {
             if (scene.name == "PlayScene")
             {
@@ -18,16 +18,22 @@ public class SceneAudio : MonoBehaviour
                 FindObjectOfType<AudioManager>().StopSound("MenuSound");
             }
 
-            if (scene.name == "StartMenu")
+            if (scene.name == "StartScene")
             {
                 FindObjectOfType<AudioManager>().PlaySound("MenuSound");
                 FindObjectOfType<AudioManager>().StopSound("Music");
             }
         }
-        else
+        else if (FindObjectOfType<AudioManager>().AllSoundIsActive == true && FindObjectOfType<AudioManager>().MusicIsActive == false)
         {
             FindObjectOfType<AudioManager>().StopSound("MenuSound");
             FindObjectOfType<AudioManager>().StopSound("Music");
+        }
+        else if (FindObjectOfType<AudioManager>().AllSoundIsActive == false)
+        {
+            FindObjectOfType<AudioManager>().StopSound("MenuSound");
+            FindObjectOfType<AudioManager>().StopSound("Music");
+            AudioListener.volume = 0f;
         }
     }
 

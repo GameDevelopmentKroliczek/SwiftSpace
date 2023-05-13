@@ -10,8 +10,38 @@ public class UI_Startscreen : MonoBehaviour
     public GameObject Playermodels;
     public GameObject Startmenu;
     public GameObject CharacterList;
+    public GameObject Credits;
+    public GameObject MusicButton;
+    public GameObject SoundButton;
+    public Sprite MusicPauseButton;
+    public Sprite MusicPlayButton;
+    public Sprite SoundPauseButton;
+    public Sprite SoundPlayButton;
+    public bool MusicSpriteIsActive = true;
+    public bool SoundIsActive = true;
 
+    public void Start()
+    {
 
+        if(PlayerPrefs.GetInt("SoundIsActive") == null)
+        {
+            PlayerPrefs.SetInt("SoundIsActive", (FindObjectOfType<AudioManager>().AllSoundIsActive ? 1 : 0));
+            FindObjectOfType<AudioManager>().AllSoundIsActive = true;
+            FindObjectOfType<AudioManager>().MusicIsActive = true;
+           
+
+        }
+        if(PlayerPrefs.GetInt("MusicSpriteIsActive") == null)
+        {
+            PlayerPrefs.SetInt("MusicSpriteIsActive", (FindObjectOfType<AudioManager>().MusicIsActive ? 1 : 0));
+            FindObjectOfType<AudioManager>().MusicIsActive = true;
+
+        }
+
+        FindObjectOfType<AudioManager>().NewScene();
+    }
+
+    
 
     public static void StartGame()
     {
@@ -20,6 +50,8 @@ public class UI_Startscreen : MonoBehaviour
         SceneManager.LoadSceneAsync("PlayScene");  
         //SceneManager.LoadScene(loadLevel, LoadSceneMode.Single);
         Time.timeScale = 1f;
+        
+        
     }
 
     public void QuitGame()
@@ -34,20 +66,81 @@ public class UI_Startscreen : MonoBehaviour
         CharacterList.SetActive(true);
     }
 
+    public void OpenCredits()
+    {
+        Credits.gameObject.SetActive(true);
+        Startmenu.gameObject.SetActive(false);
+        CharacterList.gameObject.SetActive(false);
+    }
+
     public void deactivateMusic()
     {
-        if (FindObjectOfType<AudioManager>().ActivateMusic == true)
+      
+        if (FindObjectOfType<AudioManager>().MusicIsActive == true)
         {
-
-            FindObjectOfType<AudioManager>().ActivateMusic = false;
+            //MusicButton.GetComponent<Image>().sprite = MusicPauseButton;
+            FindObjectOfType<AudioManager>().MusicIsActive = false;
             FindObjectOfType<AudioManager>().NewScene();
+            PlayerPrefs.SetInt("MusicSpriteIsActive", (FindObjectOfType<AudioManager>().MusicIsActive ? 0 : 0));
+            
+        }
+        else if (FindObjectOfType<AudioManager>().AllSoundIsActive == true && FindObjectOfType<AudioManager>().MusicIsActive == false)
+        {
+            //MusicButton.GetComponent<Image>().sprite = MusicPlayButton;
+            FindObjectOfType<AudioManager>().MusicIsActive = true;
+            FindObjectOfType<AudioManager>().NewScene();
+            PlayerPrefs.SetInt("MusicSpriteIsActive", (FindObjectOfType<AudioManager>().MusicIsActive ? 1 : 0));
+            
+
+        }
+
+        MusicSpriteIsActive = (PlayerPrefs.GetInt("MusicSpriteIsActive") != 0);
+
+        if (MusicSpriteIsActive)
+        {
+            MusicButton.GetComponent<Image>().sprite = MusicPlayButton;
         }
         else
         {
-           
-            FindObjectOfType<AudioManager>().ActivateMusic = true;
-            FindObjectOfType<AudioManager>().NewScene();
+            MusicButton.GetComponent<Image>().sprite = MusicPauseButton;
         }
     }
+
+    public void deactivateSound()
+    {
+       
+        if (FindObjectOfType<AudioManager>().AllSoundIsActive == true)
+        {
+            //MusicButton.GetComponent<Image>().sprite = MusicPauseButton;
+            //SoundButton.GetComponent<Image>().sprite = SoundPauseButton;
+            FindObjectOfType<AudioManager>().AllSoundIsActive = false;
+            FindObjectOfType<AudioManager>().MusicIsActive = false;
+            FindObjectOfType<AudioManager>().NewScene();
+            PlayerPrefs.SetInt("SoundIsActive", (FindObjectOfType<AudioManager>().AllSoundIsActive ? 0 : 0));
+            PlayerPrefs.SetInt("MusicSpriteIsActive", (FindObjectOfType<AudioManager>().MusicIsActive ? 0 : 0));
+        }
+        else 
+        {
+            ///MusicButton.GetComponent<Image>().sprite = MusicPlayButton;
+            //SoundButton.GetComponent<Image>().sprite = SoundPlayButton;
+            FindObjectOfType<AudioManager>().AllSoundIsActive = true;
+            FindObjectOfType<AudioManager>().MusicIsActive = true;
+            FindObjectOfType<AudioManager>().NewScene();
+            PlayerPrefs.SetInt("SoundIsActive", (FindObjectOfType<AudioManager>().AllSoundIsActive ? 1 : 0));
+            PlayerPrefs.SetInt("MusicSpriteIsActive", (FindObjectOfType<AudioManager>().MusicIsActive ? 1 : 0));
+        }
+
+         SoundIsActive = (PlayerPrefs.GetInt("SoundIsActive") != 0);
+
+        if (SoundIsActive)
+        {
+            SoundButton.GetComponent<Image>().sprite = SoundPlayButton;
+        }
+        else
+        {
+            SoundButton.GetComponent<Image>().sprite = SoundPauseButton;
+        }
+    }
+
 
 }

@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public bool ActivateMusic;
+    public bool AllSoundIsActive = true;
+    public bool MusicIsActive = true;
+    public bool ActivateSFX;
     public Sound[] sounds;
     public static AudioManager instance;
 
@@ -32,7 +34,7 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.Loop;
         }
 
-        ActivateMusic = true;
+        AllSoundIsActive = true;
         
     }
 
@@ -42,7 +44,7 @@ public class AudioManager : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
 
-        if (ActivateMusic == true)
+        if (MusicIsActive == true && AllSoundIsActive == true)
         {
             AudioListener.volume = 1f;
             if (scene.name == "PlayScene")
@@ -57,10 +59,22 @@ public class AudioManager : MonoBehaviour
                 StopSound("Music");
             }
         }
-        else
+        else if (MusicIsActive == false && AllSoundIsActive == false)
         {
             AudioListener.volume = 0f;
+            
+            StopSound("Music");
+            StopSound("MenuSound");
+          
         }
+        //Only SFX
+        else if (MusicIsActive == false && AllSoundIsActive == true)
+        {
+            StopSound("MenuSound");
+            StopSound("Music");
+            AudioListener.volume = 1f;
+        }
+  
     }
 
     public void PlaySound(string name)

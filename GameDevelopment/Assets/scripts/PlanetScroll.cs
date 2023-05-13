@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlanetScroll : MonoBehaviour
 {
-    public float speed = 4f;
+    [SerializeField]
+    private float speed = 4f;
     private Vector3 StartPosition;
     
     // Start is called before the first frame update
