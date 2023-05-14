@@ -10,13 +10,6 @@ public class UI_Leaderboard : MonoBehaviour
 
     // Start is called before the first frame update
    
-    private void OnDisable()
-    {  
-        CharacterList.SetActive(true);
-    }
-
-  
-
     public void ReturnButton()
     {
         Leaderboard.SetActive(false);

@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Playermodels : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject characterList;
+    private void OnEnable()
     {
-        
+        characterList.gameObject.SetActive(true);
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-       
+        characterList.gameObject.SetActive(false);
     }
 }
