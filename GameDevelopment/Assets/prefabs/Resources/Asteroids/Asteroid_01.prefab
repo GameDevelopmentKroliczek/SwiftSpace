@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4022880557371439107}
   - component: {fileID: 539482923504711887}
   - component: {fileID: 7642854250720142853}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Asteroid_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,3 +145,7 @@ MonoBehaviour:
   player: {fileID: 0}
   AnimationSpawner: {fileID: 539482923504711887}
   speed: 5
+  Damage: 1
+  MaxHealth: 1
+  Score: {fileID: 0}
+  BonusPoint: {fileID: 6388611023546707941, guid: 9f154224a12009743ab584f9273ccc92, type: 3}

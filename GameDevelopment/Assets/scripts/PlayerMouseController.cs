@@ -234,7 +234,9 @@ public class PlayerMouseController : MonoBehaviour
         Laser.gameObject.SetActive(true);
         Laser.StartCoroutine();
         weapon.gameObject.SetActive(false);
+        
     }
+
     public void DestroyLaser()
     {
         PlayerCanShoot = true;
@@ -242,7 +244,10 @@ public class PlayerMouseController : MonoBehaviour
         weapon.gameObject.SetActive(true);
     }
 
-
+    public void OnKill(GameObject BonusPoint)
+    {
+        Instantiate(BonusPoint, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z - 0.5f), Quaternion.identity);
+    }
     
 }
 

@@ -7,9 +7,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 689880203820514655, guid: 56ba49204eea3b9479046b0f956e3c2c, type: 3}
+      propertyPath: MaxHealth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1494742811714580255, guid: 56ba49204eea3b9479046b0f956e3c2c, type: 3}
       propertyPath: m_Name
-      value: Asteroid_02
+      value: Asteroid_02 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2302944724083848613, guid: 56ba49204eea3b9479046b0f956e3c2c, type: 3}
       propertyPath: m_RootOrder
@@ -29,11 +33,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2302944724083848613, guid: 56ba49204eea3b9479046b0f956e3c2c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2302944724083848613, guid: 56ba49204eea3b9479046b0f956e3c2c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2302944724083848613, guid: 56ba49204eea3b9479046b0f956e3c2c, type: 3}
       propertyPath: m_LocalRotation.y
@@ -41,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2302944724083848613, guid: 56ba49204eea3b9479046b0f956e3c2c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2302944724083848613, guid: 56ba49204eea3b9479046b0f956e3c2c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

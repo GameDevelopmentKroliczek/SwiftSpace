@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5381733961613159256}
   - component: {fileID: 4368308760412774383}
   - component: {fileID: 290380148708174108}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4823,7 +4823,7 @@ GameObject:
   - component: {fileID: 3521849024393259797}
   - component: {fileID: 7906374805938115429}
   - component: {fileID: 6056096298456360691}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LaserGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4910,7 +4910,7 @@ GameObject:
   - component: {fileID: 9093665899116894733}
   - component: {fileID: 5755969991604151272}
   - component: {fileID: -5327918249748670856}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: laser2 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

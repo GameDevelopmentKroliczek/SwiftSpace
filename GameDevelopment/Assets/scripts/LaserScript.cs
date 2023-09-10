@@ -6,26 +6,56 @@ public class LaserScript : MonoBehaviour
 {
     public PlayerMouseController player;
     public float LaserTime = 5f;
+    public Transform Laserorigin;
+    public GameObject LaserhitPoint;
+    LineRenderer LaserLine;
+    public float gunRange = 10f;
+    RaycastHit hit;
+    public LayerMask EnemyLayer;
 
-
-    public void OnTriggerEnter(Collider EnemyHit)
+    public void OnEnable()
     {
-        //Laser zerstört Gegner mit einem hit
-        EnemyController enemy = EnemyHit.GetComponent<EnemyController>();
-
-        if (enemy != null)
-        {
-            if (enemy.CanBeAttacked == true)
-            {
-                enemy.Die();
-            }
-            
-
-        }
-
+        LaserhitPoint.SetActive(true);
+        
+        LaserLine = GetComponent<LineRenderer>();
     }
 
-    
+    private void OnDisable()
+    {
+        LaserhitPoint.SetActive(false);
+    }
+
+
+
+    public void Update()
+    {
+        
+        LaserLine.SetPosition(0, Laserorigin.position);
+        LaserLine.SetPosition(1, LaserhitPoint.transform.position);
+        Ray ray = new Ray(Laserorigin.position, Laserorigin.up);
+        
+        if(Physics.Raycast(ray, out hit, gunRange, EnemyLayer))
+        {
+            
+            if (hit.collider != null)
+            { 
+                LaserhitPoint.transform.position = hit.point;
+               
+            }
+        }
+        else
+        {
+            LaserhitPoint.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + gunRange, player.transform.position.z);
+            
+           
+          
+        }
+    }
+
+
+
+
+
 
     public void StartCoroutine()
     {
@@ -38,14 +68,14 @@ public class LaserScript : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(LaserTime);
+            
             player.DestroyLaser();
         }
     }
+  
 
 
 
-
-   
 
 }
 

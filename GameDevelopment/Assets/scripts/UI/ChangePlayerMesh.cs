@@ -9,7 +9,7 @@ public class ChangePlayerMesh: MonoBehaviour
     private int Modelindex;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         PlayerModels = new GameObject[transform.childCount];
         Modelindex = PlayerPrefs.GetInt("CharacterSelected");

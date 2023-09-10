@@ -46,6 +46,7 @@ public class BulletScript : MonoBehaviour
 
         if(asteroid != null)
         {
+            asteroid.GetHit(Damage);
             Die();
         }
     }

@@ -19,11 +19,14 @@ public class UI_Startscreen : MonoBehaviour
     public Sprite SoundPlayButton;
     public bool MusicSpriteIsActive = true;
     public bool SoundIsActive = true;
+    private Animator anim;
 
     public void Start()
     {
+        Time.timeScale = 1;
         FindObjectOfType<AudioManager>().NewScene();
     }
+   
 
     public void Update()
     {

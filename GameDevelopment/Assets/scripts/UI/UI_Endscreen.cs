@@ -18,8 +18,9 @@ public class UI_Endscreen : MonoBehaviour
     public void ShowEndScreen()
     {
         gameObject.SetActive(true);
-        UI_Overlay.gameObject.SetActive(false); 
-        EndScore.text = "Score: " + scorecounter.Score.ToString("0");
+        UI_Overlay.gameObject.SetActive(false);
+        
+        EndScore.text = "Score: " + scorecounter.FinalScore.ToString();
     }
 
 

@@ -6,7 +6,7 @@ public class EnemySpawner : MonoBehaviour
 { 
     public float respawnTime = 15.0f;
     private Vector2 screenBounds;
-
+    public bool EnemyIsAlive = false;
     public List<GameObject> EnemyList;
 
 
@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         //Alle Objekte in dem Ordner "Resources" -> "Asteroids" werden in die Liste AsteroidList geladen
-        EnemyList = new List<GameObject>(Resources.LoadAll<GameObject>("Enemies"));
+        EnemyList = new List<GameObject>(Resources.LoadAll<GameObject>("EnemiesNew"));
         //Berechnet die Größe des Bildschirmrandes
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         //Startet die Coroutine zum Spawnen der Asteroiden
@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
         {
 
             int n = Random.Range(0, EnemyList.Count);
-            Instantiate(EnemyList[n], new Vector3(Random.Range(-screenBounds.x, screenBounds.x), screenBounds.y * 1.5f, 0f), Quaternion.Euler(-90f, 0f, 0f));
+            Instantiate(EnemyList[n], new Vector3(Random.Range(-screenBounds.x, screenBounds.x), screenBounds.y * 1.5f, 0f), Quaternion.identity);
            
         }
 
@@ -40,8 +40,14 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
+            
             yield return new WaitForSeconds(respawnTime);
-            spawnEnemy();
+            if (!EnemyIsAlive)
+            {
+                spawnEnemy();
+            }
+           
+
         }
     }
 

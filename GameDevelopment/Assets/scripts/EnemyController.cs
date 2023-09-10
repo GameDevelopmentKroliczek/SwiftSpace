@@ -6,17 +6,25 @@ public class EnemyController : MonoBehaviour
 {
     public Rigidbody rb;
     public SpawnDeathAnimation AnimationSpawner;
+    public EnemySpawner EnemySpawner;
+    public EnemyHealthbar Healthbar;
     public float respawnTime = 1.0f;
     public float MoveSpeed = 0.1f;
     public float EnemyStartY = 10f;
     public int Health = 100;
     public bool CanBeAttacked;
+    public GameObject ShipBody;
 
     private Vector2 screenBounds;
 
     Vector3 RotationAngleLeft;
     Vector3 RotationAngleRight;
     Vector3 StopAngle;
+
+    public ScoreCounter Score;
+    public GameObject BonusPoint;
+    public PlayerMouseController player;
+ 
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +33,14 @@ public class EnemyController : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
         StartCoroutine(EnemyMover());
         CanBeAttacked = false;
-        RotationAngleLeft = new Vector3(-90, 50, 0);
-        RotationAngleRight = new Vector3(-90, -40, 0);
-        StopAngle = new Vector3(-90, 0, 0);
-
-
+        // Vector 100 entspricht 20 Grad in Engine 
+        RotationAngleLeft = new Vector3(-90, 100, 0);
+        RotationAngleRight = new Vector3(-90, -100, 0);
+        StopAngle = new Vector3(0, 0, 0);
+        EnemySpawner = FindObjectOfType<EnemySpawner>();
+        EnemySpawner.EnemyIsAlive = true;
+        Score = FindObjectOfType<ScoreCounter>();
+        player = FindObjectOfType<PlayerMouseController>();
     }
 
     // Update is called once per frame
@@ -50,24 +61,31 @@ public class EnemyController : MonoBehaviour
         //Rotiert den Gegner bei Bewegung
         if (rb.velocity.x > 0.2f)
         {
-            Quaternion RotationRight = Quaternion.Euler(RotationAngleRight);
-            transform.rotation = Quaternion.Slerp(transform.rotation, RotationRight, 0.2f);
+            
+            Vector3 RotationRight2 = new Vector3(ShipBody.transform.rotation.x, ShipBody.transform.rotation.y - 80, ShipBody.transform.rotation.z);
+            Quaternion RotationRight = Quaternion.Euler(RotationRight2);
+            ShipBody.transform.rotation = Quaternion.Slerp(transform.rotation, RotationRight, 0.2f);
+            
         }
 
         if (rb.velocity.x < -0.2f)
         {
-            Quaternion RotationLeft = Quaternion.Euler(RotationAngleLeft);
-            transform.rotation = Quaternion.Slerp(transform.rotation, RotationLeft, 0.2f);
+            Vector3 RotationLeft2 = new Vector3(ShipBody.transform.rotation.x, ShipBody.transform.rotation.y + 80, ShipBody.transform.rotation.z);
+            Quaternion RotationLeft = Quaternion.Euler(RotationLeft2);
+            //Quaternion RotationLeft = Quaternion.Euler(RotationAngleLeft);
+            ShipBody.transform.rotation = Quaternion.Slerp(transform.rotation, RotationLeft, 0.2f);
+           
         }
 
         if (rb.velocity.x > -0.2f && rb.velocity.x < 0.2f)
         {
 
             Quaternion StopDeltaRotation = Quaternion.Euler(StopAngle);
-            transform.rotation = Quaternion.Slerp(transform.rotation, StopDeltaRotation, 0.2f);
+            ShipBody.transform.rotation = Quaternion.Slerp(transform.rotation, StopDeltaRotation, 0.2f);
 
         }
 
+      
     }
 
     private void MoveEnemy()
@@ -103,7 +121,7 @@ public class EnemyController : MonoBehaviour
         if (CanBeAttacked == true)
         {
             Health -= damage;
-
+            Healthbar.SetHealth(Health);
             if (Health <= 0)
             {
                 
@@ -115,7 +133,10 @@ public class EnemyController : MonoBehaviour
     public void Die()
     {
         //Hier Todesanimation abspielen
-        AnimationSpawner.spawnAniamtion(transform.position); 
+        AnimationSpawner.spawnAniamtion(transform.position);
+        EnemySpawner.EnemyIsAlive = false;
+        player.OnKill(BonusPoint);
+        Score.ScoreAddEnemy();
         Destroy(this.gameObject);
     }
 
