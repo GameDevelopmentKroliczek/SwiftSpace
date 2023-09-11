@@ -25,6 +25,7 @@ public class UI_Startscreen : MonoBehaviour
     {
         Time.timeScale = 1;
         FindObjectOfType<AudioManager>().NewScene();
+        
     }
    
 
@@ -55,15 +56,12 @@ public class UI_Startscreen : MonoBehaviour
     }
 
 
-    public static void StartGame()
+    public void StartGame()
     {
-        
-        // erstellt einen neuen Spielstand
-        SceneManager.LoadSceneAsync("PlayScene");  
-        //SceneManager.LoadScene(loadLevel, LoadSceneMode.Single);
+        Startmenu.gameObject.SetActive(false);
+        LoadingScene.FindObjectOfType<LoadingScene>().LoadScene();
         Time.timeScale = 1f;
-        
-        
+
     }
 
     public void QuitGame()

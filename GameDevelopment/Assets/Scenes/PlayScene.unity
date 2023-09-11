@@ -2982,6 +2982,10 @@ PrefabInstance:
       propertyPath: ModelList
       value: 
       objectReference: {fileID: 740660662}
+    - target: {fileID: 784431905, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: ShieldOverlay
+      value: 
+      objectReference: {fileID: 6384966687387142900}
     - target: {fileID: 1423627177176821526, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2996,7 +3000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1984195465015004759, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1984195465015004759, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3030,10 +3034,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4432059062490713595, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
-      propertyPath: ShieldOverlay
-      value: 
-      objectReference: {fileID: 6384966687387142900}
     - target: {fileID: 5329478391586683011, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
       propertyPath: Healthbar
       value: 

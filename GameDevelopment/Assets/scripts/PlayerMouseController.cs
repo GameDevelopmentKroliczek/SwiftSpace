@@ -6,7 +6,7 @@ public class PlayerMouseController : MonoBehaviour
 {
     public UI_Endscreen endscreen;
     public PlayerHealth playerhealth;
-    public Shield ShieldObject;
+    public GameObject ShieldObject;
     public LaserScript Laser;
     public GameObject weapon;
     public GameObject weapon_DoubleShot;
@@ -135,7 +135,7 @@ public class PlayerMouseController : MonoBehaviour
         if (CurrentHealth == MaxHealth - 2)
         {
             Healthbar.GetComponent<Animator>().enabled = true;
-            if (ShieldObject.gameObject.active == true)
+            if (ShieldObject.active == true)
             {
                 CriticalHealthOverlay.gameObject.SetActive(false);
             }
@@ -205,7 +205,7 @@ public class PlayerMouseController : MonoBehaviour
     //SchildPrefab wird aktiviert
     public void ActivateShield()
     {
-        ShieldObject.gameObject.SetActive(true);
+        ShieldObject.SetActive(true);
     }
 
     //Doppelschuss hält für "DoubleShotTimer" Sekunden
