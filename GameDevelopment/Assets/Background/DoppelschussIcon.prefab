@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6295619697666731444}
   - component: {fileID: 504447273764526988}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DoppelschussIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

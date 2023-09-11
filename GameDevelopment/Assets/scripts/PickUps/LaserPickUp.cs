@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LaserPickUp : MonoBehaviour
 {
+
+   
     public PlayerMouseController player;
 
     // aktiviert den Laserangriff beim Spieler wenn das PickUp eingesammelt wird
@@ -21,5 +23,7 @@ public class LaserPickUp : MonoBehaviour
 
         }
     }
+
+ 
 
 }

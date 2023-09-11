@@ -19,11 +19,15 @@ public class UI_Startscreen : MonoBehaviour
     public Sprite SoundPlayButton;
     public bool MusicSpriteIsActive = true;
     public bool SoundIsActive = true;
+    private Animator anim;
 
     public void Start()
     {
+        Time.timeScale = 1;
         FindObjectOfType<AudioManager>().NewScene();
+        
     }
+   
 
     public void Update()
     {
@@ -52,15 +56,12 @@ public class UI_Startscreen : MonoBehaviour
     }
 
 
-    public static void StartGame()
+    public void StartGame()
     {
-        
-        // erstellt einen neuen Spielstand
-        SceneManager.LoadSceneAsync("PlayScene");  
-        //SceneManager.LoadScene(loadLevel, LoadSceneMode.Single);
+        Startmenu.gameObject.SetActive(false);
+        LoadingScene.FindObjectOfType<LoadingScene>().LoadScene();
         Time.timeScale = 1f;
-        
-        
+
     }
 
     public void QuitGame()

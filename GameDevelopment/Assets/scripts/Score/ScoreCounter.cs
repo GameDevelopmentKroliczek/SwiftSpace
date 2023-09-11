@@ -7,32 +7,41 @@ public class ScoreCounter : MonoBehaviour
 {
     public Text Highscore;
 
-    public float Score;
-    public float ScoreBonus;
+    public int Score;
     public Text ScoreDisplay;
     public float TimeMultiplier;
-
+    
+    [SerializeField] private int ScoreAdd;
+    public int FinalScore;
     public void Start()
     {
         TimeMultiplier = 2f;
-        ScoreBonus = 0f;
-        Highscore.text = "Highscore: " + PlayerPrefs.GetFloat("Highscore", 0).ToString("0");
+        Highscore.text = "Highscore: " + PlayerPrefs.GetFloat("Highscore", 0).ToString();
+        StartCoroutine(UpdateScore());
     }
 
+    private IEnumerator UpdateScore()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1/TimeMultiplier);
+            Score += 1;
+        }
+    }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        FinalScore = Score + ScoreAdd;
         //Highscorefunktion
-        if (Score > PlayerPrefs.GetFloat("Highscore", 0))
-        {
-            PlayerPrefs.SetFloat("Highscore", Score);
-            Highscore.text = "Highscore: " + Score.ToString("0");
+        if (FinalScore > PlayerPrefs.GetFloat("Highscore", 0))
+        {     
+            PlayerPrefs.SetFloat("Highscore", FinalScore);
+            Highscore.text = "Highscore: " + FinalScore.ToString();
         }
 
 
-        Score += Time.deltaTime * TimeMultiplier;
-        ScoreDisplay.text = Score.ToString("0");
+        ScoreDisplay.text = (Score + ScoreAdd).ToString();
 
         if(Score <= 50 && Score >= 0)
         {
@@ -46,5 +55,14 @@ public class ScoreCounter : MonoBehaviour
         {
             TimeMultiplier = 5f;
         }
+    }
+
+    public void ScoreAddEnemy()
+    {
+        ScoreAdd += 20;
+    }
+    public void ScoreAddAsteroid()
+    {
+        ScoreAdd += 1;
     }
 }

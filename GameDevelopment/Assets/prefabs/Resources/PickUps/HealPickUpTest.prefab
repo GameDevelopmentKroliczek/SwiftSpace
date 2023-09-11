@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8771080159886102468}
   - component: {fileID: -5303129343412558515}
   - component: {fileID: 8169405299860613342}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HealPickUpTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,18 +155,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 668200855202901918, guid: b0fb532d3f9ab0e4dade9ba0f1845cab, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 668200855202901918, guid: b0fb532d3f9ab0e4dade9ba0f1845cab, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 668200855202901918, guid: b0fb532d3f9ab0e4dade9ba0f1845cab, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 668200855202901918, guid: b0fb532d3f9ab0e4dade9ba0f1845cab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -205,10 +193,6 @@ PrefabInstance:
     - target: {fileID: 668200855202901918, guid: b0fb532d3f9ab0e4dade9ba0f1845cab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 668200855202901918, guid: b0fb532d3f9ab0e4dade9ba0f1845cab, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2462346061730072755, guid: b0fb532d3f9ab0e4dade9ba0f1845cab, type: 3}
       propertyPath: m_Name

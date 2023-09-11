@@ -72,7 +72,9 @@ public class ChooseModel : MonoBehaviour
     public void ConfirmButton()
     {
         PlayerPrefs.SetInt ("CharacterSelected", index);
-        SceneManager.LoadScene(loadLevel, LoadSceneMode.Single);
+        ModelSelection.SetActive(false);
+        CharacterList.SetActive(false);
+        LoadingScene.FindObjectOfType<LoadingScene>().LoadScene();
         Time.timeScale = 1f;
     }
 

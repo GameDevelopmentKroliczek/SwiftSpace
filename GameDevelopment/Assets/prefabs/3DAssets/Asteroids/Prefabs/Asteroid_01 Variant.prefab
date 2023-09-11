@@ -53,7 +53,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2287288844549446068, guid: 73e01e046f73be54dbcf05caa59b4743, type: 3}
       propertyPath: m_Name
-      value: Asteroid_01
+      value: Asteroid_01 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7642854250720142853, guid: 73e01e046f73be54dbcf05caa59b4743, type: 3}
+      propertyPath: MaxHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642854250720142853, guid: 73e01e046f73be54dbcf05caa59b4743, type: 3}
+      propertyPath: BonusPoint
+      value: 
+      objectReference: {fileID: 6388611023546707941, guid: 9f154224a12009743ab584f9273ccc92, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73e01e046f73be54dbcf05caa59b4743, type: 3}

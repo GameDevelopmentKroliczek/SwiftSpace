@@ -10,8 +10,12 @@ public class asteroidController : MonoBehaviour
     public float speed = 5f;
     private Rigidbody rb;
     private Vector2 screenBounds;
-    public int Damage = 1; 
-
+    public int Damage = 1;
+    public int MaxHealth;
+    private int CurrentHealth;
+    public ScoreCounter Score;
+    public GameObject BonusPoint;
+    private bool CanBeHit = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +27,9 @@ public class asteroidController : MonoBehaviour
         // Zufällige Rotation einbauen
         rb.transform.localEulerAngles = new Vector3(Random.Range(0f, 180f), Random.Range(0f, 180f), Random.Range(0f, 180f));
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-
+        Score = FindObjectOfType<ScoreCounter>();
+        CurrentHealth = MaxHealth;
+        player = FindObjectOfType<PlayerMouseController>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -51,11 +57,33 @@ public class asteroidController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        if (transform.position.y < screenBounds.y )
+        {
+            if(!CanBeHit)
+            CanBeHit = true;
+        }
+
+
     }
 
     private void Die()
     {
         AnimationSpawner.spawnAniamtion(transform.position);
+        player.OnKill(BonusPoint);
+        Score.ScoreAddAsteroid();
         Destroy(this.gameObject);
+    }
+
+    public void GetHit(int Damage)
+    {
+        if (CanBeHit)
+        {
+            CurrentHealth -= Damage;
+            if (CurrentHealth <= 0)
+            {
+                Die();
+            }
+        }
     }
 }

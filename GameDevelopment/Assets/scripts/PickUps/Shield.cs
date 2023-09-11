@@ -12,6 +12,7 @@ public class Shield : MonoBehaviour
         StartCoroutine(ShieldTime());
         ShieldOverlay.gameObject.SetActive(true);
         FindObjectOfType<AudioManager>().PlaySound("Shield");
+        
     }
 
 

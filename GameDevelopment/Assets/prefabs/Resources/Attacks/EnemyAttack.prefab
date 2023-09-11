@@ -127,4 +127,4 @@ MonoBehaviour:
   BulletSpeed: -5
   rb: {fileID: 0}
   Damage: 1
-  ShotAnimation: {fileID: 4887293627062149592, guid: 9a4f8e76d7889c74186444da4b9f580e, type: 3}
+  ShotAnimation: {fileID: 3731287472175138482, guid: b9e355de277b9524db75eab8f4a3d816, type: 3}

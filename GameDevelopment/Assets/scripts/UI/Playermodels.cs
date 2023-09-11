@@ -9,8 +9,5 @@ public class Playermodels : MonoBehaviour
     {
         characterList.gameObject.SetActive(true);
     }
-    private void OnDisable()
-    {
-        characterList.gameObject.SetActive(false);
-    }
+   
 }

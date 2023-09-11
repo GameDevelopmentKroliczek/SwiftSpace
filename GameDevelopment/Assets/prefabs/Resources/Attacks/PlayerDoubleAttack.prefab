@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5505818158969512083}
   - component: {fileID: 4465464512582520994}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Layer 1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1944503072740788096}
   - component: {fileID: 7636211160035427885}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Layer 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 9204771621015913997}
   - component: {fileID: -5652793934580857662}
   - component: {fileID: -9185792536645530438}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerDoubleAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 201337165309620293, guid: 6da439ed3cb427140866a2f7918cabe4, type: 3}
       propertyPath: m_Name
-      value: Asteroid_04
+      value: Asteroid_04 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 684718363589307135, guid: 6da439ed3cb427140866a2f7918cabe4, type: 3}
       propertyPath: m_RootOrder
@@ -55,5 +55,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7292421412155809260, guid: 6da439ed3cb427140866a2f7918cabe4, type: 3}
+      propertyPath: MaxHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292421412155809260, guid: 6da439ed3cb427140866a2f7918cabe4, type: 3}
+      propertyPath: BonusPoint
+      value: 
+      objectReference: {fileID: 6388611023546707941, guid: 9f154224a12009743ab584f9273ccc92, type: 3}
+    m_RemovedComponents:
+    - {fileID: 2248864822687716700, guid: 6da439ed3cb427140866a2f7918cabe4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6da439ed3cb427140866a2f7918cabe4, type: 3}

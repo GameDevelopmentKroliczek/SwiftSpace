@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 684718363589307135}
   - component: {fileID: 4480870712363607386}
   - component: {fileID: 1858780919883796880}
-  - component: {fileID: 2248864822687716700}
   - component: {fileID: 717812495449913953}
   - component: {fileID: 7292421412155809260}
   - component: {fileID: -2175196526091970572}
-  m_Layer: 0
+  - component: {fileID: 5853082162657159453}
+  m_Layer: 7
   m_Name: Asteroid_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,14 +29,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201337165309620293}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &4480870712363607386
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -87,20 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2248864822687716700
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 201337165309620293}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3708063140734900064, guid: 36331d0d90779c24583edf780472998c, type: 3}
 --- !u!54 &717812495449913953
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -132,6 +118,10 @@ MonoBehaviour:
   player: {fileID: 0}
   AnimationSpawner: {fileID: -2175196526091970572}
   speed: 5
+  Damage: 1
+  MaxHealth: 1
+  Score: {fileID: 0}
+  BonusPoint: {fileID: 6388611023546707941, guid: 9f154224a12009743ab584f9273ccc92, type: 3}
 --- !u!114 &-2175196526091970572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,3 +135,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeathAnimationList: []
+--- !u!64 &5853082162657159453
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201337165309620293}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3626076700276964288, guid: 32ff95722ec149a4dadf72831e0a9126, type: 3}

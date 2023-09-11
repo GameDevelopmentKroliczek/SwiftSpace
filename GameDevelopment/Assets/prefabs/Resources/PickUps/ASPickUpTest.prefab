@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1964468925102332528}
   - component: {fileID: 4404876718729760453}
   - component: {fileID: 9148817238476262048}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ASPickUpTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,18 +154,6 @@ PrefabInstance:
     - target: {fileID: 1293722081941528500, guid: 579362b536d54de44ae95e3d3a963dd8, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1293722081941528500, guid: 579362b536d54de44ae95e3d3a963dd8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1293722081941528500, guid: 579362b536d54de44ae95e3d3a963dd8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1293722081941528500, guid: 579362b536d54de44ae95e3d3a963dd8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 1293722081941528500, guid: 579362b536d54de44ae95e3d3a963dd8, type: 3}
       propertyPath: m_LocalPosition.x

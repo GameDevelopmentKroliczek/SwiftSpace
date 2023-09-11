@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4364823808853987659}
   - component: {fileID: 6991748056263543790}
   - component: {fileID: 2298356045847236251}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy doubleshothitpsd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
