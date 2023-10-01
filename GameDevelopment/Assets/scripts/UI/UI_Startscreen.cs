@@ -11,6 +11,7 @@ public class UI_Startscreen : MonoBehaviour
     public GameObject Startmenu;
     public GameObject CharacterList;
     public GameObject Credits;
+    public GameObject Leaderboard;
     public GameObject MusicButton;
     public GameObject SoundButton;
     public Sprite MusicPauseButton;
@@ -25,7 +26,7 @@ public class UI_Startscreen : MonoBehaviour
     {
         Time.timeScale = 1;
         FindObjectOfType<AudioManager>().NewScene();
-        
+        Cursor.visible = false;
     }
    
 
@@ -79,6 +80,13 @@ public class UI_Startscreen : MonoBehaviour
     public void OpenCredits()
     {
         Credits.gameObject.SetActive(true);
+        Startmenu.gameObject.SetActive(false);
+        CharacterList.gameObject.SetActive(false);
+    }
+
+    public void OpenLeaderboard()
+    {
+        Leaderboard.gameObject.SetActive(true);
         Startmenu.gameObject.SetActive(false);
         CharacterList.gameObject.SetActive(false);
     }

@@ -76,6 +76,7 @@ public class PlayerMouseController : MonoBehaviour
         weapon.gameObject.SetActive(true);
         weapon_DoubleShot.gameObject.SetActive(false);
 
+        Cursor.visible = false;
         
     }
 

@@ -12,7 +12,7 @@ public class UI_Endscreen : MonoBehaviour
     public ScoreCounter scorecounter;
     public Text EndScore;
     public string MenuLevel;
-
+    public Text Highscore;
 
 
     public void ShowEndScreen()
@@ -21,6 +21,14 @@ public class UI_Endscreen : MonoBehaviour
         UI_Overlay.gameObject.SetActive(false);
         
         EndScore.text = "Score: " + scorecounter.FinalScore.ToString();
+        if (PlayerPrefs.GetInt("Highscore", 0) <= 0)
+        {
+            PlayerPrefs.SetInt("Highscore", 0);
+        }
+
+        Highscore.text = "Highscore: " + PlayerPrefs.GetInt("Highscore").ToString();
+        
+        
     }
 
 

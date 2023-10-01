@@ -2684,6 +2684,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3797335366411604323, guid: 49588715f7311874084f78b44b70466d, type: 3}
+      propertyPath: Highscore
+      value: 
+      objectReference: {fileID: 416808026}
+    - target: {fileID: 3797335366411604323, guid: 49588715f7311874084f78b44b70466d, type: 3}
       propertyPath: UI_Overlay
       value: 
       objectReference: {fileID: 834986981}
@@ -2982,10 +2986,18 @@ PrefabInstance:
       propertyPath: ModelList
       value: 
       objectReference: {fileID: 740660662}
+    - target: {fileID: 331144496, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 784431905, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
       propertyPath: ShieldOverlay
       value: 
       objectReference: {fileID: 6384966687387142900}
+    - target: {fileID: 38202120420361326, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1423627177176821526, guid: cad61332127ef544abac0d961bc67f9b, type: 3}
       propertyPath: m_Name
       value: Player

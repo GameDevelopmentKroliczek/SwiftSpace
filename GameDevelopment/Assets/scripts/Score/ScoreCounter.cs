@@ -16,7 +16,6 @@ public class ScoreCounter : MonoBehaviour
     public void Start()
     {
         TimeMultiplier = 2f;
-        Highscore.text = "Highscore: " + PlayerPrefs.GetFloat("Highscore", 0).ToString();
         StartCoroutine(UpdateScore());
     }
 
@@ -34,9 +33,9 @@ public class ScoreCounter : MonoBehaviour
     {
         FinalScore = Score + ScoreAdd;
         //Highscorefunktion
-        if (FinalScore > PlayerPrefs.GetFloat("Highscore", 0))
+        if (FinalScore > PlayerPrefs.GetInt("Highscore", 0))
         {     
-            PlayerPrefs.SetFloat("Highscore", FinalScore);
+            PlayerPrefs.SetInt("Highscore", FinalScore);
             Highscore.text = "Highscore: " + FinalScore.ToString();
         }
 
